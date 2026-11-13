@@ -28,6 +28,21 @@ def params(fmt):
     elif fmt == "ducks":
         p.update(n=rnd.choice([6, 8]), fin=rnd.choice([5600, 6200, 6800]), rock_gap=rnd.choice([220, 260, 300]),
                  pool_gap=rnd.choice([1200, 1500, 1800]), title=rnd.choice(["WHICH DUCK WINS?", "DUCK RACE!", "PICK YOUR DUCK!"]))
+    elif fmt == "rockets":
+        p.update(n=rnd.choice([6, 7, 8]), fin=rnd.choice([5800, 6400, 7000]), ast_gap=rnd.choice([200, 230, 270]), hue=rnd.random(),
+                 title=rnd.choice(["WHICH ROCKET REACHES SPACE?", "ROCKET RACE!", "PICK YOUR ROCKET!"]))
+    elif fmt == "cars":
+        p.update(n=rnd.choice([6, 8]), laps=rnd.choice([2, 3, 4]), crash=rnd.uniform(.001, .0025), hue=rnd.random(),
+                 title=rnd.choice(["WHO WINS THE RACE?", "GRAND PRIX!", "PICK YOUR CAR!"]))
+    elif fmt == "rps":
+        p.update(n=rnd.choice([20, 25, 30]), speed=rnd.uniform(.55, .7), title=rnd.choice(["ROCK PAPER SCISSORS", "WHO TAKES OVER?"]))
+    elif fmt == "meteors":
+        p.update(n=rnd.choice([14, 18, 22]), hue=rnd.random(), title=rnd.choice(["SURVIVE THE METEORS!", "METEOR SHOWER!", "WHO SURVIVES?"]))
+    elif fmt == "grow":
+        p.update(tfill=rnd.uniform(50, 56), g=rnd.uniform(.4, .6), hue=rnd.random(),
+                 title=rnd.choice(["IT GROWS EVERY BOUNCE", "+1 SIZE EVERY BOUNCE", "CAN IT FILL THE CIRCLE?"]))
+    elif fmt == "dominoes":
+        p.update(n=rnd.choice([400, 450, 500]), shape=rnd.choice(["spiral", "snake"]), hue=rnd.random(), tstep=rnd.uniform(.095, .11))
     elif fmt == "rings":
         p.update(n=rnd.choice([10, 12, 14, 16]), gap=rnd.uniform(0.85, 1.1), g=rnd.uniform(0.45, 0.6),
                  spin=rnd.uniform(0.7, 1.2), hue=rnd.random())
@@ -53,31 +68,57 @@ CAPS["survival"] = ["Traps every round. Only 1 survives 💀 Pick your survivor!
 CAPS["ducks"] = ["Duck race! 🦆 Pick your duck before the finish line 👇",
     "Rocks, whirlpools and 1 winner 🦆 Which duck do you pick? 👇",
     "The cutest race on TikTok 🦆 Comment your champion! 👇"]
-TAGS = {"dup": "#satisfyingvideo #physicssimulation #bouncingballs #chaos",
+CAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
+CAPS["cars"] = ["Grand Prix time! 🏎️ Pick your car before the final lap 👇", "Crashes, overtakes, 1 winner 🏁 Who's your pick? 👇", "Which car wins the race? 🏎️ Comment now! 👇"]
+CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
+CAPS["meteors"] = ["Meteor shower! ☄️ Only 1 survives. Pick your survivor 👇", "Dodge or die ☄️ Who makes it? Comment! 👇", "Who survives the meteors? ☄️ Choose now 👇"]
+CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle? Guess 👇", "Tiny ball → giant ball 🤯 Guess the bounces! 👇", "Can it fill the whole circle? 😳 Comment your guess 👇"]
+CAPS["dominoes"] = ["Will they ALL fall? 😬 Watch till the end 👇", "Hundreds of dominoes, 1 chain reaction 😮 Will it make it? 👇", "The most satisfying chain reaction? 🤩 Comment YES or NO 👇"]
+TAGS = {"rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
+        "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
+        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
+        "dup": "#satisfyingvideo #physicssimulation #bouncingballs #chaos",
         "battle": "#countryballs #countrybattle #countrywars #whowillwin",
         "race": "#marblerace #racesimulation #cuteanimation #whowillwin",
         "rings": "#ballescape #satisfyingvideo #physicssimulation",
         "survival": "#lastmanstanding #survivalgame #elimination #whowillwin",
         "ducks": "#duckrace #rubberduck #cuteanimation #whowillwin"}
 
-ALL = ["dup", "battle", "race", "rings", "survival", "ducks"]
+ALL = ["dup", "battle", "race", "rings", "survival", "ducks", "rockets", "cars", "rps", "meteors", "grow", "dominoes"]
 YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How many balls at the end? 🤯"],
       "battle": ["8 countries, only 1 survives 🏆", "Which country wins? 🌍", "Country battle royale 🏆"],
       "race": ["Who reaches the bottom first? 🏁", "Tiny race, big drama 🏁", "Pick your runner! 🏁"],
+      "rockets": ["Which rocket reaches space? 🚀 Rocket race", "Rocket race to space 🚀"],
+      "cars": ["Grand Prix: who wins? 🏎️ Car race", "Car race simulation 🏁"],
+      "rps": ["Rock vs Paper vs Scissors ✂️ Who wins?", "Rock Paper Scissors war ✂️"],
+      "meteors": ["Survive the meteors ☄️ Who's last?", "Meteor shower survival ☄️"],
+      "grow": ["It grows every bounce 😳 Satisfying", "Can it fill the circle? 😳"],
+      "dominoes": ["Will ALL the dominoes fall? 😬", "Giant domino chain reaction 🤩"],
       "rings": ["Can the ball escape? 👀", "Ball vs rings 💥", "Will it make it out? 🔥"],
       "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
       "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
-YTAGS = {"dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
+YCAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
+CAPS["cars"] = ["Grand Prix time! 🏎️ Pick your car before the final lap 👇", "Crashes, overtakes, 1 winner 🏁 Who's your pick? 👇", "Which car wins the race? 🏎️ Comment now! 👇"]
+CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
+CAPS["meteors"] = ["Meteor shower! ☄️ Only 1 survives. Pick your survivor 👇", "Dodge or die ☄️ Who makes it? Comment! 👇", "Who survives the meteors? ☄️ Choose now 👇"]
+CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle? Guess 👇", "Tiny ball → giant ball 🤯 Guess the bounces! 👇", "Can it fill the whole circle? 😳 Comment your guess 👇"]
+CAPS["dominoes"] = ["Will they ALL fall? 😬 Watch till the end 👇", "Hundreds of dominoes, 1 chain reaction 😮 Will it make it? 👇", "The most satisfying chain reaction? 🤩 Comment YES or NO 👇"]
+TAGS = {"rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
+        "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
+        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
+        "dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
          "race": ["marble race", "race", "cute"], "rings": ["oddly satisfying", "ball escape", "physics"],
          "survival": ["survival", "last one standing", "elimination"], "ducks": ["duck race", "rubber duck", "cute"]}
-FC = {"dup": ["What was your guess? 🤯 Comment the number!", "Did you guess right? 👀 Drop your number below!"],
+FC = {"rockets": ["Which rocket did you pick? 🚀 Comment below!"], "cars": ["Which car did you pick? 🏎️ Comment below!"],
+      "rps": ["Rock, paper or scissors? ✂️ What did you pick?"], "meteors": ["Who was your survivor? ☄️ Comment below!"],
+      "grow": ["How many bounces did you guess? 😳"], "dominoes": ["Did you think they'd all fall? 😬 Comment!"], "dup": ["What was your guess? 🤯 Comment the number!", "Did you guess right? 👀 Drop your number below!"],
       "battle": ["Which country did you pick? 🌍 Comment yours!", "Did your country win? 🏆 Tell us below!"],
       "race": ["Who did you pick? 🏁 Drop your runner below!", "Did your runner win? 🏁 Comment!"],
       "rings": ["Did you say YES or NO? 👀 Comment below!", "Called it? 🔥 Tell us below!"],
       "survival": ["Who was your survivor? 💀 Comment below!", "Did your pick survive? 😱 Tell us!"],
       "ducks": ["Which duck did you pick? 🦆 Comment below!", "Did your duck win? 🦆 Tell us!"]}
 FC = {k: [x + " Subscribe for a new game every day!" for x in v] for k, v in FC.items()}
-last = [h["format"] for h in hist[-4:]]
+last = [h["format"] for h in hist[-8:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
 stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
