@@ -8,9 +8,9 @@ P = json.loads(os.environ.get("TP", "{}"))
 rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
 CP = ["Turbo","Flash","Nitro","Bolt","Drift","Rocket","Blitz","Zoom","Racer","Dash","Vroom","Fury","Comet","Viper","Spark","Ace"]
-N = P.get("n", 8); LAPS = P.get("laps", 3); CX, CY, RX, RY = AX, 728, 215, 170; TW = 55
+N = P.get("n", 8); LAPS = P.get("laps", 3); CX, CY, RX, RY = AX, 748, 250, 200; TW = 65
 names = list(rng.choice(CP, N, replace=False))
-cars = [dict(n=names[i], c=hsv(P.get("hue", 0)+i/N, .7, 1), s=-0.04*i, lane=(i % 4 - 1.5)*11, v=0.0, spin=0, done=None, num=i+1) for i in range(N)]
+cars = [dict(n=names[i], c=hsv(P.get("hue", 0)+i/N, .7, 1), s=-0.04*i, lane=(i % 4 - 1.5)*14, v=0.0, spin=0, done=None, num=i+1) for i in range(N)]
 order = []; first_t = 1e9; smoke = []; lap_shown = 1
 def pos(s, lane):
     a = s*2*math.pi - math.pi/2
@@ -35,8 +35,7 @@ while True:
             if len(order) == 1: first_t = t; fanfare(o, t)
     lap = min(LAPS, int(max(c['s'] for c in act) if act else LAPS)+1)
     if lap > lap_shown: lap_shown = lap; o.sound(988, .15, .3); o.ev.append((t+.15, 1319, .2, .3, 10, "sine"))
-    img = Image.new("RGB", (W, H), BG); dr = ImageDraw.Draw(img)
-    dr.rounded_rectangle([CX-RX-TW-25, CY-RY-TW-25, CX+RX+TW+25, CY+RY+TW+25], 40, fill=(40, 120, 70), outline=BLUE, width=6)
+    img = Image.new("RGB", (W, H), (40, 120, 70)); dr = ImageDraw.Draw(img)
     dr.ellipse([CX-RX-TW, CY-RY-TW, CX+RX+TW, CY+RY+TW], fill=(70, 70, 82))
     dr.ellipse([CX-RX+TW, CY-RY+TW, CX+RX-TW, CY+RY-TW], fill=(40, 120, 70))
     for k in range(0, 360, 12):
@@ -53,7 +52,7 @@ while True:
     for c in sorted(cars, key=lambda c: c['lane']):
         x, y, a = pos(min(c['s'], LAPS), c['lane'])
         if c['done'] is not None:
-            i = order.index(c['n']); x = CX-120+(i % 4)*80; y = CY-30+(i//4)*70; a = 0
+            i = order.index(c['n']); x = CX-135+(i % 4)*90; y = CY-35+(i//4)*75; a = 0
         h = a + math.pi/2 + (t*14 if c['spin'] else 0)
         body = rot([(-11, -20), (11, -20), (11, 20), (-11, 20)], x, y, h)
         dr.polygon(body, fill=c['c'], outline=INK)
