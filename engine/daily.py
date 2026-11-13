@@ -66,6 +66,16 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "rings": ["Can the ball escape? 👀", "Ball vs rings 💥", "Will it make it out? 🔥"],
       "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
       "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
+YTAGS = {"dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
+         "race": ["marble race", "race", "cute"], "rings": ["oddly satisfying", "ball escape", "physics"],
+         "survival": ["survival", "last one standing", "elimination"], "ducks": ["duck race", "rubber duck", "cute"]}
+FC = {"dup": ["What was your guess? 🤯 Comment the number!", "Did you guess right? 👀 Drop your number below!"],
+      "battle": ["Which country did you pick? 🌍 Comment yours!", "Did your country win? 🏆 Tell us below!"],
+      "race": ["Who did you pick? 🏁 Drop your runner below!", "Did your runner win? 🏁 Comment!"],
+      "rings": ["Did you say YES or NO? 👀 Comment below!", "Called it? 🔥 Tell us below!"],
+      "survival": ["Who was your survivor? 💀 Comment below!", "Did your pick survive? 😱 Tell us!"],
+      "ducks": ["Which duck did you pick? 🦆 Comment below!", "Did your duck win? 🦆 Tell us!"]}
+FC = {k: [x + " Subscribe for a new game every day!" for x in v] for k, v in FC.items()}
 last = [h["format"] for h in hist[-4:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
@@ -84,7 +94,9 @@ for i, fmt in enumerate(fmts):
         os.remove(f)
     cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
     yt = rnd.choice(YT[fmt]) + " #shorts"
-    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap.replace("#fyp", "#shorts"), "duration": round(dur, 1), "params": p})
+    ytags = YTAGS[fmt] + ["satisfying", "simulation", "who will win", "tamko"]
+    fc = rnd.choice(FC[fmt])
+    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap.replace("#fyp", "#shorts"), "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
 json.dump(man, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)
 json.dump(hist[-200:], open(HIST, "w"), indent=0)
