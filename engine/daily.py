@@ -53,11 +53,12 @@ CAPS["survival"] = ["Traps every round. Only 1 survives 💀 Pick your survivor!
 CAPS["ducks"] = ["Duck race! 🦆 Pick your duck before the finish line 👇",
     "Rocks, whirlpools and 1 winner 🦆 Which duck do you pick? 👇",
     "The cutest race on TikTok 🦆 Comment your champion! 👇"]
-TAGS = {"survival": "#satisfying #survival #whowillwin #lastonestanding #fyp",
-        "ducks": "#duckrace #satisfying #whowillwin #cute #fyp","dup": "#satisfying #oddlysatisfying #physics #chaos #fyp",
-        "battle": "#countryballs #satisfying #whowillwin #countries #fyp",
-        "race": "#marblerace #satisfying #whowillwin #race #fyp",
-        "rings": "#satisfying #oddlysatisfying #ballgame #physics #fyp"}
+TAGS = {"dup": "#satisfyingvideo #physicssimulation #bouncingballs #chaos",
+        "battle": "#countryballs #countrybattle #countrywars #whowillwin",
+        "race": "#marblerace #racesimulation #cuteanimation #whowillwin",
+        "rings": "#ballescape #satisfyingvideo #physicssimulation",
+        "survival": "#lastmanstanding #survivalgame #elimination #whowillwin",
+        "ducks": "#duckrace #rubberduck #cuteanimation #whowillwin"}
 
 ALL = ["dup", "battle", "race", "rings", "survival", "ducks"]
 YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How many balls at the end? 🤯"],
@@ -93,10 +94,10 @@ for i, fmt in enumerate(fmts):
         if dur >= 60: break
         os.remove(f)
     cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
-    yt = rnd.choice(YT[fmt]) + " #shorts"
+    yt = rnd.choice(YT[fmt])
     ytags = YTAGS[fmt] + ["satisfying", "simulation", "who will win", "tamko"]
     fc = rnd.choice(FC[fmt])
-    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap.replace("#fyp", "#shorts"), "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
+    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap + " #shorts", "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
 json.dump(man, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)
 json.dump(hist[-200:], open(HIST, "w"), indent=0)
