@@ -7,7 +7,7 @@ rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
 MAX = P.get('max', 2000); GR = 54/math.log2(MAX); GV = P.get('g', 0.45); HUE0 = P.get('hue', 0.0)
 from PIL import Image, ImageDraw
-CX, CY, R = AX, 740, 265
+CX, CY, R = AX, 700, 260
 x = np.array([CX]); y = np.array([CY-150]); vx = np.array([5.0]); vy = np.array([0.0])
 hue = np.array([HUE0]); F1, F2 = font(54), font(40)
 pent = [261.6, 293.7, 329.6, 392, 440]

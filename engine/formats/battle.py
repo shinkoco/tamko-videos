@@ -14,7 +14,7 @@ POOL = [("FRA",(0,85,164)),("BRA",(0,156,59)),("JPN",(235,235,235)),("USA",(178,
 ("NGA",(0,135,81)),("KSA",(0,108,53)),("THA",(45,42,74)),("VIE",(218,37,29)),("PHI",(0,56,168)),("IDN",(206,17,38))]
 idx = rng.choice(len(POOL), 8, replace=False); C = [POOL[i] for i in idx]
 def lum(c): return 0.3*c[0]+0.59*c[1]+0.11*c[2]
-CX, CY, R, BR = AX, 740, P.get('R', 255), 34
+CX, CY, R, BR = AX, 735, P.get('R', 255), 34
 balls = []
 for i, (nm, c) in enumerate(C):
     a = i/8*6.28
@@ -70,10 +70,10 @@ while True:
         dr.text((x, y), b['n'], font=F2, fill=tc, anchor="mm")
     header(img, "WHO WILL WIN?", f"{len([b for b in balls if b['alive']])} countries left")
     d2 = ImageDraw.Draw(img)
-    if out_list: out(d2, (AX, 1010), "OUT: " + "  ".join(out_list), fit("OUT: " + "  ".join(out_list), 540, 26, fredoka), RED, sw=4)
+    if out_list: out(d2, (AX, 438), "OUT: " + "  ".join(out_list), fit("OUT: " + "  ".join(out_list), 540, 26, fredoka), RED, sw=4)
     if win_t:
         w = [b for b in balls if b['alive']][0]
-        cta(img, f"{w['n']} WINS! 🏆"[:-2], y=1080, col=YEL)
+        cta(img, f"{w['n']} WINS! 🏆"[:-2], col=YEL)
     else: cta(img, "Comment your country!")
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)

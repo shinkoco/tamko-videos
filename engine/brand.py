@@ -26,13 +26,13 @@ def header(img, title, sub=None, y=250):
     out(d, (AX, y), title, fit(title, 560, 76), YEL)
     if sub: out(d, (AX, y+70), sub, fit(sub, 540, 40, fredoka), "white", sw=5)
 
-def cta(img, text, y=1075, col=BLUE):
+def cta(img, text, y=388, col=BLUE):
     d = ImageDraw.Draw(img); out(d, (AX, y), text, fit(text, 540, 42), col, sw=6)
 
 def watermark(img):
     if img.mode != "RGBA":
-        base = img.convert("RGBA"); base.alpha_composite(_wm, (34, 560))
-        d = ImageDraw.Draw(base); d.text((61, 624), "@tamkoplay", font=fredoka(16), fill=(255, 255, 255, 140), anchor="mm")
+        base = img.convert("RGBA"); base.alpha_composite(_wm, (64, 560))
+        d = ImageDraw.Draw(base); d.text((91, 624), "@tamkoplay", font=fredoka(16), fill=(255, 255, 255, 140), anchor="mm")
         img.paste(base.convert(img.mode))
     return img
 

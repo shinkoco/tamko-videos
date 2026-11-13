@@ -10,7 +10,7 @@ NPOOL = ["Mochi","Pip","Bloop","Tofu","Kiwi","Bean","Zuzu","Nugget","Waffle","Gi
          "Dango","Nori","Pudding","Bubbles","Pickle","Noodle","Biscuit","Pebble","Sprout","Cocoa","Maple","Ziggy","Bolt","Ramen",
          "Wasabi","Kibo","Momo","Fuzzy","Jelly","Coco","Rocket","Pixel","Squish","Toffee"]
 N = P.get("n", 20); HUE0 = P.get("hue", 0.0)
-CX, CY, R, BR = AX, 760, 265, 17
+CX, CY, R, BR = AX, 745, 255, 17
 names = list(rng.choice(NPOOL, N, replace=False))
 pl = []
 for i in range(N):
@@ -82,7 +82,7 @@ while True:
         c = trap['col'] if blink else tuple(v//2 for v in trap['col'])
         rr = trap['r']*min(1, k*1.5)
         dr.ellipse([trap['x']-rr, trap['y']-rr, trap['x']+rr, trap['y']+rr], outline=c, width=6)
-        out(dr, (AX, 450), trap['name'], lilita(60), trap['col'])
+        out(dr, (AX, 500), trap['name'], lilita(60), trap['col'])
     for p in parts:
         p[0] += p[2]; p[1] += p[3]; p[3] += .2; p[4] -= .035
         if p[4] > 0: dr.ellipse([p[0]-4, p[1]-4, p[0]+4, p[1]+4], fill=tuple(int(v*p[4]) for v in p[5]))
@@ -101,9 +101,9 @@ while True:
     header(img, P.get("title", "WHO SURVIVES?"), f"{nleft} left  •  Round {rnd_i+1}")
     if last_out and not win_t:
         txt = "OUT: " + "  ".join(last_out)
-        out(dr, (AX, 1045), txt, fit(txt, 540, 26, fredoka), RED, sw=4)
-    if win_t: cta(img, f"{alive[0]['n']} SURVIVES!", y=1090, col=YEL)
-    else: cta(img, "Pick your survivor!", y=1090)
+        out(dr, (AX, 436), txt, fit(txt, 540, 26, fredoka), RED, sw=4)
+    if win_t: cta(img, f"{alive[0]['n']} SURVIVES!", col=YEL)
+    else: cta(img, "Pick your survivor!")
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
 print("winner", [p['n'] for p in pl if p['alive']], o.t)

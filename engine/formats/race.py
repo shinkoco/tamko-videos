@@ -87,14 +87,14 @@ while True:
                 dr.ellipse([x+ex-6, y-9, x+ex+6, y+3], fill="white")
                 dr.ellipse([x+ex+lx-3, y-6+ly, x+ex+lx+3, y+ly], fill="black")
             dr.text((x, y-BR-14), b['n'], font=fredoka(20), fill="white", anchor="mm")
-    dr.rectangle([0, 0, W, 420], fill=BG)
+    dr.rectangle([0, 0, W, 470], fill=BG)
     header(img, P.get("title", "WHO REACHES THE BOTTOM?"), None, y=240)
     ranking = order + [b['n'] for b in sorted(run, key=lambda b: -b['y'])]
     for i, nm in enumerate(ranking[:3]):
         col = [YEL, (200, 200, 215), (230, 140, 70)][i]
         out(dr, (AX, 305+i*36), f"{i+1}. {nm}", fredoka(30), col, sw=4)
-    if order: cta(img, f"{order[0]} WINS!", y=1080, col=YEL)
-    else: cta(img, "Pick your runner!", y=1080)
+    if order: cta(img, f"{order[0]} WINS!", y=440, col=YEL)
+    else: cta(img, "Pick your runner!", y=440)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
 print("finished", order, o.t)

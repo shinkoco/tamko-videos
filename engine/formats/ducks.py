@@ -89,13 +89,13 @@ while True:
             dr.polygon([(x+8, y-24), (x+22, y-20), (x+8, y-16)], fill=(255, 140, 40), outline=INK)  # beak
             dr.ellipse([x-2, y-26, x+4, y-20], fill="black")
             out(dr, (x, y-44), d['n'], fredoka(18), "white", sw=3)
-    dr.rectangle([0, 0, W, 410], fill=BG)
+    dr.rectangle([0, 0, W, 470], fill=BG)
     header(img, P.get("title", "WHICH DUCK WINS?"), None, y=240)
     rank = order + [d['n'] for d in sorted(act, key=lambda d: -d['y'])]
     for i, nm in enumerate(rank[:3]):
         out(dr, (AX, 305+i*36), f"{i+1}. {nm}", fredoka(30), [YEL, (200, 200, 215), (230, 140, 70)][i], sw=4)
-    if order: cta(img, f"{order[0]} WINS!", y=1080, col=YEL)
-    else: cta(img, "Pick your duck!", y=1080)
+    if order: cta(img, f"{order[0]} WINS!", y=440, col=YEL)
+    else: cta(img, "Pick your duck!", y=440)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
 print("finished", order, o.t)

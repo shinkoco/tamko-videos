@@ -6,7 +6,7 @@ P = json.loads(os.environ.get("TP", "{}"))
 rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
 from PIL import Image, ImageDraw
-CX, CY = AX, 740
+CX, CY = AX, 700
 N = P.get('n', 14); SP = 200/(N-1); HUE0 = P.get('hue', 0.0)
 rings = [dict(r=62+i*SP, gap=P.get('gap', 0.95), ang=rng.uniform(0, 6.28), spd=(P.get('spin', 0.9)+0.05*i)*(1 if i % 2 else -1),
               hue=HUE0+i/N, alive=True) for i in range(N)]
