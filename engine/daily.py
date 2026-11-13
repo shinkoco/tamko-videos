@@ -60,6 +60,12 @@ TAGS = {"survival": "#satisfying #survival #whowillwin #lastonestanding #fyp",
         "rings": "#satisfying #oddlysatisfying #ballgame #physics #fyp"}
 
 ALL = ["dup", "battle", "race", "rings", "survival", "ducks"]
+YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How many balls at the end? 🤯"],
+      "battle": ["8 countries, only 1 survives 🏆", "Which country wins? 🌍", "Country battle royale 🏆"],
+      "race": ["Who reaches the bottom first? 🏁", "Tiny race, big drama 🏁", "Pick your runner! 🏁"],
+      "rings": ["Can the ball escape? 👀", "Ball vs rings 💥", "Will it make it out? 🔥"],
+      "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
+      "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
 last = [h["format"] for h in hist[-4:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
@@ -77,7 +83,8 @@ for i, fmt in enumerate(fmts):
         if dur >= 60: break
         os.remove(f)
     cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
-    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "duration": round(dur, 1), "params": p})
+    yt = rnd.choice(YT[fmt]) + " #shorts"
+    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap.replace("#fyp", "#shorts"), "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
 json.dump(man, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)
 json.dump(hist[-200:], open(HIST, "w"), indent=0)

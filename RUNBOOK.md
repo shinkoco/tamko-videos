@@ -1,6 +1,6 @@
 # Tamko daily run
 
-Daily routine for @tamkoplay (TikTok), run by a scheduled Claude session.
+Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claude session.
 
 1. Clone the repo: `git clone --depth 1 https://github.com/shinkoco/tamko-videos /home/claude/tamko-videos`.
 2. Check the tools: `python3 -c "import numpy, PIL"` and `which ffmpeg`. If one is missing: `pip install --break-system-packages numpy pillow`.
@@ -14,6 +14,8 @@ Daily routine for @tamkoplay (TikTok), run by a scheduled Claude session.
    - media_urls = `https://raw.githubusercontent.com/shinkoco/tamko-videos/main/videos/<file>`
    - first video at 12:00 Europe/Paris, second at 19:00 Europe/Paris, same day. If a slot has already passed, use the next day at the same time.
      `schedule_minutes` = minutes from now until that time.
+6b. Also cross-post each video as a YouTube Short at the same time: platform `youtube`, account_id `6af76b7e636980181f23f59f`,
+   title = `yt_title`, content = `yt_caption`, same media_urls and schedule_minutes.
 7. Report: the files, their formats, and the Zernio post IDs with their times.
 
 Format engine: `engine/formats/{dup,battle,race,rings,survival,ducks}.py (rotation: no format from the last 4 videos)`. Settings are passed in the `TP` environment variable (JSON).
