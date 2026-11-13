@@ -160,6 +160,9 @@ for i, fmt in enumerate(fmts):
         if dur >= 60: break
         os.remove(f)
     cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
+    _d = datetime.date.today()
+    if os.environ.get("TAMKO_THEME") == "christmas" or (_d.month == 12 and _d.day <= 26):
+        cap = "🎄 " + cap + " #christmas"
     yt = rnd.choice(YT[fmt])
     ytags = YTAGS[fmt] + ["satisfying", "simulation", "who will win", "tamko"]
     fc = rnd.choice(FC[fmt])

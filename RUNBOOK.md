@@ -27,3 +27,5 @@ Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claud
 
 Format engine: `engine/formats/*.py — 16 formats: dup, battle, race, rings, survival, ducks, rockets, cars, rps, meteors, grow, dominoes, vision, escape, press, melody (melody uses PUBLIC-DOMAIN tunes only) (rotation: no format from the last 8 videos)`. Settings are passed in the `TP` environment variable (JSON).
 Brand: Lilita One (titles), Fredoka (body text), palette A (night background #0E101E, yellow #FFCD3C, blue #3CAAFF, red #FF5A6E), watermark on the left at mid-height.
+
+Seasonal themes: engine/brand.py switches automatically by date (THEME). Christmas = 1–26 December: snowy night-blue background, gold title, icy-blue call to action, animated falling snow and a blinking garland, plus 🎄 and #christmas in the TikTok caption. Can be forced with the env var TAMKO_THEME=christmas.

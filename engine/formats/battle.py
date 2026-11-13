@@ -60,7 +60,7 @@ while True:
         sp = math.hypot(b['vx'], b['vy'])
         if sp < 7: b['vx'] *= 7/max(sp, .1); b['vy'] *= 7/max(sp, .1)
         if sp > 15: b['vx'] *= 15/sp; b['vy'] *= 15/sp
-    img = Image.new("RGB", (W, H), (14, 16, 30)); dr = ImageDraw.Draw(img)
+    img = Image.new("RGB", (W, H), BG); dr = ImageDraw.Draw(img)
     dr.arc([CX-R, CY-R, CX+R, CY+R], math.degrees(ang+gap), math.degrees(ang)+360, fill=(255, 255, 255), width=8)
     for b in balls:
         if b['y'] > H+100: continue
