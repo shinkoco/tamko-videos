@@ -22,6 +22,12 @@ def params(fmt):
         p.update(sx=rnd.choice([84, 92, 100]), sy=rnd.choice([110, 120, 130]), gaprow=rnd.choice([7, 9, 11]),
                  hue=rnd.random(), fin=rnd.choice([8800, 9600, 10400]),
                  title=rnd.choice(["WHO REACHES THE BOTTOM?", "WHO WINS THE RACE?", "PICK YOUR RUNNER!"]))
+    elif fmt == "survival":
+        p.update(n=rnd.choice([16, 20, 24]), hue=rnd.random(), round=rnd.uniform(4.0, 4.8),
+                 title=rnd.choice(["WHO SURVIVES?", "LAST ONE STANDING", "SURVIVE THE TRAPS!"]))
+    elif fmt == "ducks":
+        p.update(n=rnd.choice([6, 8]), fin=rnd.choice([5600, 6200, 6800]), rock_gap=rnd.choice([220, 260, 300]),
+                 pool_gap=rnd.choice([1200, 1500, 1800]), title=rnd.choice(["WHICH DUCK WINS?", "DUCK RACE!", "PICK YOUR DUCK!"]))
     elif fmt == "rings":
         p.update(n=rnd.choice([10, 12, 14, 16]), gap=rnd.uniform(0.85, 1.1), g=rnd.uniform(0.45, 0.6),
                  spin=rnd.uniform(0.7, 1.2), hue=rnd.random())
@@ -41,14 +47,22 @@ CAPS = {
               "Ring after ring... will it make it out? 🔥 Guess below 👇",
               "The ball vs the rings 💥 Who wins? Comment before the end 👇"],
 }
-TAGS = {"dup": "#satisfying #oddlysatisfying #physics #chaos #fyp",
+CAPS["survival"] = ["Traps every round. Only 1 survives 💀 Pick your survivor! 👇",
+    "Who makes it to the end? 😱 Comment your pick before round 1 👇",
+    "Last one standing wins 🏆 Choose wisely 👇"]
+CAPS["ducks"] = ["Duck race! 🦆 Pick your duck before the finish line 👇",
+    "Rocks, whirlpools and 1 winner 🦆 Which duck do you pick? 👇",
+    "The cutest race on TikTok 🦆 Comment your champion! 👇"]
+TAGS = {"survival": "#satisfying #survival #whowillwin #lastonestanding #fyp",
+        "ducks": "#duckrace #satisfying #whowillwin #cute #fyp","dup": "#satisfying #oddlysatisfying #physics #chaos #fyp",
         "battle": "#countryballs #satisfying #whowillwin #countries #fyp",
         "race": "#marblerace #satisfying #whowillwin #race #fyp",
         "rings": "#satisfying #oddlysatisfying #ballgame #physics #fyp"}
 
-last = [h["format"] for h in hist[-COUNT:]]
-fmts = [f for f in ["dup", "battle", "race", "rings"] if f not in last]
-rnd.shuffle(fmts); fmts = (fmts + [f for f in ["dup", "battle", "race", "rings"] if f not in fmts])[:COUNT]
+ALL = ["dup", "battle", "race", "rings", "survival", "ducks"]
+last = [h["format"] for h in hist[-4:]]
+fmts = [f for f in ALL if f not in last]
+rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
 stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
 man = []
 for i, fmt in enumerate(fmts):

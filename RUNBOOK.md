@@ -16,5 +16,5 @@ Daily routine for @tamkoplay (TikTok), run by a scheduled Claude session.
      `schedule_minutes` = minutes from now until that time.
 7. Report: the files, their formats, and the Zernio post IDs with their times.
 
-Format engine: `engine/formats/{dup,battle,race,rings}.py`. Settings are passed in the `TP` environment variable (JSON).
+Format engine: `engine/formats/{dup,battle,race,rings,survival,ducks}.py (rotation: no format from the last 4 videos)`. Settings are passed in the `TP` environment variable (JSON).
 Brand: Lilita One (titles), Fredoka (body text), palette A (night background #0E101E, yellow #FFCD3C, blue #3CAAFF, red #FF5A6E), watermark on the left at mid-height.
