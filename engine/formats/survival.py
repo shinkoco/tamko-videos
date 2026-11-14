@@ -12,6 +12,7 @@ NPOOL = ["Mochi","Pip","Bloop","Tofu","Kiwi","Bean","Zuzu","Nugget","Waffle","Gi
 N = P.get("n", 20); HUE0 = P.get("hue", 0.0)
 CX, CY, R, BR = AX, 745, 255, 17
 names = list(rng.choice(NPOOL, N, replace=False))
+if P.get('tamko'): names[int(rng.integers(N))] = 'Tamko'
 pl = []
 for i in range(N):
     a = rng.uniform(0, 6.28); d = rng.uniform(0, R-40)
@@ -90,6 +91,10 @@ while True:
     for p in alive:
         x, y = p['x'], p['y']; big = 1.6 if win_t else 1
         r = BR*big
+        if p['n'] == 'Tamko':
+            tamko_sprite(img, x, y, r*2.3, o.t)
+            if len(alive) <= 8 or win_t: out(dr, (x, y-r-14), 'Tamko', fredoka(18 if not win_t else 28), YEL, sw=3)
+            continue
         dr.ellipse([x-r, y-r, x+r, y+r], fill=p['c'], outline=INK, width=3)
         lx = max(-2, min(2, p['vx']*.5)); ly = max(-2, min(2, p['vy']*.5))
         for ex in (-6*big, 6*big):

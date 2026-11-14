@@ -9,6 +9,7 @@ rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
 N = P.get("n", 18); X0, Y0, X1, Y1 = 50, 500, 620, 975; BR = 16; HUE0 = P.get("hue", 0)
 names = list(rng.choice(NPOOL, N, replace=False))
+if P.get('tamko'): names[int(rng.integers(N))] = 'Tamko'
 pl = [dict(n=names[i], c=hsv(HUE0+i/N, .6, 1), x=rng.uniform(X0+30, X1-30), y=rng.uniform(Y0+30, Y1-30),
            vx=rng.uniform(-2, 2), vy=rng.uniform(-2, 2), alive=True) for i in range(N)]
 mets = []; booms = []; parts = []; nxt = 2.5; win_t = None; last_out = []
@@ -69,7 +70,11 @@ while True:
         if q[4] > 0: dr.ellipse([q[0]-4, q[1]-4, q[0]+4, q[1]+4], fill=tuple(int(v*q[4]) for v in q[5]))
     parts = [q for q in parts if q[4] > 0]
     for p in alive:
-        blob(dr, p['x'], p['y'], BR*(1.6 if win_t else 1), p['c'], p['vx'], p['vy'], p['n'] if (len(alive) <= 8 or win_t) else None)
+        if p['n'] == 'Tamko':
+            rr = BR*(1.6 if win_t else 1); tamko_sprite(img, p['x'], p['y'], rr*2.3, o.t)
+            if len(alive) <= 8 or win_t: out(dr, (p['x'], p['y']-rr-14), 'Tamko', fredoka(18), YEL, sw=3)
+        else:
+            blob(dr, p['x'], p['y'], BR*(1.6 if win_t else 1), p['c'], p['vx'], p['vy'], p['n'] if (len(alive) <= 8 or win_t) else None)
     header(img, P.get("title", "SURVIVE THE METEORS!"), f"{len(alive)} left")
     if last_out and not win_t: out(dr, (AX, 438), "OUT: " + "  ".join(last_out), fit("OUT: " + "  ".join(last_out), 540, 26, fredoka), RED, sw=4)
     cta(img, f"{alive[0]['n']} SURVIVES!" if win_t else "Pick your survivor!", col=YEL if win_t else BLUE)

@@ -12,7 +12,7 @@ hist = json.load(open(HIST)) if os.path.exists(HIST) else []
 rnd = random.Random()
 
 def params(fmt):
-    p = {"seed": rnd.randrange(1, 10**9)}
+    p = {"seed": rnd.randrange(1, 10**9), "tamko": rnd.random() < 0.4}
     if fmt == "dup":
         p.update(max=rnd.choice([1000, 1500, 2000, 2500, 3000]), g=rnd.uniform(0.35, 0.55), hue=rnd.random(),
                  title=rnd.choice(["EVERY BOUNCE = +1 BALL", "1 BOUNCE = 1 NEW BALL", "HOW MANY BALLS?"]))

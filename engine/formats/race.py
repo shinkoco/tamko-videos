@@ -7,7 +7,9 @@ rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
 from PIL import Image, ImageDraw
 NPOOL = ["Mochi","Pip","Bloop","Tofu","Kiwi","Bean","Zuzu","Nugget","Waffle","Gizmo","Taro","Yuzu","Miso","Boba","Peanut","Sushi","Dango","Nori","Pudding","Bubbles","Pickle","Noodle","Biscuit","Pebble","Sprout","Cocoa","Maple","Ziggy","Bolt","Ramen","Wasabi","Tamtam","Kibo","Momo","Fuzzy","Jelly","Coco","Rocket","Pixel","Squish"]
-NAMES = list(rng.choice(NPOOL, 10, replace=False)); HUE0 = P.get("hue", 0.0)
+NAMES = list(rng.choice(NPOOL, 10, replace=False))
+if P.get('tamko'): NAMES[int(rng.integers(10))] = 'Tamko'
+HUE0 = P.get("hue", 0.0)
 BR, PR, SX, SY, Y0, FIN = 22, 8, P.get('sx', 92), P.get('sy', 120), 400, P.get('fin', 9600)
 pegs_off = {}
 blobs = [dict(n=nm, c=hsv(HUE0+i/10, .65, 1), x=80+i*52, y=200+rng.uniform(0, 40), vx=0, vy=0, done=None)
@@ -80,6 +82,8 @@ while True:
         x, y = b['x'], b['y']-cam
         if b['done'] is not None:
             i = order.index(b['n']); x = 60+(i % 5)*150; y = FIN-cam+90+(i//5)*90
+        if -50 < y < H+50 and b['n'] == 'Tamko':
+            tamko_sprite(img, x, y, BR*2.3, o.t); out(dr, (x, y-BR-16), 'Tamko', fredoka(20), YEL, sw=3); continue
         if -50 < y < H+50:
             dr.ellipse([x-BR, y-BR, x+BR, y+BR], fill=b['c'], outline=INK, width=3)
             lx = max(-3, min(3, b['vx']*0.6)); ly = max(-3, min(3, b['vy']*0.4))

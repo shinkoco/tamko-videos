@@ -10,9 +10,10 @@ NPOOL = ["Quacky","Waddles","Puddles","Ducky","Bubbles","Nugget","Sunny","Mango"
          "Daisy","Lemon","Pebble","Taco","Chip","Muffin","Ziggy","Honey","Pancake","Sprinkle","Tofu","Coco","Mochi","Boba","Kiwi"]
 N = P.get("n", 8); FIN = P.get("fin", 6200); L, Rb = 50, 620  # river banks
 names = list(rng.choice(NPOOL, N, replace=False))
+if P.get('tamko'): names[int(rng.integers(N))] = 'Tamko'
 COLS = [(255, 205, 60), (255, 130, 160), (120, 220, 255), (150, 235, 140), (255, 160, 70), (200, 150, 255), (255, 255, 255), (255, 100, 100)]
 rng.shuffle(COLS)
-ducks = [dict(n=names[i], c=COLS[i % len(COLS)], x=L+40+i*(Rb-L-80)/(N-1), y=150.0, vx=0.0, vy=0.0, done=None, spin=0.0) for i in range(N)]
+ducks = [dict(n=names[i], c=(255, 205, 60) if names[i] == 'Tamko' else COLS[i % len(COLS)], x=L+40+i*(Rb-L-80)/(N-1), y=150.0, vx=0.0, vy=0.0, done=None, spin=0.0) for i in range(N)]
 # obstacles
 rocks = [(rng.uniform(L+40, Rb-40), y, rng.uniform(22, 40)) for y in np.arange(700, FIN-300, P.get("rock_gap", 260))]
 pools = [(rng.uniform(L+80, Rb-80), y) for y in np.arange(1300, FIN-500, P.get("pool_gap", 1500))]
@@ -88,7 +89,12 @@ while True:
             dr.ellipse([x-12, y-32, x+10, y-10], fill=d['c'], outline=INK, width=3)       # head
             dr.polygon([(x+8, y-24), (x+22, y-20), (x+8, y-16)], fill=(255, 140, 40), outline=INK)  # beak
             dr.ellipse([x-2, y-26, x+4, y-20], fill="black")
-            out(dr, (x, y-44), d['n'], fredoka(18), "white", sw=3)
+            if d['n'] == 'Tamko':
+                dr.rectangle([x-12, y-31, x+10, y-25], fill="white", outline=INK); dr.ellipse([x-4, y-31, x+2, y-25], fill=(230, 40, 60))
+                wv = math.sin(o.t*6)*4
+                dr.polygon([(x-12, y-29), (x-28, y-36+wv), (x-24, y-27)], fill="white", outline=INK)
+                dr.polygon([(x-12, y-27), (x-27, y-22-wv), (x-22, y-26)], fill="white", outline=INK)
+            out(dr, (x, y-44), d['n'], fredoka(18), YEL if d['n'] == 'Tamko' else "white", sw=3)
     dr.rectangle([0, 0, W, 470], fill=BG)
     header(img, P.get("title", "WHICH DUCK WINS?"), None, y=240)
     rank = order + [d['n'] for d in sorted(act, key=lambda d: -d['y'])]
