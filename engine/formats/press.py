@@ -15,11 +15,11 @@ slam = 0; plate = TOP; done_t = None; flash = 0
 while True:
     t = o.t
     if done_t and t > max(done_t+4, 61): break
-    phase = (t-3) % PERIOD if t > 3 else -1
+    phase = (t-0.3) % PERIOD if t > 0.3 else -1
     if slam < SLAMS and phase >= 0:
         k = phase/PERIOD
         plate = TOP + (FLOOR-TOP-30)*(k/0.12)**2 if k < 0.12 else (FLOOR-30 if k < 0.2 else FLOOR-30 - (FLOOR-30-TOP)*min(1, (k-.2)/.3))
-        if k >= 0.12 and slam < int((t-3)/PERIOD) + 1:  # impact (once per period)
+        if k >= 0.12 and slam < int((t-0.3)/PERIOD) + 1:  # impact (once per period)
             slam += 1; flash = 1.0; o.sound(60, .6, .7, 5, "square"); o.sound(0, .3, .5, 10, "noise")
             n = len(x); f = 0.8
             x = np.r_[x-r*.3, x+r*.3]; y = np.r_[y, y]; r = np.r_[r*f, r*f]

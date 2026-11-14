@@ -12,7 +12,7 @@ names = list(rng.choice(NPOOL, N, replace=False))
 if P.get('tamko'): names[int(rng.integers(N))] = 'Tamko'
 pl = [dict(n=names[i], c=hsv(HUE0+i/N, .6, 1), x=rng.uniform(X0+30, X1-30), y=rng.uniform(Y0+30, Y1-30),
            vx=rng.uniform(-2, 2), vy=rng.uniform(-2, 2), alive=True) for i in range(N)]
-mets = []; booms = []; parts = []; nxt = 2.5; win_t = None; last_out = []
+mets = []; booms = []; parts = []; nxt = 0.4; win_t = None; last_out = []
 while True:
     t = o.t
     alive = [p for p in pl if p['alive']]

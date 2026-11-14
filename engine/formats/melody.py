@@ -31,7 +31,7 @@ while sum(d for _, d in seq) < 50:
     seq += [(n, d*BEAT0*k) for n, d in MEL] + [(None, 1.0)]
     k = max(0.5, k*0.85)
 x, y = CX, CY; a = rng.uniform(0, 6.28); dx, dy = math.cos(a), math.sin(a)
-idx = 0; seg_t = 1.5; t_next = 1.5; trail = []; ripples = []; reveal_t = None; hue = rng.random()
+idx = 0; seg_t = 0.3; t_next = 0.3; trail = []; ripples = []; reveal_t = None; hue = rng.random()
 def dist_to_wall(px, py, dx, dy):
     b = (px-CX)*dx + (py-CY)*dy; c = (px-CX)**2 + (py-CY)**2 - (R-r)**2
     return -b + math.sqrt(max(0, b*b - c))

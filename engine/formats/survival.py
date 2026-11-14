@@ -32,7 +32,7 @@ while True:
     if (win_t and t > max(win_t+4, 61)) or t > 85: break
     alive = [p for p in pl if p['alive']]
     # start a trap
-    if not win_t and trap is None and t >= 3 + rnd_i*ROUND:
+    if not win_t and trap is None and t >= 0.6 + rnd_i*ROUND:
         k = min(plan[rnd_i] if rnd_i < len(plan) else 1, len(alive)-1); tgt = alive[rng.integers(len(alive))]
         ds = sorted(alive, key=lambda p: (p['x']-tgt['x'])**2 + (p['y']-tgt['y'])**2)
         rad = math.hypot(ds[k-1]['x']-tgt['x'], ds[k-1]['y']-tgt['y']) + BR + 6

@@ -1,4 +1,4 @@
-import os, math
+import os, math, json
 from PIL import Image, ImageDraw, ImageFont
 A = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 FD = A + "/"
@@ -90,7 +90,28 @@ def season(img):
         d.ellipse([x-8, y-6, x+8, y+12], fill=c)
     return img
 
+_HOOKS = ["WAIT FOR THE END!", "ONLY 1% GUESS RIGHT", "PICK ONE NOW!", "DON'T SCROLL!", "THE ENDING IS CRAZY", "GUESS BEFORE IT ENDS!"]
+try:
+    _seed = json.loads(os.environ.get("TP", "{}")).get("seed", 0)
+except Exception:
+    _seed = 0
+HOOK = _HOOKS[_seed % len(_HOOKS)]
+_wf = [0]
+def hook(img):
+    """Big pulsing hook text during the first 3 seconds (retention)."""
+    f = _wf[0]
+    if f >= 90: return
+    k = f/90; pop = 1 + 0.12*math.sin(f/3) if f > 6 else 0.4 + 0.6*f/6
+    fnt = fit(HOOK, 600, int(64*pop)); d = ImageDraw.Draw(img)
+    pad = 18; tw = fnt.getlength(HOOK); y = 560
+    alpha_ok = f < 80 or (f//3) % 2 == 0  # quick blink before vanishing
+    if alpha_ok:
+        d.rounded_rectangle([AX-tw/2-pad, y-46, AX+tw/2+pad, y+46], 22, fill=RED, outline="white", width=4)
+        out(d, (AX, y), HOOK, fnt, "white", sw=4)
+
 def watermark(img):
+    _wf[0] += 1
+    hook(img)
     season(img)
     if img.mode != "RGBA":
         base = img.convert("RGBA"); base.alpha_composite(_wm, (64, 560))

@@ -26,7 +26,7 @@ STEP = P.get("tstep", 0.1)  # seconds between falls
 DUR = 2 + N*STEP
 # suspense: a stall point where the chain pauses
 stall_i = int(N*rng.uniform(.55, .7)); STALL = 2.2
-fall_at = [2 + i*STEP + (STALL if i >= stall_i else 0) for i in range(N)]
+fall_at = [0.4 + i*STEP + (STALL if i >= stall_i else 0) for i in range(N)]
 snd = 0; done_t = None
 while True:
     t = o.t
@@ -43,7 +43,7 @@ while True:
         dx, dy = math.cos(ang), math.sin(ang); px, py = -dy, dx
         poly = [(x-dx*L-px*Wd/2, y-dy*L-py*Wd/2), (x+dx*L-px*Wd/2, y+dy*L-py*Wd/2), (x+dx*L+px*Wd/2, y+dy*L+py*Wd/2), (x-dx*L+px*Wd/2, y-dy*L+py*Wd/2)]
         dr.polygon(poly, fill=c)
-    if 2 + stall_i*STEP < t < fall_at[stall_i] and not done_t:
+    if 0.4 + stall_i*STEP < t < fall_at[stall_i] and not done_t:
         out(dr, (AX, 445), "...", lilita(60), RED)
     header(img, P.get("title", f"WILL ALL {N} FALL?"), f"Fallen: {fallen}/{N}")
     cta(img, "ALL DOWN!" if done_t else "Will it make it to the end?", col=YEL if done_t else BLUE)

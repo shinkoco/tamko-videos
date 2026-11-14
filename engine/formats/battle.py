@@ -20,7 +20,7 @@ for i, (nm, c) in enumerate(C):
     a = i/8*6.28
     balls.append(dict(n=nm, c=c, x=CX+130*math.cos(a), y=CY+130*math.sin(a),
                       vx=rng.uniform(-6, 6), vy=rng.uniform(-6, 6), alive=True, out=False))
-ang, last, out_list, win_t = 0.0, 0.0, [], None
+ang, last, out_list, win_t = 0.0, -5.0, [], None
 F1, F2, F3 = font(52), fredoka(24), font(34)
 while True:
     t = o.t
