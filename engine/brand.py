@@ -8,6 +8,7 @@ def fredoka(s):
 YEL, BLUE, INK = (255, 205, 60), (60, 170, 255), (20, 15, 35)
 
 W, H = 720, 1280
+FPS_GUESS = 30
 BG, RED = (14, 16, 30), (255, 90, 110)
 import datetime, random as _r
 def _auto_theme():
@@ -35,9 +36,38 @@ def header(img, title, sub=None, y=250):
     out(d, (AX, y), title, fit(title, 560, 76), YEL)
     if sub: out(d, (AX, y+70), sub, fit(sub, 540, 40, fredoka), "white", sw=5)
 
-def cta(img, text, y=388, col=None):
-    col = col or BLUE
-    d = ImageDraw.Draw(img); out(d, (AX, y), text, fit(text, 540, 42), col, sw=6)
+_tick = [0]
+def tamko_sprite(img, cx, cy, s, phase=0.0):
+    """Draw the Tamko mascot (champion headband with tails waving in the wind)."""
+    d = ImageDraw.Draw(img); r = s/2
+    w1 = math.sin(phase*6.0)*0.25; w2 = math.sin(phase*6.0 + 1.3)*0.25
+    hb_y = cy - r*0.42
+    for k, w in ((0, w1), (1, w2)):  # headband tails, flapping
+        base = (cx + r*0.88, hb_y + (k*0.12 - 0.04)*r)
+        ang = (-0.35 + 0.55*k) + w*1.4; L = r*0.95
+        tip = (base[0] + L*math.cos(ang), base[1] + L*math.sin(ang))
+        mid = (base[0] + L*0.55*math.cos(ang-0.35), base[1] + L*0.55*math.sin(ang-0.35))
+        d.polygon([base, mid, tip, (base[0], base[1] + r*0.16)], fill="white", outline=INK)
+    d.ellipse([cx-r, cy-r, cx+r, cy+r], fill=(255, 205, 60), outline=INK, width=max(2, int(s/22)))
+    d.ellipse([cx-r*.6, cy-r*.75, cx-r*.25, cy-r*.45], fill=(255, 240, 170))
+    d.polygon([(cx-r*.93, cy-r*.55), (cx+r*.93, cy-r*.55), (cx+r*.97, cy-r*.3), (cx-r*.97, cy-r*.3)], fill="white", outline=INK)
+    d.ellipse([cx-r*.13, hb_y-r*.13, cx+r*.13, hb_y+r*.13], fill=(230, 40, 60))
+    for ex in (-.32, .32):
+        x, y = cx+ex*r, cy+r*.05; w, h = .15*r, .2*r
+        d.ellipse([x-w, y-h, x+w, y+h], fill=(30, 25, 40)); d.ellipse([x-w*.5, y-h*.6, x, y-h*.1], fill="white")
+    for ex in (-.55, .55):
+        d.ellipse([cx+ex*r-.13*r, cy+.3*r-.07*r, cx+ex*r+.13*r, cy+.3*r+.07*r], fill=(255, 140, 90))
+    d.chord([cx-.2*r, cy+.15*r, cx+.2*r, cy+.48*r], 0, 180, fill=(120, 30, 40), outline=INK)
+
+def cta(img, text, y=388, col=None, mascot=True):
+    col = col or BLUE; _tick[0] += 1
+    f = fit(text, 480 if mascot else 540, 42); d = ImageDraw.Draw(img)
+    if not mascot:
+        out(d, (AX, y), text, f, col, sw=6); return
+    tw = f.getlength(text); s = 52; gap = 10; x0 = AX - (tw + gap + s)/2
+    out(d, (x0 + tw/2, y), text, f, col, sw=6)
+    bob = math.sin(_tick[0]/5)*3
+    tamko_sprite(img, x0 + tw + gap + s/2, y + bob, s, _tick[0]/FPS_GUESS)
 
 if THEME == "christmas":
     YEL, BLUE = (255, 215, 90), (140, 210, 255)
