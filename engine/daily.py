@@ -154,16 +154,23 @@ rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
 stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
 man = []
 for i, fmt in enumerate(fmts):
-    for attempt in range(3):
+    for attempt in range(4):
+        if attempt == 2:  # this format keeps failing: switch to another one instead of aborting the day
+            fmt = rnd.choice([f for f in ALL if f not in fmts]); fmts[i] = fmt
         p = params(fmt); name = f"tamko_{stamp}_{i}_{fmt}"
         env = dict(os.environ, TP=json.dumps(p), TOUT=name, OUTDIR=OUT)
-        subprocess.run([sys.executable, os.path.join(HERE, "formats", fmt + ".py")], env=env, check=True,
-                       stdout=subprocess.DEVNULL)
+        r = subprocess.run([sys.executable, os.path.join(HERE, "formats", fmt + ".py")], env=env,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+        if r.returncode != 0:
+            print(f"WARNING: {fmt} failed (attempt {attempt+1}): {r.stderr.strip().splitlines()[-1] if r.stderr.strip() else '?'}", file=sys.stderr)
+            continue
         f = os.path.join(OUT, name + ".mp4")
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f],
                                    capture_output=True, text=True).stdout or 0)
         if dur >= 60: break
         os.remove(f)
+    else:
+        sys.exit(f"ERROR: could not produce video {i}")
     cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
     _d = datetime.date.today()
     if os.environ.get("TAMKO_THEME") == "christmas" or (_d.month == 12 and _d.day <= 26):

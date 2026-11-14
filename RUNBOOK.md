@@ -29,3 +29,5 @@ Format engine: `engine/formats/*.py — 16 formats: dup, battle, race, rings, su
 Brand: Lilita One (titles), Fredoka (body text), palette A (night background #0E101E, yellow #FFCD3C, blue #3CAAFF, red #FF5A6E), watermark on the left at mid-height.
 
 Seasonal themes: engine/brand.py switches automatically by date (THEME). Christmas = 1–26 December: snowy night-blue background, gold title, icy-blue call to action, animated falling snow and a blinking garland, plus 🎄 and #christmas in the TikTok caption. Can be forced with the env var TAMKO_THEME=christmas.
+
+Quality check: after ANY change to the engine, run `python3 engine/qa.py /tmp/qa` (renders all 16 formats, ~11 min) and only push if it prints ALL GOOD. daily.py now switches to another format if one keeps failing, instead of stopping the day.
