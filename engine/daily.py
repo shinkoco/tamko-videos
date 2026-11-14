@@ -115,7 +115,7 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "rings": ["Can the ball escape? 👀", "Ball vs rings 💥", "Will it make it out? 🔥"],
       "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
       "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
-YCAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
+CAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
 CAPS["cars"] = ["Grand Prix time! 🏎️ Pick your car before the final lap 👇", "Crashes, overtakes, 1 winner 🏁 Who's your pick? 👇", "Which car wins the race? 🏎️ Comment now! 👇"]
 CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
 CAPS["meteors"] = ["Meteor shower! ☄️ Only 1 survives. Pick your survivor 👇", "Dodge or die ☄️ Who makes it? Comment! 👇", "Who survives the meteors? ☄️ Choose now 👇"]
@@ -125,14 +125,19 @@ CAPS["vision"] = ["How old is your vision? 👀 Comment the age when you lost th
 CAPS["escape"] = ["New rule, new chaos 🤯 Can the ball escape? Comment YES or NO 👇", "Can it break every ring? 👀 Guess before the end 👇"]
 CAPS["press"] = ["Every slam splits the balls 🔨 How many at the end? Guess 👇", "1 ball vs the hydraulic press 🔨 Guess the final count 👇"]
 CAPS["melody"] = ["Every bounce plays a note 🎵 Guess the song before the reveal 👇", "Can you name this song? 🎵 Comment before the end 👇", "Guess the song! 🎵 No cheating 👀👇"]
-TAGS = {"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
+TAGS.update({"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
         "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
         "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
-        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
-        "dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
+        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying"})
+YTAGS = {"dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
          "race": ["marble race", "race", "cute"], "rings": ["oddly satisfying", "ball escape", "physics"],
-         "survival": ["survival", "last one standing", "elimination"], "ducks": ["duck race", "rubber duck", "cute"]}
+         "survival": ["survival", "last one standing", "elimination"], "ducks": ["duck race", "rubber duck", "cute"],
+         "vision": ["vision test", "eye test", "challenge"], "escape": ["ball escape", "physics", "oddly satisfying"],
+         "press": ["hydraulic press", "physics", "oddly satisfying"], "melody": ["guess the song", "music", "classical music", "bouncing ball"],
+         "rockets": ["rocket race", "space", "cute"], "cars": ["car race", "grand prix", "racing"], "rps": ["rock paper scissors", "battle"],
+         "meteors": ["meteor", "survival", "last one standing"], "grow": ["bouncing ball", "physics", "oddly satisfying"],
+         "dominoes": ["dominoes", "chain reaction", "oddly satisfying"]}
 FC = {"vision": ["What age did you get? 👀 Comment below!"], "escape": ["Did you think it would escape? 👀 Comment!"],
       "press": ["What was your guess? 🔨 Comment the number!"], "melody": ["Did you guess the song before the reveal? 🎵"], "rockets": ["Which rocket did you pick? 🚀 Comment below!"], "cars": ["Which car did you pick? 🏎️ Comment below!"],
       "rps": ["Rock, paper or scissors? ✂️ What did you pick?"], "meteors": ["Who was your survivor? ☄️ Comment below!"],
