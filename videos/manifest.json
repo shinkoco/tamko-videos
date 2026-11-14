@@ -1,28 +1,25 @@
 [
  {
-  "file": "tamko_20261114_1146_0_rings.mp4",
-  "format": "rings",
-  "caption": "Can the ball escape every ring? \ud83d\udc40 Comment YES or NO! \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation",
-  "yt_title": "Ball vs rings \ud83d\udca5",
-  "yt_caption": "Can the ball escape every ring? \ud83d\udc40 Comment YES or NO! \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation #shorts",
+  "file": "tamko_20261114_1048_0_battle.mp4",
+  "format": "battle",
+  "caption": "Country battle! Last one standing wins \ud83c\udfc6 Who's your pick? \ud83d\udc47 #countryballs #countrybattle #countrywars #whowillwin",
+  "yt_title": "Country battle royale \ud83c\udfc6",
+  "yt_caption": "Country battle! Last one standing wins \ud83c\udfc6 Who's your pick? \ud83d\udc47 #countryballs #countrybattle #countrywars #whowillwin #shorts",
   "yt_tags": [
-   "oddly satisfying",
-   "ball escape",
-   "physics",
+   "countryballs",
+   "country battle",
+   "countries",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Called it? \ud83d\udd25 Tell us below! Subscribe for a new game every day!",
-  "duration": 63.9,
+  "yt_first_comment": "Did your country win? \ud83c\udfc6 Tell us below! Subscribe for a new game every day!",
+  "duration": 63.5,
   "params": {
-   "seed": 295873641,
-   "n": 10,
-   "gap": 1.043113047784069,
-   "g": 0.5440771953727094,
-   "spin": 1.0945680355258154,
-   "hue": 0.6632106099561808
+   "seed": 144459192,
+   "R": 240,
+   "spin": 0.7087997422740708
   }
  }
 ]
