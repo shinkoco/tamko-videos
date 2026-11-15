@@ -148,6 +148,8 @@ FC = {"vision": ["What age did you get? 👀 Comment below!"], "escape": ["Did y
       "survival": ["Who was your survivor? 💀 Comment below!", "Did your pick survive? 😱 Tell us!"],
       "ducks": ["Which duck did you pick? 🦆 Comment below!", "Did your duck win? 🦆 Tell us!"]}
 FC = {k: [x + " Subscribe for a new game every day!" for x in v] for k, v in FC.items()}
+BROAD = ["#arcade", "#minigame", "#arcadegame", "#simulationgame", "#games"]
+BLOCKED = {"#bouncingballs", "#bouncingball", "#balls", "#ballz"}
 last = [h["format"] for h in hist[-8:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
@@ -171,7 +173,9 @@ for i, fmt in enumerate(fmts):
         os.remove(f)
     else:
         sys.exit(f"ERROR: could not produce video {i}")
-    cap = rnd.choice(CAPS[fmt]) + " " + TAGS[fmt]
+    tags = TAGS[fmt].split()[:3] + [rnd.choice(BROAD)]
+    tags = [h for h in tags if h.lower() not in BLOCKED]  # hashtags TikTok already removed
+    cap = rnd.choice(CAPS[fmt]) + " " + " ".join(dict.fromkeys(tags))
     _d = datetime.date.today()
     if os.environ.get("TAMKO_THEME") == "christmas" or (_d.month == 12 and _d.day <= 26):
         cap = "🎄 " + cap + " #christmas"
