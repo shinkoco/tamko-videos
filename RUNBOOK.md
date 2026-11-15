@@ -12,7 +12,7 @@ Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claud
 ```json
 {"content": "<caption>",
  "media_items": [{"type": "video", "url": "https://raw.githubusercontent.com/shinkoco/tamko-videos/main/videos/<file>"}],
- "scheduled_for": "<YYYY-MM-DD>T12:00:00",  "timezone": "Europe/Paris",
+ "scheduled_for": "<YYYY-MM-DD>T08:00:00",  "timezone": "Europe/Paris",
  "tags": <yt_tags>,
  "platforms": [
    {"platform": "tiktok", "accountId": "6af7635df038e4d78c1b8569"},
@@ -22,7 +22,7 @@ Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claud
  "tiktok_settings": {"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": true, "allowDuet": true, "allowStitch": true,
    "contentPreviewConfirmed": true, "expressConsentGiven": true, "videoCoverTimestampMs": 20000}}
 ```
-   First video at 12:00, second at 19:00 (Paris time). If a slot has already passed, use the next day at the same time.
+   First video at 08:00, second at 17:00 (Paris time). If a slot has already passed, use the next day at the same time.
 7. Report: the files, their formats, and the Zernio post IDs with their times.
 
 Format engine: `engine/formats/*.py — 16 formats: dup, battle, race, rings, survival, ducks, rockets, cars, rps, meteors, grow, dominoes, vision, escape, press, melody (melody uses PUBLIC-DOMAIN tunes only) (rotation: no format from the last 8 videos)`. Settings are passed in the `TP` environment variable (JSON).
