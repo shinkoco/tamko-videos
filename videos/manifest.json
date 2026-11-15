@@ -1,25 +1,29 @@
 [
  {
-  "file": "tamko_20261114_1048_0_battle.mp4",
-  "format": "battle",
-  "caption": "Country battle! Last one standing wins \ud83c\udfc6 Who's your pick? \ud83d\udc47 #countryballs #countrybattle #countrywars #whowillwin",
-  "yt_title": "Country battle royale \ud83c\udfc6",
-  "yt_caption": "Country battle! Last one standing wins \ud83c\udfc6 Who's your pick? \ud83d\udc47 #countryballs #countrybattle #countrywars #whowillwin #shorts",
+  "file": "tamko_20261115_0712_0_cars.mp4",
+  "format": "cars",
+  "caption": "Which car wins the race? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #carrace #grandprix #racesimulation #whowillwin",
+  "yt_title": "Car race simulation \ud83c\udfc1",
+  "yt_caption": "Which car wins the race? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #carrace #grandprix #racesimulation #whowillwin #shorts",
   "yt_tags": [
-   "countryballs",
-   "country battle",
-   "countries",
+   "car race",
+   "grand prix",
+   "racing",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Did your country win? \ud83c\udfc6 Tell us below! Subscribe for a new game every day!",
+  "yt_first_comment": "Which car did you pick? \ud83c\udfce\ufe0f Comment below! Subscribe for a new game every day!",
   "duration": 63.5,
   "params": {
-   "seed": 144459192,
-   "R": 240,
-   "spin": 0.7087997422740708
+   "seed": 695620666,
+   "tamko": true,
+   "n": 8,
+   "laps": 3,
+   "crash": 0.0024885485767127545,
+   "hue": 0.8716918857016573,
+   "title": "PICK YOUR CAR!"
   }
  }
 ]
