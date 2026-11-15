@@ -90,8 +90,8 @@ TAGS = {"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": 
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
         "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
         "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
-        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
-        "dup": "#satisfyingvideo #physicssimulation #bouncingballs #chaos",
+        "grow": "#satisfyingvideo #physicssimulation #simulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
+        "dup": "#satisfyingvideo #physicssimulation #simulation #chaos",
         "battle": "#countryballs #countrybattle #countrywars #whowillwin",
         "race": "#marblerace #racesimulation #cuteanimation #whowillwin",
         "rings": "#ballescape #satisfyingvideo #physicssimulation",
@@ -129,7 +129,7 @@ TAGS.update({"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "esca
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
         "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
         "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
-        "grow": "#satisfyingvideo #bouncingball #physicssimulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying"})
+        "grow": "#satisfyingvideo #physicssimulation #simulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying"})
 YTAGS = {"dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],
          "race": ["marble race", "race", "cute"], "rings": ["oddly satisfying", "ball escape", "physics"],
          "survival": ["survival", "last one standing", "elimination"], "ducks": ["duck race", "rubber duck", "cute"],
