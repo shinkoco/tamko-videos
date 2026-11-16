@@ -32,8 +32,8 @@ def params(fmt):
         p.update(n=rnd.choice([6, 7, 8]), fin=rnd.choice([5800, 6400, 7000]), ast_gap=rnd.choice([200, 230, 270]), hue=rnd.random(),
                  title=rnd.choice(["WHICH ROCKET REACHES SPACE?", "ROCKET RACE!", "PICK YOUR ROCKET!"]))
     elif fmt == "cars":
-        p.update(n=rnd.choice([6, 8]), laps=rnd.choice([2, 3, 4]), crash=rnd.uniform(.001, .0025), hue=rnd.random(),
-                 title=rnd.choice(["WHO WINS THE RACE?", "GRAND PRIX!", "PICK YOUR CAR!"]))
+        p.update(n=rnd.choice([6, 7, 8]), hue=rnd.random(), bpm=rnd.choice([140, 150, 160]),
+                 title=rnd.choice(["LAST CAR STANDING WINS", "HIGHWAY SURVIVAL!", "PICK YOUR CAR!"]))
     elif fmt == "rps":
         p.update(n=rnd.choice([20, 25, 30]), speed=rnd.uniform(.55, .7), title=rnd.choice(["ROCK PAPER SCISSORS", "WHO TAKES OVER?"]))
     elif fmt == "meteors":
@@ -77,7 +77,7 @@ CAPS["ducks"] = ["Duck race! 🦆 Pick your duck before the finish line 👇",
     "Rocks, whirlpools and 1 winner 🦆 Which duck do you pick? 👇",
     "The cutest race on TikTok 🦆 Comment your champion! 👇"]
 CAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
-CAPS["cars"] = ["Grand Prix time! 🏎️ Pick your car before the final lap 👇", "Crashes, overtakes, 1 winner 🏁 Who's your pick? 👇", "Which car wins the race? 🏎️ Comment now! 👇"]
+CAPS["cars"] = ["Highway chaos! 🏎️ Pick your car before the first crash 👇", "Cones, oil, trucks… only 1 car survives 🏁 Who's your pick? 👇", "Which car makes it to the end? 🏎️ Comment now! 👇"]
 CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
 CAPS["meteors"] = ["Meteor shower! ☄️ Only 1 survives. Pick your survivor 👇", "Dodge or die ☄️ Who makes it? Comment! 👇", "Who survives the meteors? ☄️ Choose now 👇"]
 CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle? Guess 👇", "Tiny ball → giant ball 🤯 Guess the bounces! 👇", "Can it fill the whole circle? 😳 Comment your guess 👇"]
@@ -88,7 +88,7 @@ CAPS["press"] = ["Every slam splits the balls 🔨 How many at the end? Guess �
 CAPS["melody"] = ["Every bounce plays a note 🎵 Guess the song before the reveal 👇", "Can you name this song? 🎵 Comment before the end 👇", "Guess the song! 🎵 No cheating 👀👇"]
 TAGS = {"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
-        "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
+        "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #highway #racesimulation #whowillwin",
         "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
         "grow": "#satisfyingvideo #physicssimulation #simulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying",
         "dup": "#satisfyingvideo #physicssimulation #simulation #chaos",
@@ -107,7 +107,7 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "press": ["Hydraulic press splits every ball 🔨", "1 ball vs a hydraulic press 🔨 How many?"],
       "melody": ["Guess the song 🎵 Every bounce plays a note", "Can you name this song? 🎵 Bouncing ball music"],
       "rockets": ["Which rocket reaches space? 🚀 Rocket race", "Rocket race to space 🚀"],
-      "cars": ["Grand Prix: who wins? 🏎️ Car race", "Car race simulation 🏁"],
+      "cars": ["Highway survival: who wins? 🏎️ Car race", "Last car standing 🏁 Car race simulation"],
       "rps": ["Rock vs Paper vs Scissors ✂️ Who wins?", "Rock Paper Scissors war ✂️"],
       "meteors": ["Survive the meteors ☄️ Who's last?", "Meteor shower survival ☄️"],
       "grow": ["It grows every bounce 😳 Satisfying", "Can it fill the circle? 😳"],
@@ -116,7 +116,7 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
       "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
 CAPS["rockets"] = ["Rocket race to space! 🚀 Pick your rocket before liftoff 👇", "Asteroids, boosts and 1 winner 🚀 Which rocket? 👇", "Which rocket reaches space first? 🚀 Comment! 👇"]
-CAPS["cars"] = ["Grand Prix time! 🏎️ Pick your car before the final lap 👇", "Crashes, overtakes, 1 winner 🏁 Who's your pick? 👇", "Which car wins the race? 🏎️ Comment now! 👇"]
+CAPS["cars"] = ["Highway chaos! 🏎️ Pick your car before the first crash 👇", "Cones, oil, trucks… only 1 car survives 🏁 Who's your pick? 👇", "Which car makes it to the end? 🏎️ Comment now! 👇"]
 CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
 CAPS["meteors"] = ["Meteor shower! ☄️ Only 1 survives. Pick your survivor 👇", "Dodge or die ☄️ Who makes it? Comment! 👇", "Who survives the meteors? ☄️ Choose now 👇"]
 CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle? Guess 👇", "Tiny ball → giant ball 🤯 Guess the bounces! 👇", "Can it fill the whole circle? 😳 Comment your guess 👇"]
@@ -127,7 +127,7 @@ CAPS["press"] = ["Every slam splits the balls 🔨 How many at the end? Guess �
 CAPS["melody"] = ["Every bounce plays a note 🎵 Guess the song before the reveal 👇", "Can you name this song? 🎵 Comment before the end 👇", "Guess the song! 🎵 No cheating 👀👇"]
 TAGS.update({"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
-        "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #grandprix #racesimulation #whowillwin",
+        "rockets": "#rocketrace #space #whowillwin #cuteanimation", "cars": "#carrace #highway #racesimulation #whowillwin",
         "rps": "#rockpaperscissors #simulation #whowillwin #battle", "meteors": "#meteorshower #survivalgame #lastmanstanding #whowillwin",
         "grow": "#satisfyingvideo #physicssimulation #simulation", "dominoes": "#dominoes #chainreaction #satisfyingvideo #oddlysatisfying"})
 YTAGS = {"dup": ["oddly satisfying", "physics", "bouncing balls", "chaos"], "battle": ["countryballs", "country battle", "countries"],

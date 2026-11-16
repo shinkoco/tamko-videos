@@ -25,3 +25,21 @@ def podium(dr, ranking, y=305):
 
 def fanfare(o, t):
     for k, fr in enumerate([523, 659, 784, 1047]): o.ev.append((t+.12*k, fr, .4, .35, 5, "sine"))
+
+def music(o, dur, bpm=150, seed=0, vol=1.0):
+    """Original chiptune loop: kick, hat, square bass, arpeggio."""
+    import random
+    r = random.Random(seed); b = 60/bpm
+    root = r.choice([110, 98, 123.5, 104])
+    prog = r.choice([[0, 5, 3, 4], [0, 3, 4, 4], [0, 5, 4, 3], [0, 4, 5, 3]])
+    deg = [0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
+    def st(n): return root*2**(n/12)
+    k = 0; t = 0.0
+    while t < dur:
+        bar = (k//8) % 4; ch = deg[prog[bar]]
+        if k % 2 == 0: o.ev.append((t, 55, .12, .5*vol, 25, "sine"))
+        o.ev.append((t+b/4, 8000, .03, .06*vol, 60, "noise"))
+        o.ev.append((t, st(ch-12) if k % 2 == 0 else st(ch), b*.45, .11*vol, 6, "sq"))
+        arp = [0, 4, 7, 12][k % 4] if prog[bar] in (0, 3) else [0, 3, 7, 12][k % 4]
+        o.ev.append((t+b/2, st(ch+arp+12), b*.4, .07*vol, 9, "sine"))
+        k += 1; t = k*b/2
