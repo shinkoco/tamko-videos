@@ -7,71 +7,101 @@ from PIL import Image, ImageDraw
 P = json.loads(os.environ.get("TP", "{}"))
 rng = np.random.default_rng(P.get("seed", 1))
 o = Out(os.environ.get("TOUT", "out"))
-RP = ["Apollo","Comet","Nova","Zippy","Orbit","Blaze","Luna","Astro","Rocky","Spark","Meteor","Pluto","Vega","Jet","Cosmo","Starry"]
-N = P.get("n", 7); FIN = P.get("fin", 6400); L, R = 40, 630
-names = list(rng.choice(RP, N, replace=False))
-cols = [hsv(P.get("hue", 0)+i/N, .55, 1) for i in range(N)]
-rk = [dict(n=names[i], c=cols[i], x=L+50+i*(R-L-100)/(N-1), d=0.0, v=0.0, vx=0.0, stun=0, done=None) for i in range(N)]
-ast = [(rng.uniform(L+40, R-40), d, rng.uniform(20, 42)) for d in np.arange(600, FIN-300, P.get("ast_gap", 230))]
-boost = [(rng.uniform(L+60, R-60), d) for d in np.arange(900, FIN-400, 900)]
-stars = [(rng.uniform(0, W), rng.uniform(0, 4000), rng.uniform(1, 3)) for _ in range(220)]
-order = []; cam = 0; first_t = 1e9; snd = 0
+NM = ["Apollo","Nova","Comet","Orbit","Luna","Astro","Zenith","Pulsar","Quasar","Vega","Rigel","Titan","Cosmo","Halley","Sirius","Atlas"]
+N = P.get("n", 8); L0, L1 = 60, 620; COLS = 6; CW = (L1-L0)/COLS; TOP, BOT = 480, 1280
+names = list(rng.choice(NM, N, replace=False))
+if P.get("tamko"): names[0] = "Tamko"
+hue = P.get("hue", rng.random())
+ships = [dict(n=names[i], c=YEL if names[i] == "Tamko" else hsv(hue+i/N, .7, 1), x=L0+CW*(i % COLS+.5), y=1000+(i//COLS)*110,
+              alive=True, num=i) for i in range(N)]
+for s in ships: s['tx'] = s['x']
+plan = [5+(57-5)*k/(N-2)+rng.uniform(-2, 2) for k in range(N-1)]
+stars = [[rng.uniform(0, W), rng.uniform(TOP, H), rng.uniform(1, 3)] for _ in range(90)]
+obs = []; boom = []; order = []; doomed = None; nxt = 1.0; win_t = 0
+INV = ["..X.....X..", "...X...X...", "..XXXXXXX..", ".XX.XXX.XX.", "XXXXXXXXXXX", "X.XXXXXXX.X", "X.X.....X.X", "...XX.XX..."]
+INV2 = ["...XXXX...", ".XXXXXXXX.", "XXXXXXXXXX", "XXX.XX.XXX", "XXXXXXXXXX", "..XX..XX..", ".XX.XX.XX.", "X........X"]
+music(o, 66, bpm=P.get("bpm", 155), seed=P.get("seed", 1)+7)
+def inv_draw(dr, x, y, col, t, alt):
+    g = INV if alt else INV2; px = 7
+    for j, row in enumerate(g):
+        for i, ch in enumerate(row):
+            if ch == "X": dr.rectangle([x+(i-len(row)/2)*px, y+(j-4)*px, x+(i-len(row)/2+1)*px-1, y+(j-3)*px-1], fill=col)
+def ship_draw(img, dr, s, t):
+    x, y = s['x'], s['y']
+    if s['n'] == "Tamko":
+        tamko_sprite(img, int(x), int(y), 40, t)
+    else:
+        dr.polygon([(x, y-34), (x-15, y+10), (x+15, y+10)], fill=s['c'], outline=INK)
+        dr.polygon([(x-15, y+2), (x-26, y+22), (x-12, y+18)], fill=RED, outline=INK)
+        dr.polygon([(x+15, y+2), (x+26, y+22), (x+12, y+18)], fill=RED, outline=INK)
+        dr.ellipse([x-7, y-16, x+7, y-2], fill=(150, 220, 255), outline=INK)
+    fl = 12+6*math.sin(t*40+s['num'])
+    dr.polygon([(x-8, y+18), (x+8, y+18), (x, y+18+fl)], fill=(255, 170, 40)); dr.polygon([(x-4, y+18), (x+4, y+18), (x, y+10+fl)], fill=(255, 240, 160))
+    out(dr, (x, y-50), s['n'], fredoka(17), "white", sw=3)
+def spawn(target=None):
+    k = rng.choice(["inv", "inv2", "ast", "laser"], p=[.35, .25, .25, .15])
+    x = target['x'] if target else L0+CW*(rng.integers(COLS)+.5)
+    obs.append(dict(x=x, y=TOP-60, k=k, target=target, col=hsv(rng.random(), .6, 1), r=rng.uniform(28, 44), a=rng.uniform(0, 6)))
 while True:
     t = o.t
-    if t > 61 and (len(order) == N or (order and t > first_t+7)): break
-    if t > 80: break
-    act = [r for r in rk if r['done'] is None]
-    lead = max(r['d'] for r in rk)
-    for r in act:
-        tgt = 3.6 + 0.7*math.sin(t*0.9 + r['x']/90) + min(1.6, (lead-r['d'])*0.004)
-        if r['stun'] > 0: r['stun'] -= 1; tgt = 0.6
-        r['v'] += (tgt - r['v'])*0.06; r['vx'] += rng.uniform(-.3, .3); r['vx'] *= .95
-        for (bx, bd) in boost:
-            if abs(r['x']-bx) < 40 and abs(r['d']-bd) < 25: r['v'] = 10; o.sound(1175, .1, .15) if t-snd > .1 else None; snd = t
-        for (ax, ad, ar) in ast:
-            if math.hypot(r['x']-ax, r['d']-ad) < ar+16 and r['stun'] == 0:
-                r['stun'] = 40; r['vx'] = 6 if r['x'] > ax else -6; o.sound(140, .25, .35, 8, "noise")
-        r['d'] += r['v']; r['x'] = min(R-18, max(L+18, r['x']+r['vx']))
-        if r['d'] >= FIN:
-            r['done'] = t; order.append(r['n']); o.sound(784 if len(order) == 1 else 523, .3, .35, 6)
-            if len(order) == 1: first_t = t; fanfare(o, t)
-    target = (max(r['d'] for r in act) if act else FIN) - 230
-    cam += (min(target, FIN-500) - cam)*0.08
-    Y = lambda d: 960 - (d - cam)
-    img = Image.new("RGB", (W, H), (8, 8, 26)); dr = ImageDraw.Draw(img)
-    for (sx, sy, sz) in stars:
-        yy = (sy + cam*0.3*sz/3) % 1400 - 60; dr.ellipse([sx-sz, yy-sz, sx+sz, yy+sz], fill=(200, 200, 255))
-    fy = Y(FIN)
-    if -40 < fy < H:
-        for k in range(L, R, 40): dr.rectangle([k, fy-20, k+20, fy], fill="white"); dr.rectangle([k+20, fy-40, k+40, fy-20], fill="white")
-    for (bx, bd) in boost:
-        y = Y(bd)
-        if -40 < y < H+40: dr.polygon([(bx-28, y+14), (bx+28, y+14), (bx, y-20)], fill=YEL)
-    for (ax, ad, ar) in ast:
-        y = Y(ad)
-        if -60 < y < H+60:
-            dr.ellipse([ax-ar, y-ar, ax+ar, y+ar], fill=(120, 105, 95), outline=(70, 60, 55), width=3)
-            dr.ellipse([ax-ar*.4, y-ar*.3, ax-ar*.05, y+ar*.05], fill=(95, 82, 75))
-    for r in rk:
-        x = r['x']; y = Y(r['d'])
-        if r['done'] is not None:
-            i = order.index(r['n']); x = L+60+(i % 4)*140; y = Y(FIN)-110-(i//4)*90
-        if -80 < y < H+80:
-            a = (t*12 if r['stun'] else 0)
-            fl = 18 + 10*abs(math.sin(t*30 + x))
-            body = rot([(-11, -26), (11, -26), (11, 16), (-11, 16)], x, y, a)
-            nose = rot([(-11, -26), (11, -26), (0, -44)], x, y, a)
-            fins = rot([(-11, 6), (-22, 20), (-11, 16)], x, y, a) , rot([(11, 6), (22, 20), (11, 16)], x, y, a)
-            flame = rot([(-8, 16), (8, 16), (0, 16+fl)], x, y, a)
-            dr.polygon(flame, fill=(255, 150, 40)); dr.polygon(body, fill=r['c'], outline=INK)
-            dr.polygon(nose, fill=RED, outline=INK); [dr.polygon(f, fill=RED, outline=INK) for f in fins]
-            cx, cy = rot([(0, -10)], x, y, a)[0]; dr.ellipse([cx-6, cy-6, cx+6, cy+6], fill=(150, 220, 255), outline=INK)
-            out(dr, (x, y+48+fl*.3), r['n'], fredoka(18), "white", sw=3)
+    alive = [s for s in ships if s['alive']]
+    if len(alive) == 1 and not order: order = [alive[0]['n']]; fanfare(o, t); win_t = t
+    if order and t > win_t+4 and t > 61: break
+    if t > 85: break
+    spd = 8 + 9*min(1, t/50)
+    if not plan and len(alive) > 1 and doomed is None: plan.append(t+1.6)
+    if plan and t >= plan[0]-1.6 and doomed is None and len(alive) > 1:
+        plan.pop(0); doomed = alive[rng.integers(len(alive))]; spawn(doomed)
+    if t >= nxt and not order: nxt = t+max(.22, .7-t*.008); spawn()
+    for ob in obs:
+        ob['y'] += spd*(1.6 if ob['k'] == "laser" else 1); ob['a'] += .05
+        if ob['k'] in ("inv", "inv2") and ob['target'] is None: ob['x'] += math.sin(t*4+ob['a'])*2
+    obs = [ob for ob in obs if ob['y'] < BOT+80]
+    for s in alive:
+        threat = [ob for ob in obs if ob['target'] is not s and abs(ob['x']-s['x']) < 55 and 0 < s['y']-ob['y'] < 280]
+        if s is doomed:
+            s['tx'] = next((ob['x'] for ob in obs if ob['target'] is s), s['tx'])
+        elif threat:
+            best = min(range(COLS), key=lambda l: sum(1 for ob in obs if abs(ob['x']-(L0+CW*(l+.5))) < 55 and 0 < s['y']-ob['y'] < 340)*10 + abs(L0+CW*(l+.5)-s['x'])/CW + rng.random()*.5)
+            s['tx'] = L0+CW*(best+.5)
+        elif rng.random() < .012: s['tx'] = L0+CW*(rng.integers(COLS)+.5)
+        s['x'] += (s['tx']-s['x'])*.17
+        for q in alive:
+            if q is not s and abs(q['x']-s['x']) < 46 and abs(q['y']-s['y']) < 80:
+                s['y'] += 3 if s['y'] >= q['y'] else -3
+                if s is not doomed: s['x'] += 2 if s['x'] >= q['x'] else -2
+        s['x'] = min(L1-20, max(L0+20, s['x']))
+        s['y'] += (930+60*math.sin(t*.7+s['num']*2.1)+(s['num'] % 3)*75 - s['y'])*.02
+        for ob in obs:
+            if ob['target'] is s and abs(ob['x']-s['x']) < 40 and abs(ob['y']-s['y']) < 45:
+                s['alive'] = False; ob['y'] = BOT+300; doomed = None
+                o.sound(140, .5, .5, 5, "noise"); o.sound(70, .4, .4, 6, "sine")
+                for _ in range(30): boom.append([s['x'], s['y'], rng.uniform(-6, 6), rng.uniform(-6, 6), 1.0, hsv(rng.uniform(.0, .15), .9, 1)])
+                break
+    if doomed is not None and not any(ob['target'] is doomed for ob in obs): doomed = None
+    img = Image.new("RGB", (W, H), (8, 6, 24)); dr = ImageDraw.Draw(img)
+    for st in stars:
+        st[1] += spd*st[2]*.25
+        if st[1] > H: st[1] = TOP; st[0] = rng.uniform(0, W)
+        g = int(120+40*st[2]); dr.rectangle([st[0], st[1], st[0]+st[2], st[1]+st[2]*3], fill=(g, g, 255))
+    for ob in obs:
+        x, y = ob['x'], ob['y']
+        if ob['k'] in ("inv", "inv2"): inv_draw(dr, x, y, ob['col'], t, (int(t*4) % 2 == 0) ^ (ob['k'] == "inv2"))
+        elif ob['k'] == "ast":
+            pts = [(x+ob['r']*(1+.25*math.sin(i*2.3))*math.cos(ob['a']+i*math.pi/4), y+ob['r']*(1+.25*math.sin(i*2.3))*math.sin(ob['a']+i*math.pi/4)) for i in range(8)]
+            dr.polygon(pts, fill=(140, 120, 110), outline=INK)
+        else:
+            dr.rectangle([x-5, y-34, x+5, y+34], fill=(255, 60, 120)); dr.rectangle([x-2, y-30, x+2, y+30], fill="white")
+    for b in boom:
+        b[0] += b[2]; b[1] += b[3]; b[4] -= .03
+        if b[4] > 0: r_ = 4+10*b[4]; dr.ellipse([b[0]-r_, b[1]-r_, b[0]+r_, b[1]+r_], fill=b[5])
+    boom = [b for b in boom if b[4] > 0]
+    for s in alive: ship_draw(img, dr, s, t)
     dr.rectangle([0, 0, W, 470], fill=BG)
-    header(img, P.get("title", "WHICH ROCKET REACHES SPACE?"), None, y=240)
-    podium(dr, order + [r['n'] for r in sorted(act, key=lambda r: -r['d'])])
-    cta(img, f"{order[0]} WINS!" if order else "Pick your rocket!", y=440, col=YEL if order else BLUE)
+    header(img, P.get("title", "LAST ROCKET STANDING WINS"), None, y=240)
+    podium(dr, order if order else [s['n'] for s in sorted(alive, key=lambda s: s['y'])])
+    cta(img, f"{order[0]} WINS!" if order else f"{len(alive)} ROCKETS LEFT  •  Pick yours!", y=440, col=YEL if order else BLUE)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
-print("done", order[:3], o.t)
+print("done", order, o.t)
 o.close()
