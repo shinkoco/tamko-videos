@@ -1,29 +1,53 @@
 [
  {
-  "file": "tamko_20261115_0712_0_cars.mp4",
-  "format": "cars",
-  "caption": "Which car wins the race? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #carrace #grandprix #racesimulation #whowillwin",
-  "yt_title": "Car race simulation \ud83c\udfc1",
-  "yt_caption": "Which car wins the race? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #carrace #grandprix #racesimulation #whowillwin #shorts",
+  "file": "tamko_20261116_0442_0_meteors.mp4",
+  "format": "meteors",
+  "caption": "Meteor shower! \u2604\ufe0f Only 1 survives. Pick your survivor \ud83d\udc47 #meteorshower #survivalgame #lastmanstanding #minigame",
+  "yt_title": "Meteor shower survival \u2604\ufe0f",
+  "yt_caption": "Meteor shower! \u2604\ufe0f Only 1 survives. Pick your survivor \ud83d\udc47 #meteorshower #survivalgame #lastmanstanding #minigame #shorts",
   "yt_tags": [
-   "car race",
-   "grand prix",
-   "racing",
+   "meteor",
+   "survival",
+   "last one standing",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Which car did you pick? \ud83c\udfce\ufe0f Comment below! Subscribe for a new game every day!",
+  "yt_first_comment": "Who was your survivor? \u2604\ufe0f Comment below! Subscribe for a new game every day!",
   "duration": 63.5,
   "params": {
-   "seed": 695620666,
+   "seed": 410166367,
    "tamko": true,
-   "n": 8,
-   "laps": 3,
-   "crash": 0.0024885485767127545,
-   "hue": 0.8716918857016573,
-   "title": "PICK YOUR CAR!"
+   "n": 14,
+   "hue": 0.8199615273180796,
+   "title": "SURVIVE THE METEORS!"
+  }
+ },
+ {
+  "file": "tamko_20261116_0442_1_escape.mp4",
+  "format": "escape",
+  "caption": "Can it break every ring? \ud83d\udc40 Guess before the end \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation #arcadegame",
+  "yt_title": "Ball escape with a twist \ud83e\udd2f",
+  "yt_caption": "Can it break every ring? \ud83d\udc40 Guess before the end \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation #arcadegame #shorts",
+  "yt_tags": [
+   "ball escape",
+   "physics",
+   "oddly satisfying",
+   "satisfying",
+   "simulation",
+   "who will win",
+   "tamko"
+  ],
+  "yt_first_comment": "Did you think it would escape? \ud83d\udc40 Comment! Subscribe for a new game every day!",
+  "duration": 82.5,
+  "params": {
+   "seed": 887413009,
+   "tamko": true,
+   "rule": "freeze",
+   "n": 10,
+   "gap": 0.91053774286114,
+   "hue": 0.84483845891134
   }
  }
 ]
