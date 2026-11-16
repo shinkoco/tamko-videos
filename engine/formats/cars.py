@@ -50,9 +50,10 @@ while True:
     alive = [c for c in cars if c['alive']]
     if len(alive) == 1 and not order: order = [alive[0]['n']]; fanfare(o, t); win_t = t
     if order and t > win_t+4 and t > 61: break
-    if t > 75: break
+    if t > 85: break
     spd = 9 + 9*min(1, t/50)
     scroll = (scroll + spd) % 80
+    if not plan and len(alive) > 1 and doomed is None: plan.append(t + 1.6)
     # plan: pick a victim, send obstacle at it
     if plan and t >= plan[0] - 1.6 and doomed is None and len(alive) > 1:
         plan.pop(0); doomed = alive[rng.integers(len(alive))]
