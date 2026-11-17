@@ -1,53 +1,55 @@
 [
  {
-  "file": "tamko_20261116_0442_0_meteors.mp4",
-  "format": "meteors",
-  "caption": "Meteor shower! \u2604\ufe0f Only 1 survives. Pick your survivor \ud83d\udc47 #meteorshower #survivalgame #lastmanstanding #minigame",
-  "yt_title": "Meteor shower survival \u2604\ufe0f",
-  "yt_caption": "Meteor shower! \u2604\ufe0f Only 1 survives. Pick your survivor \ud83d\udc47 #meteorshower #survivalgame #lastmanstanding #minigame #shorts",
+  "file": "tamko_20261117_0442_0_dup.mp4",
+  "format": "dup",
+  "caption": "1 ball becomes chaos \ud83d\ude33 Drop your guess for the final count \ud83d\udc47 #satisfyingvideo #physicssimulation #simulation #games",
+  "yt_title": "How many balls at the end? \ud83e\udd2f",
+  "yt_caption": "1 ball becomes chaos \ud83d\ude33 Drop your guess for the final count \ud83d\udc47 #satisfyingvideo #physicssimulation #simulation #games #shorts",
   "yt_tags": [
-   "meteor",
-   "survival",
-   "last one standing",
+   "oddly satisfying",
+   "physics",
+   "bouncing balls",
+   "chaos",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Who was your survivor? \u2604\ufe0f Comment below! Subscribe for a new game every day!",
-  "duration": 63.5,
+  "yt_first_comment": "Did you guess right? \ud83d\udc40 Drop your number below! Subscribe for a new game every day!",
+  "duration": 64.5,
   "params": {
-   "seed": 410166367,
-   "tamko": true,
-   "n": 14,
-   "hue": 0.8199615273180796,
-   "title": "SURVIVE THE METEORS!"
+   "seed": 956677522,
+   "tamko": false,
+   "max": 1500,
+   "g": 0.5460016854184047,
+   "hue": 0.7110127492395599,
+   "title": "EVERY BOUNCE = +1 BALL"
   }
  },
  {
-  "file": "tamko_20261116_0442_1_escape.mp4",
-  "format": "escape",
-  "caption": "Can it break every ring? \ud83d\udc40 Guess before the end \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation #arcadegame",
-  "yt_title": "Ball escape with a twist \ud83e\udd2f",
-  "yt_caption": "Can it break every ring? \ud83d\udc40 Guess before the end \ud83d\udc47 #ballescape #satisfyingvideo #physicssimulation #arcadegame #shorts",
+  "file": "tamko_20261117_0442_1_rockets.mp4",
+  "format": "rockets",
+  "caption": "Alien invasion! \ud83d\udc7e Pick your rocket before the first hit \ud83d\udc47 #spaceinvaders #rocketrace #space #arcade",
+  "yt_title": "Alien invasion: which rocket survives? \ud83d\udc7e",
+  "yt_caption": "Alien invasion! \ud83d\udc7e Pick your rocket before the first hit \ud83d\udc47 #spaceinvaders #rocketrace #space #arcade #shorts",
   "yt_tags": [
-   "ball escape",
-   "physics",
-   "oddly satisfying",
+   "space invaders",
+   "rocket race",
+   "space",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Did you think it would escape? \ud83d\udc40 Comment! Subscribe for a new game every day!",
-  "duration": 82.5,
+  "yt_first_comment": "Which rocket did you pick? \ud83d\ude80 Comment below! Subscribe for a new game every day!",
+  "duration": 63.9,
   "params": {
-   "seed": 887413009,
-   "tamko": true,
-   "rule": "freeze",
-   "n": 10,
-   "gap": 0.91053774286114,
-   "hue": 0.84483845891134
+   "seed": 401758404,
+   "tamko": false,
+   "n": 7,
+   "hue": 0.8185583773261319,
+   "bpm": 155,
+   "title": "SPACE INVASION!"
   }
  }
 ]
