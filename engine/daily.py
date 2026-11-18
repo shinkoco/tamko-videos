@@ -148,8 +148,27 @@ FC = {"vision": ["What age did you get? 👀 Comment below!"], "escape": ["Did y
       "survival": ["Who was your survivor? 💀 Comment below!", "Did your pick survive? 😱 Tell us!"],
       "ducks": ["Which duck did you pick? 🦆 Comment below!", "Did your duck win? 🦆 Tell us!"]}
 FC = {k: [x + " Subscribe for a new game every day!" for x in v] for k, v in FC.items()}
-BROAD = ["#arcade", "#minigame", "#arcadegame", "#simulationgame", "#games"]
-BLOCKED = {"#bouncingballs", "#bouncingball", "#balls", "#ballz"}
+BLOCKED = {"#bouncingballs", "#balls", "#ballz", "#minigame", "#arcadegames", "#lastonestanding", "#lastmanstanding", "#oddlysatisfying"}
+# vidIQ keyword research 2026-11-18 (also listed in the HUB, studiomgi.github.io data.json keywords.tamko)
+BROAD = ["#arcade", "#gameplay", "#retrogames", "#mobilegames", "#simulatorgames"]
+TAGS = {"dup": "#satisfyingsimulation #bouncingball #2dphysics", "grow": "#bouncingball #satisfyingsimulation #physicssimulation",
+        "press": "#satisfyingvideo #physicssimulation #2dphysics", "battle": "#countryballs #countrybattle #battleroyale",
+        "survival": "#battleroyale #countryballs #whowouldwin", "meteors": "#battleroyale #survivalgame #whowouldwin",
+        "race": "#marblerace #marblerun #algodoo", "ducks": "#marblerace #algodoo #whowouldwin",
+        "rings": "#ballescape #spinningrings #willitescape", "escape": "#ballescape #willitescape #physicssimulation",
+        "rps": "#rockpaperscissors #whowouldwin #satisfyingsimulation", "dominoes": "#domino #dominoesfalling #rubegoldberg",
+        "rockets": "#spaceinvaders #spaceinvadersgameplay #classicarcade", "cars": "#cargame #carracinggame #whowouldwin",
+        "vision": "#visiontest #eyetest #satisfyingvideo", "melody": "#guessthesong #bouncingball #satisfyingvideo"}
+YTAGS = {"dup": ["satisfying simulation", "bouncing ball", "2d physics", "physics simulation"],
+         "grow": ["bouncing ball", "satisfying simulation", "physics simulation"], "press": ["satisfying video", "physics simulation", "2d physics"],
+         "battle": ["countryballs", "country battle", "countries marble race", "world war simulator"],
+         "survival": ["battle royale", "countryballs", "who would win"], "meteors": ["battle royale", "survival game", "who would win"],
+         "race": ["marble race", "marble run", "marble racing", "algodoo marble race"], "ducks": ["marble race", "algodoo", "who would win"],
+         "rings": ["ball escape", "spinning rings", "escape the circle", "will it escape"], "escape": ["ball escape", "will it escape", "escape the circle"],
+         "rps": ["rock paper scissors", "rock paper scissors simulation", "who would win"], "dominoes": ["domino", "dominoes falling", "rube goldberg"],
+         "rockets": ["space invaders", "space invaders gameplay", "space invaders arcade"], "cars": ["car game", "car race game", "car racing game"],
+         "vision": ["vision test", "eye test", "satisfying video"], "melody": ["guess the song", "bouncing ball", "satisfying video"]}
+GENTAGS = ["arcade", "gameplay", "retro games", "classic arcade games", "mobile games", "simulator games", "satisfying video", "relaxing video", "physics simulation", "who would win"]
 last = [h["format"] for h in hist[-8:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
@@ -180,7 +199,7 @@ for i, fmt in enumerate(fmts):
     if os.environ.get("TAMKO_THEME") == "christmas" or (_d.month == 12 and _d.day <= 26):
         cap = "🎄 " + cap + " #christmas"
     yt = rnd.choice(YT[fmt])
-    ytags = YTAGS[fmt] + ["satisfying", "simulation", "who will win", "tamko"]
+    ytags = YTAGS[fmt] + rnd.sample(GENTAGS, 4) + ["tamko"]
     fc = rnd.choice(FC[fmt])
     man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap + " #shorts", "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
