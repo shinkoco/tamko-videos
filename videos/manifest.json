@@ -1,55 +1,56 @@
 [
  {
-  "file": "tamko_20261117_0442_0_dup.mp4",
-  "format": "dup",
-  "caption": "1 ball becomes chaos \ud83d\ude33 Drop your guess for the final count \ud83d\udc47 #satisfyingvideo #physicssimulation #simulation #games",
-  "yt_title": "How many balls at the end? \ud83e\udd2f",
-  "yt_caption": "1 ball becomes chaos \ud83d\ude33 Drop your guess for the final count \ud83d\udc47 #satisfyingvideo #physicssimulation #simulation #games #shorts",
+  "file": "tamko_20261118_0724_0_race.mp4",
+  "format": "race",
+  "caption": "10 tiny runners, 1 winner \ud83c\udfc1 Pick your runner in the comments! \ud83d\udc47 #marblerace #racesimulation #cuteanimation #arcadegame",
+  "yt_title": "Tiny race, big drama \ud83c\udfc1",
+  "yt_caption": "10 tiny runners, 1 winner \ud83c\udfc1 Pick your runner in the comments! \ud83d\udc47 #marblerace #racesimulation #cuteanimation #arcadegame #shorts",
   "yt_tags": [
-   "oddly satisfying",
-   "physics",
-   "bouncing balls",
-   "chaos",
+   "marble race",
+   "race",
+   "cute",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Did you guess right? \ud83d\udc40 Drop your number below! Subscribe for a new game every day!",
-  "duration": 64.5,
+  "yt_first_comment": "Who did you pick? \ud83c\udfc1 Drop your runner below! Subscribe for a new game every day!",
+  "duration": 70.3,
   "params": {
-   "seed": 956677522,
+   "seed": 894624223,
    "tamko": false,
-   "max": 1500,
-   "g": 0.5460016854184047,
-   "hue": 0.7110127492395599,
-   "title": "EVERY BOUNCE = +1 BALL"
+   "sx": 92,
+   "sy": 110,
+   "gaprow": 7,
+   "hue": 0.08551662549268901,
+   "fin": 9600,
+   "title": "WHO REACHES THE BOTTOM?"
   }
  },
  {
-  "file": "tamko_20261117_0442_1_rockets.mp4",
-  "format": "rockets",
-  "caption": "Alien invasion! \ud83d\udc7e Pick your rocket before the first hit \ud83d\udc47 #spaceinvaders #rocketrace #space #arcade",
-  "yt_title": "Alien invasion: which rocket survives? \ud83d\udc7e",
-  "yt_caption": "Alien invasion! \ud83d\udc7e Pick your rocket before the first hit \ud83d\udc47 #spaceinvaders #rocketrace #space #arcade #shorts",
+  "file": "tamko_20261118_0724_1_dominoes.mp4",
+  "format": "dominoes",
+  "caption": "The most satisfying chain reaction? \ud83e\udd29 Comment YES or NO \ud83d\udc47 #dominoes #chainreaction #satisfyingvideo #simulationgame",
+  "yt_title": "Will ALL the dominoes fall? \ud83d\ude2c",
+  "yt_caption": "The most satisfying chain reaction? \ud83e\udd29 Comment YES or NO \ud83d\udc47 #dominoes #chainreaction #satisfyingvideo #simulationgame #shorts",
   "yt_tags": [
-   "space invaders",
-   "rocket race",
-   "space",
+   "dominoes",
+   "chain reaction",
+   "oddly satisfying",
    "satisfying",
    "simulation",
    "who will win",
    "tamko"
   ],
-  "yt_first_comment": "Which rocket did you pick? \ud83d\ude80 Comment below! Subscribe for a new game every day!",
-  "duration": 63.9,
+  "yt_first_comment": "Did you think they'd all fall? \ud83d\ude2c Comment! Subscribe for a new game every day!",
+  "duration": 63.5,
   "params": {
-   "seed": 401758404,
+   "seed": 972425079,
    "tamko": false,
-   "n": 7,
-   "hue": 0.8185583773261319,
-   "bpm": 155,
-   "title": "SPACE INVASION!"
+   "n": 450,
+   "shape": "spiral",
+   "hue": 0.1576333117070553,
+   "tstep": 0.09869031477661147
   }
  }
 ]
