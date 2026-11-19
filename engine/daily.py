@@ -47,6 +47,12 @@ def params(fmt):
         p.update(hue=rnd.random(), tend=rnd.uniform(52, 56), r=rnd.choice([22, 26, 30]))
     elif fmt == "escape":
         p.update(rule=rnd.choice(["spawn", "shrink", "freeze"]), n=rnd.choice([8, 10, 12]), gap=rnd.uniform(.8, 1.0), hue=rnd.random())
+    elif fmt == "plinko":
+        p.update(bpm=rnd.choice([140, 150, 160]), title=rnd.choice(["PICK 1 TO 6!", "WHICH NUMBER WINS?", "PLINKO: PICK YOUR BALL!"]))
+    elif fmt == "territory":
+        d = rnd.choice(["fire", "ice", "day", "grass"]); p.update(duel=d, per=rnd.choice([2, 3]), bpm=rnd.choice([140, 150, 160]))
+    elif fmt == "maze":
+        p.update(gw=rnd.choice([12, 14]), gh=rnd.choice([14, 16]), timer=rnd.choice([52.0, 55.0]), bpm=rnd.choice([130, 140, 150]))
     elif fmt == "press":
         p.update(p=rnd.uniform(.5, .62), hue=rnd.random(), title=rnd.choice(["WHICH SLAM BREAKS THE GLASS?", "WHEN WILL THE GLASS BREAK?", "GUESS THE SLAM NUMBER!"]))
     elif fmt == "melody":
@@ -99,7 +105,7 @@ TAGS = {"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": 
         "survival": "#lastmanstanding #survivalgame #elimination #whowillwin",
         "ducks": "#duckrace #rubberduck #cuteanimation #whowillwin"}
 
-ALL = ["dup", "battle", "race", "rings", "survival", "ducks", "rockets", "cars", "rps", "meteors", "grow", "dominoes", "vision", "escape", "press", "melody"]
+ALL = ["dup", "battle", "race", "rings", "survival", "ducks", "rockets", "cars", "rps", "meteors", "grow", "dominoes", "vision", "escape", "press", "melody", "plinko", "territory", "maze"]
 YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How many balls at the end? 🤯"],
       "battle": ["8 countries, only 1 survives 🏆", "Which country wins? 🌍", "Country battle royale 🏆"],
       "race": ["Who reaches the bottom first? 🏁", "Tiny race, big drama 🏁", "Pick your runner! 🏁"],
@@ -200,6 +206,16 @@ last = [h["format"] for h in hist[-8:]]
 fmts = [f for f in ALL if f not in last]
 rnd.shuffle(fmts); fmts = (fmts + [f for f in ALL if f not in fmts])[:COUNT]
 stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
+CAPS["plinko"] = ["Pick 1 to 6 👇 OUT = eliminated. Which number survives?", "6 balls, 1 winner 🎯 Comment your number before the end 👇", "Plinko battle! Which number wins? Pick 1 to 6 👇"]
+CAPS["territory"] = ["Pick your side 👇 Biggest area after the timer wins", "Each ball paints its color 🎨 Who takes over? Comment now 👇", "Element war! Which side wins? 👇"]
+CAPS["maze"] = ["TRAPPED or FREE? 👀 Bet before the timer ends 👇", "Can Tamko find the exit in time? ⏱️ Comment TRAPPED or FREE 👇", "Will Tamko escape the maze? 🧩 Place your bet 👇"]
+YT["plinko"] = ["Pick 1 to 6 🎯 Which ball survives?", "Plinko elimination 💀 Pick your number", "Wait for the last drop 💀 (1 to 6)"]
+YT["territory"] = ["Which side takes over? 🎨💀", "Element war: pick your side 🔥💧", "Wait for the last second 💀 Who wins the map?"]
+YT["maze"] = ["Trapped or free? 🧩💀", "Can Tamko escape the maze in time? ⏱️", "Wait for the timer 💀 Trapped or free?"]
+TAGS.update({"plinko": "#plinko #pickanumber #whowouldwin", "territory": "#territorywar #satisfyingsimulation #whowouldwin", "maze": "#maze #mazegame #puzzle"})
+YTAGS.update({"plinko": ["plinko", "pick a number", "who would win"], "territory": ["territory war", "pong wars", "satisfying simulation"], "maze": ["maze", "maze game", "maze solving"]})
+FC.update({"plinko": ["Which number did you pick? 🎯 Comment below!"], "territory": ["Which side did you pick? 🎨 Comment below!"], "maze": ["Trapped or free? What was your bet? 🧩"]})
+QUESTION.update({"plinko": "Which number did you pick?", "territory": "Which side did you pick?", "maze": "Trapped or free: what was your bet?"})
 man = []
 for i, fmt in enumerate(fmts):
     for attempt in range(4):

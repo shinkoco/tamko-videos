@@ -7,7 +7,7 @@ os.makedirs(OUT, exist_ok=True)
 JOBS = [("dup", {"seed": 1}), ("battle", {"seed": 2}, "christmas"), ("race", {"seed": 3, "tamko": True}), ("rings", {"seed": 4}),
         ("survival", {"seed": 5, "tamko": True}), ("ducks", {"seed": 6, "tamko": True}), ("rockets", {"seed": 7}), ("cars", {"seed": 8}),
         ("rps", {"seed": 9}), ("meteors", {"seed": 10, "tamko": True}), ("grow", {"seed": 11}), ("dominoes", {"seed": 12, "shape": "snake"}),
-        ("vision", {"seed": 13}), ("escape", {"seed": 14, "rule": "freeze"}), ("press", {"seed": 15}),
+        ("vision", {"seed": 13}), ("escape", {"seed": 14, "rule": "freeze"}), ("press", {"seed": 15}), ("plinko", {"seed": 16}), ("territory", {"seed": 17, "duel": "day"}), ("maze", {"seed": 18}),
         ("melody", {"seed": 16, "song": "Jingle Bells"}, "christmas")]
 def run(job):
     fmt, p = job[0], job[1]; theme = job[2] if len(job) > 2 else "default"
