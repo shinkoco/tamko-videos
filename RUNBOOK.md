@@ -22,7 +22,9 @@ Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claud
    Buffer free plan: max 10 scheduled posts for the whole org (shared with Partners in Vice) — only schedule the current day's 2 Shorts.
    Times are local Paris time written as "YYYY-MM-DDTHH:MM:00" (timezone Europe/Paris), optimised per platform:
    - Video 1 (morning slot): TikTok 08:00, YouTube 17:00 the same day.
-   - Video 2 (evening slot): TikTok 20:00, YouTube 22:00 the same day.
+   - Video 2 (midday slot, added 2026-11-19): TikTok 13:00, YouTube 19:00 the same day.
+   - Video 3 (evening slot): TikTok 20:00, YouTube 22:00 the same day.
+   (3 videos per day since 2026-11-19.)
    If a TikTok time has already passed (or is less than 20 minutes away), use the next day for both times of that video.
    WARNING: when updating an existing Zernio post with `platforms`, always resend the FULL platform objects, otherwise Zernio wipes them.
    Visual charter (2026-11-19, freelance avatar+banner, option B light): starry night backdrop replaces flat BG (brand_bg in watermark), glossy cyan titles with gold rim, new flat mascot, small gold/cyan clouds in corners, endcard = mascot + TAMKO logo + "Follow for a new game every day!". Priority to the game: no big mascot in the header. Header block lifted 55 px (lift_header) right under the TikTok top bar (~150 px hidden).
