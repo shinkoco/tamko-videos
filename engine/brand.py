@@ -21,7 +21,7 @@ if THEME == "christmas":
 AX = 340  # action centre x (shifted left of TikTok right rail)
 _mini = Image.open(os.path.join(A, "tamko_mini_sticker.png")).convert("RGBA")
 _full = Image.open(os.path.join(A, "tamko_B.png")).convert("RGBA")
-_wm = _mini.resize((54, 54)); _wm.putalpha(_wm.getchannel("A").point(lambda a: a*0.55))
+_wm = None  # built after tamko_sprite is defined
 
 def out(d, xy, t, f, fill, anc="mm", sw=7):
     d.text(xy, t, font=f, fill=fill, anchor=anc, stroke_width=sw, stroke_fill=INK)
@@ -31,33 +31,50 @@ def fit(t, maxw, size, fn=lilita):
     while f.getlength(t) > maxw and size > 20: size -= 2; f = fn(size)
     return f
 
+_gl = {}
+def glossy_layer(text, size, maxw=600):
+    key = (text, size, maxw)
+    if key in _gl: return _gl[key]
+    from PIL import ImageFilter
+    while lilita(size).getlength(text) + size*.3 > maxw and size > 24: size -= 2
+    f = lilita(size); w, h = int(maxw + size), int(size*2.2); x, y = w/2, h/2
+    L = Image.new("RGBA", (w, h), (0, 0, 0, 0)); gd = ImageDraw.Draw(L)
+    gd.text((x, y), text, font=f, anchor="mm", fill=(80, 210, 255, 200), stroke_width=int(size*.2), stroke_fill=(80, 210, 255, 200))
+    L = L.filter(ImageFilter.GaussianBlur(size*.22)); d = ImageDraw.Draw(L)
+    d.text((x+size*.05, y+size*.09), text, font=f, anchor="mm", fill=(10, 20, 45), stroke_width=int(size*.14), stroke_fill=(255, 196, 40))
+    d.text((x, y), text, font=f, anchor="mm", fill=(60, 200, 245), stroke_width=int(size*.09), stroke_fill=(10, 20, 45))
+    hl = Image.new("RGBA", (w, h), (0, 0, 0, 0)); hd = ImageDraw.Draw(hl); hd.text((x, y), text, font=f, anchor="mm", fill=(200, 243, 255))
+    bb = hd.textbbox((x, y), text, font=f, anchor="mm"); m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).rectangle([0, 0, w, (bb[1]+bb[3])/2], fill=255)
+    hl.putalpha(Image.composite(hl.getchannel("A"), m, m)); L.alpha_composite(hl)
+    _gl[key] = L; return L
+
 def header(img, title, sub=None, y=250):
+    L = glossy_layer(title, 72, 600)
+    if img.mode == "RGBA": img.alpha_composite(L, (int(AX - L.width/2), int(y - L.height/2)))
+    else: img.paste(L, (int(AX - L.width/2), int(y - L.height/2)), L)
     d = ImageDraw.Draw(img)
-    out(d, (AX, y), title, fit(title, 560, 76), YEL)
     if sub: out(d, (AX, y+70), sub, fit(sub, 540, 40, fredoka), "white", sw=5)
 
 _tick = [0]
 def tamko_sprite(img, cx, cy, s, phase=0.0):
-    """Draw the Tamko mascot (champion headband with tails waving in the wind)."""
-    d = ImageDraw.Draw(img); r = s/2
-    w1 = math.sin(phase*6.0)*0.25; w2 = math.sin(phase*6.0 + 1.3)*0.25
-    hb_y = cy - r*0.42
-    for k, w in ((0, w1), (1, w2)):  # headband tails, flapping
-        base = (cx + r*0.88, hb_y + (k*0.12 - 0.04)*r)
-        ang = (-0.35 + 0.55*k) + w*1.4; L = r*0.95
-        tip = (base[0] + L*math.cos(ang), base[1] + L*math.sin(ang))
-        mid = (base[0] + L*0.55*math.cos(ang-0.35), base[1] + L*0.55*math.sin(ang-0.35))
-        d.polygon([base, mid, tip, (base[0], base[1] + r*0.16)], fill="white", outline=INK)
-    d.ellipse([cx-r, cy-r, cx+r, cy+r], fill=(255, 205, 60), outline=INK, width=max(2, int(s/22)))
-    d.ellipse([cx-r*.6, cy-r*.75, cx-r*.25, cy-r*.45], fill=(255, 240, 170))
-    d.polygon([(cx-r*.93, cy-r*.55), (cx+r*.93, cy-r*.55), (cx+r*.97, cy-r*.3), (cx-r*.97, cy-r*.3)], fill="white", outline=INK)
-    d.ellipse([cx-r*.13, hb_y-r*.13, cx+r*.13, hb_y+r*.13], fill=(230, 40, 60))
-    for ex in (-.32, .32):
-        x, y = cx+ex*r, cy+r*.05; w, h = .15*r, .2*r
-        d.ellipse([x-w, y-h, x+w, y+h], fill=(30, 25, 40)); d.ellipse([x-w*.5, y-h*.6, x, y-h*.1], fill="white")
-    for ex in (-.55, .55):
-        d.ellipse([cx+ex*r-.13*r, cy+.3*r-.07*r, cx+ex*r+.13*r, cy+.3*r+.07*r], fill=(255, 140, 90))
-    d.chord([cx-.2*r, cy+.15*r, cx+.2*r, cy+.48*r], 0, 180, fill=(120, 30, 40), outline=INK)
+    """Tamko mascot, 2026-11 charter: flat yellow ball, navy offset shadow, white headband with red dot, waving tails."""
+    d = ImageDraw.Draw(img); r = s/2; DEEP = (10, 20, 45)
+    d.ellipse([cx-r+r*.12, cy-r+r*.16, cx+r+r*.12, cy+r+r*.16], fill=DEEP, outline=(255, 196, 40), width=max(1, int(s/40)))
+    hb = cy - r*.45
+    for k in (0, 1):
+        a = -.45 + .5*k + math.sin(phase*6 + k*1.3)*.3; L = r*.8; b0 = (cx + r*.85, hb)
+        tip = (b0[0] + L*math.cos(a), b0[1] + L*math.sin(a)); m = (b0[0] + L*.5*math.cos(a-.4), b0[1] + L*.5*math.sin(a-.4))
+        d.polygon([b0, m, tip, (b0[0], b0[1] + r*.2)], fill="white", outline=DEEP)
+    d.ellipse([cx-r, cy-r, cx+r, cy+r], fill=(250, 200, 50))
+    d.ellipse([cx-r*.62, cy-r*.82, cx-r*.2, cy-r*.55], fill=(255, 235, 150))
+    d.rectangle([cx-r*.99, hb-r*.15, cx+r*.99, hb+r*.15], fill="white", outline=DEEP, width=max(1, int(s/60)))
+    d.ellipse([cx-r*.13, hb-r*.13, cx+r*.13, hb+r*.13], fill=(220, 30, 40))
+    for ex in (-.33, .33):
+        x, y = cx + ex*r, cy + r*.08; w, h = .14*r, .19*r
+        d.ellipse([x-w, y-h, x+w, y+h], fill=(15, 12, 20)); d.ellipse([x-w*.55, y-h*.7, x+w*.05, y-h*.1], fill="white")
+    for ex in (-.6, .6):
+        d.ellipse([cx+ex*r-.16*r, cy+.33*r-.08*r, cx+ex*r+.16*r, cy+.33*r+.08*r], fill=(245, 120, 110))
+    d.chord([cx-.2*r, cy+.22*r, cx+.2*r, cy+.55*r], 0, 180, fill=(150, 30, 35), outline=DEEP)
 
 def cta(img, text, y=388, col=None, mascot=True):
     col = col or BLUE; _tick[0] += 1
@@ -109,26 +126,60 @@ def hook(img):
         d.rounded_rectangle([AX-tw/2-pad, y-46, AX+tw/2+pad, y+46], 22, fill=RED, outline="white", width=4)
         out(d, (AX, y), HOOK, fnt, "white", sw=4)
 
+def _night():
+    import random as R
+    rr = R.Random(7); im = Image.new("RGB", (W, H)); d = ImageDraw.Draw(im)
+    c0, c1 = (6, 10, 26), (16, 34, 70)
+    for y in range(H):
+        k = y/H; d.line([(0, y), (W, y)], fill=tuple(int(c0[i]+(c1[i]-c0[i])*k) for i in range(3)))
+    for _ in range(170):
+        x, y, z = rr.uniform(0, W), rr.uniform(0, H), rr.choice([1, 1, 1.5, 2])
+        d.ellipse([x-z, y-z, x+z, y+z], fill=(255, 196, 40) if rr.random() < .5 else (210, 225, 255))
+    def cloud(cx, cy, sz, col, dk):
+        for dx, dy, q in [(-.5, .1, .38), (0, -.15, .5), (.5, .1, .38), (0, .2, .4)]:
+            X, Y, Q = cx+dx*sz, cy+dy*sz, q*sz; d.ellipse([X-Q, Y-Q, X+Q, Y+Q], fill=col, outline=dk, width=2)
+        for dx in (-.25, .25):
+            X, Y, Q = cx+dx*sz, cy-.05*sz, .17*sz; d.arc([X-Q, Y-Q, X+Q, Y+Q], 180, 470, fill=dk, width=3)
+    cloud(-5, 30, 70, (230, 175, 40), (170, 120, 20)); cloud(735, 470, 60, (230, 175, 40), (170, 120, 20))
+    cloud(700, 25, 55, (50, 170, 220), (20, 100, 150))
+    import numpy as _np
+    return _np.asarray(im)
+_NIGHT = [None]
+def brand_bg(img):
+    """Swap the flat BG colour for the starry night backdrop (charter 2026-11)."""
+    import numpy as _np
+    if _NIGHT[0] is None: _NIGHT[0] = _night()
+    if img.mode != "RGB": return img
+    a = _np.array(img); m = (a[:, :, 0] == BG[0]) & (a[:, :, 1] == BG[1]) & (a[:, :, 2] == BG[2])
+    _np.copyto(a, _NIGHT[0], where=m[:, :, None]); img.paste(Image.frombuffer("RGB", (W, H), a.tobytes())); return img
+
 def watermark(img):
     _wf[0] += 1
+    brand_bg(img)
     hook(img)
     season(img)
     if img.mode != "RGBA":
+        global _wm
+        if _wm is None:
+            _wm = Image.new("RGBA", (60, 60), (0, 0, 0, 0)); tamko_sprite(_wm, 27, 28, 46)
+            _wm.putalpha(_wm.getchannel("A").point(lambda a: a*0.6))
         base = img.convert("RGBA"); base.alpha_composite(_wm, (64, 560))
         d = ImageDraw.Draw(base); d.text((91, 624), "@tamkoplay", font=fredoka(16), fill=(255, 255, 255, 140), anchor="mm")
         img.paste(base.convert(img.mode))
     return img
 
-def outro_frames(fps=30, secs=2.5, bg=(14, 16, 30)):
-    fr = []
+def outro_frames(fps=30, secs=2.5, bg=None):
+    if _NIGHT[0] is None: _NIGHT[0] = _night()
+    base = Image.fromarray(_NIGHT[0]).convert("RGBA"); fr = []
+    logo = glossy_layer("TAMKO", 140, 560)
     for i in range(int(fps*secs)):
-        t = i/fps; im = Image.new("RGB", (W, H), bg).convert("RGBA")
-        s = int(360 * min(1, t*3)**0.5) or 1; bounce = abs(math.sin(t*5))*30*max(0, 1-t/1.5)
-        m = _full.resize((s, s)); mask = Image.new("L", (s, s), 0); ImageDraw.Draw(mask).ellipse([0, 0, s, s], fill=255)
-        im.paste(m, (AX-s//2, int(560-s//2-bounce)), mask)
+        t = i/fps; im = base.copy()
+        s = int(300 * min(1, t*3)**0.5) or 1; bounce = abs(math.sin(t*5))*30*max(0, 1-t/1.5)
+        tamko_sprite(im, AX, 470 - bounce, s, t)
+        if t > 0.25: im.alpha_composite(logo, (int(AX - logo.width/2), int(760 - logo.height/2)))
         d = ImageDraw.Draw(im)
-        if t > 0.4:
-            out(d, (AX, 820), "Follow for more!", lilita(64), YEL)
-            out(d, (AX, 900), "@tamkoplay", fredoka(44), "white", sw=5)
+        if t > 0.5:
+            out(d, (AX, 900), "Follow for a new game every day!", fit("Follow for a new game every day!", 620, 50), YEL, sw=6)
+            out(d, (AX, 970), "@tamkoplay", fredoka(40), "white", sw=5)
         fr.append(im.convert("RGB"))
     return fr
