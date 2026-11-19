@@ -48,7 +48,7 @@ def params(fmt):
     elif fmt == "escape":
         p.update(rule=rnd.choice(["spawn", "shrink", "freeze"]), n=rnd.choice([8, 10, 12]), gap=rnd.uniform(.8, 1.0), hue=rnd.random())
     elif fmt == "press":
-        p.update(slams=rnd.choice([8, 9, 10]), hue=rnd.random())
+        p.update(p=rnd.uniform(.5, .62), hue=rnd.random(), title=rnd.choice(["WHICH SLAM BREAKS THE GLASS?", "WHEN WILL THE GLASS BREAK?", "GUESS THE SLAM NUMBER!"]))
     elif fmt == "melody":
         p.update(beat=rnd.uniform(.38, .46))
     elif fmt == "rings":
@@ -85,7 +85,7 @@ CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle?
 CAPS["dominoes"] = ["Will they ALL fall? 😬 Watch till the end 👇", "Hundreds of dominoes, 1 chain reaction 😮 Will it make it? 👇", "The most satisfying chain reaction? 🤩 Comment YES or NO 👇"]
 CAPS["vision"] = ["How old is your vision? 👀 Comment the age when you lost the ball 👇", "Can you still see it? 👀 Tell us your vision age 👇", "Vision test! 👀 When did the ball disappear for you? 👇"]
 CAPS["escape"] = ["New rule, new chaos 🤯 Can the ball escape? Comment YES or NO 👇", "Can it break every ring? 👀 Guess before the end 👇"]
-CAPS["press"] = ["Every slam splits the balls 🔨 How many at the end? Guess 👇", "1 ball vs the hydraulic press 🔨 Guess the final count 👇"]
+CAPS["press"] = ["Every slam adds more balls 🔨 Which slam breaks the glass? Guess 👇", "The glass breaks at the red line 🔨 Guess the slam number 👇", "Slam after slam 🔨 When does the glass break? Comment your number 👇"]
 CAPS["melody"] = ["Every bounce plays a note 🎵 Guess the song before the reveal 👇", "Can you name this song? 🎵 Comment before the end 👇", "Guess the song! 🎵 No cheating 👀👇"]
 TAGS = {"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
@@ -105,7 +105,7 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "race": ["Who reaches the bottom first? 🏁", "Tiny race, big drama 🏁", "Pick your runner! 🏁"],
       "vision": ["How old is your vision? 👀 Eye test", "Can you still see the ball? 👀 Vision test"],
       "escape": ["Can the ball escape the rings? 🤯 New rule", "Ball escape with a twist 🤯"],
-      "press": ["Hydraulic press splits every ball 🔨", "1 ball vs a hydraulic press 🔨 How many?"],
+      "press": ["Which slam breaks the glass? 🔨💀", "Hydraulic press vs glass 🔨 Guess the slam"],
       "melody": ["Guess the song 🎵 Every bounce plays a note", "Can you name this song? 🎵 Bouncing ball music"],
       "rockets": ["Alien invasion: which rocket survives? 👾", "Last rocket standing 🚀 Space invaders race"],
       "cars": ["Highway survival: who wins? 🏎️ Car race", "Last car standing 🏁 Car race simulation"],
@@ -122,7 +122,7 @@ for _k, _v in {"dup": ["Wait for the last bounce 💀 How many balls?", "Every b
     "race": ["Wait for the photo finish 💀 Pick your runner", "Can your runner win? 🏁 (1 to 10)"],
     "vision": ["Your eyes will FAIL this test 👀", "Wait until the ball disappears 👀 How old is your vision?"],
     "escape": ["Can the ball escape all the rings? 💀", "Wait for the last ring 💀 Will it escape?"],
-    "press": ["How many balls can the press take? 🔨💀", "Wait for the last slam 🔨 Guess the count"],
+    "press": ["Wait for the glass to break 🔨💀", "Guess the slam number 🔨 (1 to 15)"],
     "melody": ["Guess the song before the last note 🎵💀", "Sound on 🔊 Can you name this song?"],
     "rockets": ["Only 1 rocket survives the invasion 💀👾", "Wait for the final boss wave 👾 Pick your rocket"],
     "cars": ["Only 1 car survives the highway 💀🏎️", "Wait for the last crash 💀 Pick your car"],
@@ -135,7 +135,7 @@ for _k, _v in {"dup": ["Wait for the last bounce 💀 How many balls?", "Every b
     "ducks": ["Which duck wins? 🦆💀 Wait for the end", "Can your duck dodge everything? 🦆"]}.items():
     YT[_k] = YT[_k] + _v
 QUESTION = {"dup": "What number did you guess?", "battle": "Which country did you pick?", "race": "Which runner did you pick?",
-    "vision": "At what age did the ball disappear for you?", "escape": "Did you think it would escape?", "press": "What number did you guess?",
+    "vision": "At what age did the ball disappear for you?", "escape": "Did you think it would escape?", "press": "Which slam did you pick?",
     "melody": "Did you guess the song before the reveal?", "rockets": "Which rocket did you pick?", "cars": "Which car did you pick?",
     "rps": "Rock, paper or scissors: who did you pick?", "meteors": "Who was your survivor?", "grow": "How many bounces did you guess?",
     "dominoes": "Did you think they'd all fall?", "rings": "Did you think it would escape?", "survival": "Who was your survivor?", "ducks": "Which duck did you pick?"}
@@ -150,7 +150,7 @@ CAPS["grow"] = ["It grows every bounce 😳 How many bounces to fill the circle?
 CAPS["dominoes"] = ["Will they ALL fall? 😬 Watch till the end 👇", "Hundreds of dominoes, 1 chain reaction 😮 Will it make it? 👇", "The most satisfying chain reaction? 🤩 Comment YES or NO 👇"]
 CAPS["vision"] = ["How old is your vision? 👀 Comment the age when you lost the ball 👇", "Can you still see it? 👀 Tell us your vision age 👇", "Vision test! 👀 When did the ball disappear for you? 👇"]
 CAPS["escape"] = ["New rule, new chaos 🤯 Can the ball escape? Comment YES or NO 👇", "Can it break every ring? 👀 Guess before the end 👇"]
-CAPS["press"] = ["Every slam splits the balls 🔨 How many at the end? Guess 👇", "1 ball vs the hydraulic press 🔨 Guess the final count 👇"]
+CAPS["press"] = ["Every slam adds more balls 🔨 Which slam breaks the glass? Guess 👇", "The glass breaks at the red line 🔨 Guess the slam number 👇", "Slam after slam 🔨 When does the glass break? Comment your number 👇"]
 CAPS["melody"] = ["Every bounce plays a note 🎵 Guess the song before the reveal 👇", "Can you name this song? 🎵 Comment before the end 👇", "Guess the song! 🎵 No cheating 👀👇"]
 TAGS.update({"vision": "#visiontest #eyetest #satisfyingvideo #challenge", "escape": "#ballescape #satisfyingvideo #physicssimulation",
         "press": "#hydraulicpress #satisfyingvideo #physicssimulation", "melody": "#guessthesong #musicchallenge #satisfyingvideo #classicalmusic",
