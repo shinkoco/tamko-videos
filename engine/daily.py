@@ -1,6 +1,6 @@
 """Generate N Tamko videos with fresh random variants.
 Usage: python3 daily.py OUTDIR [count]
-Writes OUTDIR/<name>.mp4 and OUTDIR/manifest.json [{file, format, caption}].
+Writes OUTDIR/<name>.mp4 (TikTok, 60 s+), OUTDIR/<name>_yt.mp4 (YouTube Short, 2x speed) and OUTDIR/manifest.json [{file, yt_file, format, caption, yt_title, yt_caption}].
 Keeps engine/history.json so consecutive runs rotate formats."""
 import os, sys, json, random, subprocess, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -76,6 +76,7 @@ CAPS["survival"] = ["Traps every round. Only 1 survives 💀 Pick your survivor!
 CAPS["ducks"] = ["Duck race! 🦆 Pick your duck before the finish line 👇",
     "Rocks, whirlpools and 1 winner 🦆 Which duck do you pick? 👇",
     "The cutest race on TikTok 🦆 Comment your champion! 👇"]
+
 CAPS["rockets"] = ["Alien invasion! 👾 Pick your rocket before the first hit 👇", "Invaders, asteroids, lasers… only 1 rocket survives 🚀 Who's your pick? 👇", "Which rocket survives the invasion? 👾 Comment now! 👇"]
 CAPS["cars"] = ["Highway chaos! 🏎️ Pick your car before the first crash 👇", "Cones, oil, trucks… only 1 car survives 🏁 Who's your pick? 👇", "Which car makes it to the end? 🏎️ Comment now! 👇"]
 CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
@@ -115,6 +116,32 @@ YT = {"dup": ["Every bounce = +1 ball 🤯", "1 ball becomes chaos 😳", "How m
       "rings": ["Can the ball escape? 👀", "Ball vs rings 💥", "Will it make it out? 🔥"],
       "survival": ["Only 1 survives the traps 💀", "Last one standing wins 🏆", "Who survives? 😱"],
       "ducks": ["Duck race! Pick your duck 🦆", "Which duck wins? 🦆", "The cutest race ever 🦆"]}
+# Competitor-style title hooks (Math Melody / Bump Theory / Satisfying Shapes analysis, 2026-11-19)
+for _k, _v in {"dup": ["Wait for the last bounce 💀 How many balls?", "Every bounce = MORE balls 💀 Guess the count"],
+    "battle": ["Only 1 country survives 💀 Pick yours", "Wait for the final 2 💀 Country battle"],
+    "race": ["Wait for the photo finish 💀 Pick your runner", "Can your runner win? 🏁 (1 to 10)"],
+    "vision": ["Your eyes will FAIL this test 👀", "Wait until the ball disappears 👀 How old is your vision?"],
+    "escape": ["Can the ball escape all the rings? 💀", "Wait for the last ring 💀 Will it escape?"],
+    "press": ["How many balls can the press take? 🔨💀", "Wait for the last slam 🔨 Guess the count"],
+    "melody": ["Guess the song before the last note 🎵💀", "Sound on 🔊 Can you name this song?"],
+    "rockets": ["Only 1 rocket survives the invasion 💀👾", "Wait for the final boss wave 👾 Pick your rocket"],
+    "cars": ["Only 1 car survives the highway 💀🏎️", "Wait for the last crash 💀 Pick your car"],
+    "rps": ["Which side takes over? ✂️💀 Rock Paper Scissors", "Wait for the comeback 💀 Rock vs Paper vs Scissors"],
+    "meteors": ["Only 1 survives the meteors 💀 Pick yours", "Wait for the last meteor ☄️💀"],
+    "grow": ["How many bounces until it fills? 💀", "Wait for the last bounce 😳 It grows every hit"],
+    "dominoes": ["Will ALL the dominoes fall? 💀 Wait for the end", "Can 500 dominoes make it? 😬💀"],
+    "rings": ["Can the ball escape every ring? 💀", "Wait for ring 1 💀 Will it make it out?"],
+    "survival": ["Only 1 survives the traps 💀 Pick yours", "Wait for the final 2 💀 Who survives?"],
+    "ducks": ["Which duck wins? 🦆💀 Wait for the end", "Can your duck dodge everything? 🦆"]}.items():
+    YT[_k] = YT[_k] + _v
+QUESTION = {"dup": "What number did you guess?", "battle": "Which country did you pick?", "race": "Which runner did you pick?",
+    "vision": "At what age did the ball disappear for you?", "escape": "Did you think it would escape?", "press": "What number did you guess?",
+    "melody": "Did you guess the song before the reveal?", "rockets": "Which rocket did you pick?", "cars": "Which car did you pick?",
+    "rps": "Rock, paper or scissors: who did you pick?", "meteors": "Who was your survivor?", "grow": "How many bounces did you guess?",
+    "dominoes": "Did you think they'd all fall?", "rings": "Did you think it would escape?", "survival": "Who was your survivor?", "ducks": "Which duck did you pick?"}
+def yt_description(fmt, cap_text, tags):
+    tg = " ".join(dict.fromkeys(tags + ["#satisfying", "#physics", "#simulation", "#shorts"]))
+    return f"{cap_text}\n\nSound on 🔊 100% code: our own physics, visuals and music. A new game every day!\n\n{QUESTION.get(fmt, 'Who did you pick?')} 👇\n\n{tg}"
 CAPS["rockets"] = ["Alien invasion! 👾 Pick your rocket before the first hit 👇", "Invaders, asteroids, lasers… only 1 rocket survives 🚀 Who's your pick? 👇", "Which rocket survives the invasion? 👾 Comment now! 👇"]
 CAPS["cars"] = ["Highway chaos! 🏎️ Pick your car before the first crash 👇", "Cones, oil, trucks… only 1 car survives 🏁 Who's your pick? 👇", "Which car makes it to the end? 🏎️ Comment now! 👇"]
 CAPS["rps"] = ["Rock vs Paper vs Scissors ✂️ Who takes over? Comment before the end 👇", "3 armies, 1 winner ✂️ Pick your side! 👇", "Rock, paper or scissors? Who wins this war? 👇"]
@@ -150,7 +177,7 @@ FC = {"vision": ["What age did you get? 👀 Comment below!"], "escape": ["Did y
 FC = {k: [x + " Subscribe for a new game every day!" for x in v] for k, v in FC.items()}
 BLOCKED = {"#bouncingballs", "#balls", "#ballz", "#minigame", "#arcadegames", "#lastonestanding", "#lastmanstanding", "#oddlysatisfying"}
 # vidIQ keyword research 2026-11-18 (also listed in the HUB, studiomgi.github.io data.json keywords.tamko)
-BROAD = ["#arcade", "#gameplay", "#retrogames", "#mobilegames", "#simulatorgames"]
+BROAD = ["#arcade", "#gameplay", "#retrogames", "#mobilegames", "#simulatorgames", "#physics"]
 TAGS = {"dup": "#satisfyingsimulation #bouncingball #2dphysics", "grow": "#bouncingball #satisfyingsimulation #physicssimulation",
         "press": "#satisfyingvideo #physicssimulation #2dphysics", "battle": "#countryballs #countrybattle #battleroyale",
         "survival": "#battleroyale #countryballs #whowouldwin", "meteors": "#battleroyale #survivalgame #whowouldwin",
@@ -194,14 +221,20 @@ for i, fmt in enumerate(fmts):
         sys.exit(f"ERROR: could not produce video {i}")
     tags = TAGS[fmt].split()[:3] + [rnd.choice(BROAD)]
     tags = [h for h in tags if h.lower() not in BLOCKED]  # hashtags TikTok already removed
-    cap = rnd.choice(CAPS[fmt]) + " " + " ".join(dict.fromkeys(tags))
+    cap_text = rnd.choice(CAPS[fmt]); cap = cap_text + " " + " ".join(dict.fromkeys(tags))
     _d = datetime.date.today()
     if os.environ.get("TAMKO_THEME") == "christmas" or (_d.month == 12 and _d.day <= 26):
         cap = "🎄 " + cap + " #christmas"
     yt = rnd.choice(YT[fmt])
     ytags = YTAGS[fmt] + rnd.sample(GENTAGS, 4) + ["tamko"]
     fc = rnd.choice(FC[fmt])
-    man.append({"file": name + ".mp4", "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": cap + " #shorts", "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
+    # YouTube Short version: 2x speed (~30-40 s), like the competitors' 15-30 s Shorts
+    yfile = name + "_yt.mp4"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f, "-filter_complex", "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]",
+                    "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-c:a", "aac", "-b:a", "160k",
+                    "-movflags", "+faststart", os.path.join(OUT, yfile)], check=True)
+    ytags_h = [t for t in tags if t != "#physics"]
+    man.append({"file": name + ".mp4", "yt_file": yfile, "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": yt_description(fmt, cap_text, ytags_h), "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
 json.dump(man, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)
 json.dump(hist[-200:], open(HIST, "w"), indent=0)
