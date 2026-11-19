@@ -153,8 +153,15 @@ def brand_bg(img):
     a = _np.array(img); m = (a[:, :, 0] == BG[0]) & (a[:, :, 1] == BG[1]) & (a[:, :, 2] == BG[2])
     _np.copyto(a, _NIGHT[0], where=m[:, :, None]); img.paste(Image.frombuffer("RGB", (W, H), a.tobytes())); return img
 
+SHIFT = 55  # charter v2: header block moved up under the TikTok top bar (option 1, 2026-11-19)
+def lift_header(img):
+    blk = img.crop((0, 190, W, 466)); img.paste(blk, (0, 190 - SHIFT))
+    ImageDraw.Draw(img).rectangle([0, 466 - SHIFT, W, 465], fill=BG)
+    return img
+
 def watermark(img):
     _wf[0] += 1
+    lift_header(img)
     brand_bg(img)
     hook(img)
     season(img)
