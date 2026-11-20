@@ -46,5 +46,9 @@
 {
 "format": "territory",
 "date": "20261120_0433"
+},
+{
+"format": "maze",
+"date": "20261120_0820"
 }
 ]
