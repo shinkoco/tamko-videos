@@ -1,0 +1,134 @@
+{
+ "updated": "2026-11-20T05:45:00+01:00",
+ "date_label": "Vendredi 20 novembre",
+ "alerts": [],
+ "channel": {
+  "name": "Tamko",
+  "headline": [
+   "Tamko,",
+   "3 vidéos TikTok aujourd'hui."
+  ],
+  "summary": "Territory war ajouté au créneau 13:00 (TikTok seul), survival à 08:00 et canards à 20:00. Depuis le lancement : 5 931 vues TikTok et 4 507 vues YouTube.",
+  "kpis": [
+   {
+    "platform": "TikTok",
+    "label": "Meilleure vidéo",
+    "detail": "Ball escape, publiée le 15/11",
+    "value": 932,
+    "unit": "vues",
+    "bar": 0.84
+   },
+   {
+    "platform": "YouTube",
+    "label": "Meilleur Short",
+    "detail": "Course de voitures, publié le 16/11",
+    "value": 1111,
+    "unit": "vues",
+    "bar": 1.0
+   }
+  ],
+  "followers": {
+   "label": "Abonnés TikTok",
+   "value": 1,
+   "goal": 1000
+  },
+  "today": [
+   {
+    "time": "08:00",
+    "platform": "TikTok",
+    "title": "Who makes it to the end? (survival)",
+    "status": "programmé"
+   },
+   {
+    "time": "13:00",
+    "platform": "TikTok",
+    "title": "Pick your side (territory war)",
+    "status": "programmé"
+   },
+   {
+    "time": "17:00",
+    "platform": "YouTube",
+    "title": "Who makes it to the end? (survival)",
+    "status": "programmé"
+   },
+   {
+    "time": "20:00",
+    "platform": "TikTok",
+    "title": "Duck race!",
+    "status": "programmé"
+   },
+   {
+    "time": "22:00",
+    "platform": "YouTube",
+    "title": "Duck race!",
+    "status": "programmé"
+   }
+  ],
+  "upcoming": [
+   {
+    "day": "Samedi 21",
+    "text": "3 TikTok (08:00, 13:00, 20:00). YouTube : dominos 18:00"
+   }
+  ],
+  "trend": null,
+  "engagement": {
+   "likes": 17,
+   "comments": 2,
+   "shares": 4,
+   "followers_gain": 1
+  },
+  "best_time": "08:00",
+  "warmup": [
+   {
+    "label": "@bongballs — courses de balles virales",
+    "url": "https://www.tiktok.com/@bongballs",
+    "comment": "The 1 ball always has the best comeback energy 😂"
+   },
+   {
+    "label": "@ballomena0 — 1 ball vs 4000",
+    "url": "https://www.tiktok.com/@ballomena0",
+    "comment": "I picked the single ball and I regret nothing 💀"
+   },
+   {
+    "label": "@satisfying2dsims — simulations physiques",
+    "url": "https://www.tiktok.com/@satisfying2dsims",
+    "comment": "That last bounce was way too close 😳"
+   },
+   {
+    "label": "@hypnobille — balles et spinners",
+    "url": "https://www.tiktok.com/@hypnobille",
+    "comment": "Watched this 3 times to see when it overflows 🤯"
+   },
+   {
+    "label": "@satisfying_shape5 — ball escape",
+    "url": "https://www.tiktok.com/@satisfying_shape5",
+    "comment": "I was sure it wouldn't escape that ring 👀"
+   },
+   {
+    "label": "#ballescape",
+    "url": "https://www.tiktok.com/tag/ballescape",
+    "comment": "My heart rate on that final ring 📈"
+   },
+   {
+    "label": "#marblerace",
+    "url": "https://www.tiktok.com/tag/marblerace",
+    "comment": "Yellow was robbed on the last turn 😤"
+   },
+   {
+    "label": "#physicssimulation",
+    "url": "https://www.tiktok.com/tag/physicssimulation",
+    "comment": "How do you even code physics this smooth? 🔥"
+   },
+   {
+    "label": "#satisfyingsimulation",
+    "url": "https://www.tiktok.com/tag/satisfyingsimulation",
+    "comment": "This is my favorite kind of brain rest 😌"
+   },
+   {
+    "label": "#whowouldwin",
+    "url": "https://www.tiktok.com/tag/whowouldwin",
+    "comment": "Called it from the first second 😎"
+   }
+  ]
+ }
+}
