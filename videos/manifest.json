@@ -1,57 +1,29 @@
 [
  {
-  "file": "tamko_20261119_0436_0_survival.mp4",
-  "format": "survival",
-  "caption": "Who makes it to the end? \ud83d\ude31 Comment your pick before round 1 \ud83d\udc47 #battleroyale #countryballs #whowouldwin #gameplay",
-  "yt_title": "Only 1 survives the traps \ud83d\udc80",
-  "yt_caption": "Who makes it to the end? \ud83d\ude31 Comment your pick before round 1 \ud83d\udc47 #battleroyale #countryballs #whowouldwin #gameplay #shorts",
+  "file": "tamko_20261120_0433_0_territory.mp4",
+  "yt_file": "tamko_20261120_0433_0_territory_yt.mp4",
+  "format": "territory",
+  "caption": "Pick your side \ud83d\udc47 Biggest area after the timer wins #territorywar #satisfyingsimulation #whowouldwin #mobilegames",
+  "yt_title": "Wait for the last second \ud83d\udc80 Who wins the map?",
+  "yt_caption": "Pick your side \ud83d\udc47 Biggest area after the timer wins\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich side did you pick? \ud83d\udc47\n\n#territorywar #satisfyingsimulation #whowouldwin #mobilegames #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "battle royale",
-   "countryballs",
-   "who would win",
-   "simulator games",
+   "territory war",
+   "pong wars",
+   "satisfying simulation",
+   "arcade",
+   "gameplay",
    "physics simulation",
-   "classic arcade games",
-   "satisfying video",
-   "tamko"
-  ],
-  "yt_first_comment": "Who was your survivor? \ud83d\udc80 Comment below! Subscribe for a new game every day!",
-  "duration": 63.5,
-  "params": {
-   "seed": 910517185,
-   "tamko": false,
-   "n": 16,
-   "hue": 0.505510883092707,
-   "round": 4.540912457739139,
-   "title": "SURVIVE THE TRAPS!"
-  }
- },
- {
-  "file": "tamko_20261119_0436_1_ducks.mp4",
-  "format": "ducks",
-  "caption": "Duck race! \ud83e\udd86 Pick your duck before the finish line \ud83d\udc47 #marblerace #algodoo #whowouldwin #gameplay",
-  "yt_title": "The cutest race ever \ud83e\udd86",
-  "yt_caption": "Duck race! \ud83e\udd86 Pick your duck before the finish line \ud83d\udc47 #marblerace #algodoo #whowouldwin #gameplay #shorts",
-  "yt_tags": [
-   "marble race",
-   "algodoo",
-   "who would win",
-   "simulator games",
-   "satisfying video",
-   "mobile games",
    "retro games",
    "tamko"
   ],
-  "yt_first_comment": "Which duck did you pick? \ud83e\udd86 Comment below! Subscribe for a new game every day!",
+  "yt_first_comment": "Which side did you pick? \ud83c\udfa8 Comment below!",
   "duration": 63.5,
   "params": {
-   "seed": 153691171,
-   "tamko": true,
-   "n": 8,
-   "fin": 6200,
-   "rock_gap": 220,
-   "pool_gap": 1200,
-   "title": "DUCK RACE!"
+   "seed": 481480921,
+   "tamko": false,
+   "duel": "ice",
+   "per": 2,
+   "bpm": 150
   }
  }
 ]
