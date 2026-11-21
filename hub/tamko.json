@@ -1,14 +1,16 @@
 {
- "updated": "2026-11-20T05:45:00+01:00",
- "date_label": "Vendredi 20 novembre",
- "alerts": [],
+ "updated": "2026-11-21T05:50:00+01:00",
+ "date_label": "Samedi 21 novembre",
+ "alerts": [
+  "Tamko : YouTube ignoré aujourd'hui pour les 3 nouvelles vidéos (limite d'environ 2 uploads par 24 h déjà atteinte avec les 2 Shorts d'hier et les dominos de 18:00). Rien à faire."
+ ],
  "channel": {
   "name": "Tamko",
   "headline": [
    "Tamko,",
-   "3 vidéos TikTok aujourd'hui."
+   "3 vidéos TikTok programmées aujourd'hui."
   ],
-  "summary": "Territory war ajouté au créneau 13:00 (TikTok seul), survival à 08:00 et canards à 20:00. Depuis le lancement : 5 931 vues TikTok et 4 507 vues YouTube.",
+  "summary": "Melody à 08:00, escape à 13:00 et grow à 20:00 sur TikTok. Depuis le lancement : 5 976 vues TikTok et 5 056 vues YouTube ; les vidéos récentes plafonnent autour de 210-260 vues.",
   "kpis": [
    {
     "platform": "TikTok",
@@ -16,13 +18,13 @@
     "detail": "Ball escape, publiée le 15/11",
     "value": 932,
     "unit": "vues",
-    "bar": 0.84
+    "bar": 0.85
    },
    {
     "platform": "YouTube",
     "label": "Meilleur Short",
     "detail": "Course de voitures, publié le 16/11",
-    "value": 1111,
+    "value": 1097,
     "unit": "vues",
     "bar": 1.0
    }
@@ -36,38 +38,32 @@
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Who makes it to the end? (survival)",
+    "title": "Guess the song! (melody)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Pick your side (territory war)",
+    "title": "Can the ball escape? (escape)",
     "status": "programmé"
    },
    {
-    "time": "17:00",
+    "time": "18:00",
     "platform": "YouTube",
-    "title": "Who makes it to the end? (survival)",
+    "title": "Dominos (ancien Short)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Duck race!",
-    "status": "programmé"
-   },
-   {
-    "time": "22:00",
-    "platform": "YouTube",
-    "title": "Duck race!",
+    "title": "Tiny ball → giant ball (grow)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Samedi 21",
-    "text": "3 TikTok (08:00, 13:00, 20:00). YouTube : dominos 18:00"
+    "day": "Dimanche 22",
+    "text": "3 TikTok (08:00, 13:00, 20:00) + YouTube selon la limite de 2 par 24 h"
    }
   ],
   "trend": null,
@@ -75,7 +71,7 @@
    "likes": 17,
    "comments": 2,
    "shares": 4,
-   "followers_gain": 1
+   "followers_gain": 0
   },
   "best_time": "08:00",
   "warmup": [
