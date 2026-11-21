@@ -155,6 +155,10 @@ def brand_bg(img):
 
 SHIFT = 55  # charter v2: header block moved up under the TikTok top bar (option 1, 2026-11-19)
 def lift_header(img):
+    # Only lift when the gameplay does not reach into the header band (otherwise we would cut a shape in two)
+    import numpy as _np
+    band = _np.asarray(img.convert("RGB"))[440:470]
+    if not _np.all(band == _np.array(BG, _np.uint8)): return img
     blk = img.crop((0, 190, W, 466)); img.paste(blk, (0, 190 - SHIFT))
     ImageDraw.Draw(img).rectangle([0, 466 - SHIFT, W, 465], fill=BG)
     return img
