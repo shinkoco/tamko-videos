@@ -50,5 +50,17 @@
 {
 "format": "maze",
 "date": "20261120_0820"
+},
+{
+"format": "melody",
+"date": "20261121_0531"
+},
+{
+"format": "escape",
+"date": "20261121_0531"
+},
+{
+"format": "grow",
+"date": "20261121_0531"
 }
 ]

@@ -1,29 +1,83 @@
 [
  {
-  "file": "tamko_20261120_0433_0_territory.mp4",
-  "yt_file": "tamko_20261120_0433_0_territory_yt.mp4",
-  "format": "territory",
-  "caption": "Pick your side \ud83d\udc47 Biggest area after the timer wins #territorywar #satisfyingsimulation #whowouldwin #mobilegames",
-  "yt_title": "Wait for the last second \ud83d\udc80 Who wins the map?",
-  "yt_caption": "Pick your side \ud83d\udc47 Biggest area after the timer wins\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich side did you pick? \ud83d\udc47\n\n#territorywar #satisfyingsimulation #whowouldwin #mobilegames #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261121_0531_0_melody.mp4",
+  "yt_file": "tamko_20261121_0531_0_melody_yt.mp4",
+  "format": "melody",
+  "caption": "Guess the song! \ud83c\udfb5 No cheating \ud83d\udc40\ud83d\udc47 #guessthesong #bouncingball #satisfyingvideo #arcade",
+  "yt_title": "Sound on \ud83d\udd0a Can you name this song?",
+  "yt_caption": "Guess the song! \ud83c\udfb5 No cheating \ud83d\udc40\ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you guess the song before the reveal? \ud83d\udc47\n\n#guessthesong #bouncingball #satisfyingvideo #arcade #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "territory war",
-   "pong wars",
-   "satisfying simulation",
-   "arcade",
+   "guess the song",
+   "bouncing ball",
+   "satisfying video",
+   "classic arcade games",
+   "who would win",
    "gameplay",
-   "physics simulation",
-   "retro games",
+   "arcade",
    "tamko"
   ],
-  "yt_first_comment": "Which side did you pick? \ud83c\udfa8 Comment below!",
+  "yt_first_comment": "Did you guess the song before the reveal? \ud83c\udfb5 Subscribe for a new game every day!",
+  "duration": 69.0,
+  "params": {
+   "seed": 134419787,
+   "tamko": true,
+   "beat": 0.44024731930765304
+  }
+ },
+ {
+  "file": "tamko_20261121_0531_1_escape.mp4",
+  "yt_file": "tamko_20261121_0531_1_escape_yt.mp4",
+  "format": "escape",
+  "caption": "New rule, new chaos \ud83e\udd2f Can the ball escape? Comment YES or NO \ud83d\udc47 #ballescape #willitescape #physicssimulation #mobilegames",
+  "yt_title": "Can the ball escape the rings? \ud83e\udd2f New rule",
+  "yt_caption": "New rule, new chaos \ud83e\udd2f Can the ball escape? Comment YES or NO \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you think it would escape? \ud83d\udc47\n\n#ballescape #willitescape #physicssimulation #mobilegames #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "ball escape",
+   "will it escape",
+   "escape the circle",
+   "physics simulation",
+   "mobile games",
+   "relaxing video",
+   "arcade",
+   "tamko"
+  ],
+  "yt_first_comment": "Did you think it would escape? \ud83d\udc40 Comment! Subscribe for a new game every day!",
+  "duration": 73.0,
+  "params": {
+   "seed": 560978617,
+   "tamko": false,
+   "rule": "freeze",
+   "n": 10,
+   "gap": 0.9735742095323974,
+   "hue": 0.05678691121753543
+  }
+ },
+ {
+  "file": "tamko_20261121_0531_2_grow.mp4",
+  "yt_file": "tamko_20261121_0531_2_grow_yt.mp4",
+  "format": "grow",
+  "caption": "Tiny ball \u2192 giant ball \ud83e\udd2f Guess the bounces! \ud83d\udc47 #bouncingball #satisfyingsimulation #physicssimulation #physics",
+  "yt_title": "It grows every bounce \ud83d\ude33 Satisfying",
+  "yt_caption": "Tiny ball \u2192 giant ball \ud83e\udd2f Guess the bounces! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nHow many bounces did you guess? \ud83d\udc47\n\n#bouncingball #satisfyingsimulation #physicssimulation #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "bouncing ball",
+   "satisfying simulation",
+   "physics simulation",
+   "classic arcade games",
+   "satisfying video",
+   "mobile games",
+   "who would win",
+   "tamko"
+  ],
+  "yt_first_comment": "How many bounces did you guess? \ud83d\ude33 Subscribe for a new game every day!",
   "duration": 63.5,
   "params": {
-   "seed": 481480921,
+   "seed": 784535159,
    "tamko": false,
-   "duel": "ice",
-   "per": 2,
-   "bpm": 150
+   "tfill": 55.36562189235839,
+   "g": 0.5468216323790172,
+   "hue": 0.6334873851371157,
+   "title": "CAN IT FILL THE CIRCLE?"
   }
  }
 ]
