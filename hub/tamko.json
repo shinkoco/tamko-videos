@@ -1,16 +1,14 @@
 {
- "updated": "2026-11-21T05:50:00+01:00",
- "date_label": "Samedi 21 novembre",
- "alerts": [
-  "Tamko : YouTube ignoré aujourd'hui pour les 3 nouvelles vidéos (limite d'environ 2 uploads par 24 h déjà atteinte avec les 2 Shorts d'hier et les dominos de 18:00). Rien à faire."
- ],
+ "updated": "2026-11-22T05:50:00+01:00",
+ "date_label": "Dimanche 22 novembre",
+ "alerts": [],
  "channel": {
   "name": "Tamko",
   "headline": [
    "Tamko,",
-   "3 vidéos TikTok programmées aujourd'hui."
+   "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Melody à 08:00, escape à 13:00 et grow à 20:00 sur TikTok. Depuis le lancement : 5 976 vues TikTok et 5 056 vues YouTube ; les vidéos récentes plafonnent autour de 210-260 vues.",
+  "summary": "Race à 08:00, plinko à 13:00 et rps à 20:00 sur TikTok ; Shorts YouTube race à 10:00 et rps à 22:00. Depuis le lancement : 7 346 vues TikTok et environ 6 875 vues YouTube ; les vidéos récentes restent autour de 210-260 vues.",
   "kpis": [
    {
     "platform": "TikTok",
@@ -24,7 +22,7 @@
     "platform": "YouTube",
     "label": "Meilleur Short",
     "detail": "Course de voitures, publié le 16/11",
-    "value": 1097,
+    "value": 1099,
     "unit": "vues",
     "bar": 1.0
    }
@@ -38,32 +36,38 @@
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Guess the song! (melody)",
+    "title": "Who reaches the bottom first? (race)",
+    "status": "programmé"
+   },
+   {
+    "time": "10:00",
+    "platform": "YouTube",
+    "title": "Who reaches the bottom first? (race)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Can the ball escape? (escape)",
-    "status": "programmé"
-   },
-   {
-    "time": "18:00",
-    "platform": "YouTube",
-    "title": "Dominos (ancien Short)",
+    "title": "Pick 1 to 6 (plinko)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Tiny ball → giant ball (grow)",
+    "title": "Rock, paper or scissors (rps)",
+    "status": "programmé"
+   },
+   {
+    "time": "22:00",
+    "platform": "YouTube",
+    "title": "Rock vs Paper vs Scissors (rps)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Dimanche 22",
-    "text": "3 TikTok (08:00, 13:00, 20:00) + YouTube selon la limite de 2 par 24 h"
+    "day": "Lundi 23",
+    "text": "3 TikTok (08:00, 13:00, 20:00) + 2 Shorts YouTube (10:00, 22:00) selon la limite de 2 par 24 h"
    }
   ],
   "trend": null,
