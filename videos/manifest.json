@@ -1,83 +1,86 @@
 [
  {
-  "file": "tamko_20261121_0531_0_melody.mp4",
-  "yt_file": "tamko_20261121_0531_0_melody_yt.mp4",
-  "format": "melody",
-  "caption": "Guess the song! \ud83c\udfb5 No cheating \ud83d\udc40\ud83d\udc47 #guessthesong #bouncingball #satisfyingvideo #arcade",
-  "yt_title": "Sound on \ud83d\udd0a Can you name this song?",
-  "yt_caption": "Guess the song! \ud83c\udfb5 No cheating \ud83d\udc40\ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you guess the song before the reveal? \ud83d\udc47\n\n#guessthesong #bouncingball #satisfyingvideo #arcade #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261122_0532_0_race.mp4",
+  "yt_file": "tamko_20261122_0532_0_race_yt.mp4",
+  "format": "race",
+  "caption": "Who reaches the bottom first? \ud83c\udfc1 Choose now, no cheating \ud83d\udc40\ud83d\udc47 #marblerace #marblerun #algodoo #mobilegames",
+  "yt_title": "Who reaches the bottom first? \ud83c\udfc1",
+  "yt_caption": "Who reaches the bottom first? \ud83c\udfc1 Choose now, no cheating \ud83d\udc40\ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich runner did you pick? \ud83d\udc47\n\n#marblerace #marblerun #algodoo #mobilegames #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "guess the song",
-   "bouncing ball",
-   "satisfying video",
+   "marble race",
+   "marble run",
+   "marble racing",
+   "algodoo marble race",
    "classic arcade games",
-   "who would win",
-   "gameplay",
-   "arcade",
-   "tamko"
-  ],
-  "yt_first_comment": "Did you guess the song before the reveal? \ud83c\udfb5 Subscribe for a new game every day!",
-  "duration": 69.0,
-  "params": {
-   "seed": 134419787,
-   "tamko": true,
-   "beat": 0.44024731930765304
-  }
- },
- {
-  "file": "tamko_20261121_0531_1_escape.mp4",
-  "yt_file": "tamko_20261121_0531_1_escape_yt.mp4",
-  "format": "escape",
-  "caption": "New rule, new chaos \ud83e\udd2f Can the ball escape? Comment YES or NO \ud83d\udc47 #ballescape #willitescape #physicssimulation #mobilegames",
-  "yt_title": "Can the ball escape the rings? \ud83e\udd2f New rule",
-  "yt_caption": "New rule, new chaos \ud83e\udd2f Can the ball escape? Comment YES or NO \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you think it would escape? \ud83d\udc47\n\n#ballescape #willitescape #physicssimulation #mobilegames #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "ball escape",
-   "will it escape",
-   "escape the circle",
-   "physics simulation",
+   "simulator games",
    "mobile games",
    "relaxing video",
-   "arcade",
    "tamko"
   ],
-  "yt_first_comment": "Did you think it would escape? \ud83d\udc40 Comment! Subscribe for a new game every day!",
-  "duration": 73.0,
+  "yt_first_comment": "Did your runner win? \ud83c\udfc1 Comment! Subscribe for a new game every day!",
+  "duration": 63.5,
   "params": {
-   "seed": 560978617,
-   "tamko": false,
-   "rule": "freeze",
-   "n": 10,
-   "gap": 0.9735742095323974,
-   "hue": 0.05678691121753543
+   "seed": 940602002,
+   "tamko": true,
+   "sx": 100,
+   "sy": 130,
+   "gaprow": 11,
+   "hue": 0.7622182038699424,
+   "fin": 8800,
+   "title": "WHO WINS THE RACE?"
   }
  },
  {
-  "file": "tamko_20261121_0531_2_grow.mp4",
-  "yt_file": "tamko_20261121_0531_2_grow_yt.mp4",
-  "format": "grow",
-  "caption": "Tiny ball \u2192 giant ball \ud83e\udd2f Guess the bounces! \ud83d\udc47 #bouncingball #satisfyingsimulation #physicssimulation #physics",
-  "yt_title": "It grows every bounce \ud83d\ude33 Satisfying",
-  "yt_caption": "Tiny ball \u2192 giant ball \ud83e\udd2f Guess the bounces! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nHow many bounces did you guess? \ud83d\udc47\n\n#bouncingball #satisfyingsimulation #physicssimulation #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261122_0532_1_plinko.mp4",
+  "yt_file": "tamko_20261122_0532_1_plinko_yt.mp4",
+  "format": "plinko",
+  "caption": "Pick 1 to 6 \ud83d\udc47 OUT = eliminated. Which number survives? #plinko #pickanumber #whowouldwin #gameplay",
+  "yt_title": "Pick 1 to 6 \ud83c\udfaf Which ball survives?",
+  "yt_caption": "Pick 1 to 6 \ud83d\udc47 OUT = eliminated. Which number survives?\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich number did you pick? \ud83d\udc47\n\n#plinko #pickanumber #whowouldwin #gameplay #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "bouncing ball",
-   "satisfying simulation",
-   "physics simulation",
-   "classic arcade games",
-   "satisfying video",
-   "mobile games",
+   "plinko",
+   "pick a number",
    "who would win",
+   "mobile games",
+   "relaxing video",
+   "simulator games",
+   "arcade",
    "tamko"
   ],
-  "yt_first_comment": "How many bounces did you guess? \ud83d\ude33 Subscribe for a new game every day!",
+  "yt_first_comment": "Which number did you pick? \ud83c\udfaf Comment below!",
   "duration": 63.5,
   "params": {
-   "seed": 784535159,
+   "seed": 612790373,
    "tamko": false,
-   "tfill": 55.36562189235839,
-   "g": 0.5468216323790172,
-   "hue": 0.6334873851371157,
-   "title": "CAN IT FILL THE CIRCLE?"
+   "bpm": 150,
+   "title": "WHICH NUMBER WINS?"
+  }
+ },
+ {
+  "file": "tamko_20261122_0532_2_rps.mp4",
+  "yt_file": "tamko_20261122_0532_2_rps_yt.mp4",
+  "format": "rps",
+  "caption": "Rock, paper or scissors? Who wins this war? \ud83d\udc47 #rockpaperscissors #whowouldwin #satisfyingsimulation #physics",
+  "yt_title": "Wait for the comeback \ud83d\udc80 Rock vs Paper vs Scissors",
+  "yt_caption": "Rock, paper or scissors? Who wins this war? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nRock, paper or scissors: who did you pick? \ud83d\udc47\n\n#rockpaperscissors #whowouldwin #satisfyingsimulation #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "rock paper scissors",
+   "rock paper scissors simulation",
+   "who would win",
+   "physics simulation",
+   "mobile games",
+   "classic arcade games",
+   "retro games",
+   "tamko"
+  ],
+  "yt_first_comment": "Rock, paper or scissors? \u2702\ufe0f What did you pick? Subscribe for a new game every day!",
+  "duration": 68.9,
+  "params": {
+   "seed": 57018207,
+   "tamko": true,
+   "n": 30,
+   "speed": 0.6417301567243615,
+   "title": "ROCK PAPER SCISSORS"
   }
  }
 ]
