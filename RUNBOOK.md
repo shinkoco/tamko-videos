@@ -28,7 +28,7 @@ Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claud
    If a TikTok time has already passed (or is less than 20 minutes away), use the next day for both times of that video.
    WARNING: when updating an existing Zernio post with `platforms`, always resend the FULL platform objects, otherwise Zernio wipes them.
    Visual charter (2026-11-19, freelance avatar+banner, option B light): starry night backdrop replaces flat BG (brand_bg in watermark), glossy cyan titles with gold rim, new flat mascot, small gold/cyan clouds in corners, endcard = mascot + TAMKO logo + "Follow for a new game every day!". Priority to the game: no big mascot in the header. Header block lifted 55 px (lift_header) right under the TikTok top bar (~150 px hidden).
-   YouTube Short = the manifest's yt_file (2x speed, ~30-40 s) with yt_title and yt_caption (full description: Sound on, 100% code, question, hashtags). TikTok = file (60 s+) with caption.
+   YouTube Short = the manifest's yt_file (2x speed, ~30-40 s) with yt_title and yt_caption (full description: Sound on, 100% code, question, hashtags). TikTok = ALSO the yt_file (2x speed, ~30 s; since 22/11/2026, for retention) with caption. Never post the 60 s file anymore.
    Hashtags & tags: vidIQ list in engine/daily.py (TAGS, BROAD, YTAGS, GENTAGS) and in the HUB data.json keywords.tamko — keep both in sync.
    Stats: TikTok from Zernio analytics; YouTube from Buffer (get_aggregated_post_metrics / list_posts on the Tamko channel).
 7. Report: the files, their formats, and the Zernio post IDs with their times.
