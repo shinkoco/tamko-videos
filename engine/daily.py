@@ -216,6 +216,27 @@ TAGS.update({"plinko": "#plinko #pickanumber #whowouldwin", "territory": "#terri
 YTAGS.update({"plinko": ["plinko", "pick a number", "who would win"], "territory": ["territory war", "pong wars", "satisfying simulation"], "maze": ["maze", "maze game", "maze solving"]})
 FC.update({"plinko": ["Which number did you pick? 🎯 Comment below!"], "territory": ["Which side did you pick? 🎨 Comment below!"], "maze": ["Trapped or free? What was your bet? 🧩"]})
 QUESTION.update({"plinko": "Which number did you pick?", "territory": "Which side did you pick?", "maze": "Trapped or free: what was your bet?"})
+def trim_dead_tail(path, keep=2.0, minlen=4.0):
+    """Cut long frozen stretches in the second half of the short version (e.g. Plinko ending at 12 s
+    then 20 s of static screen). Keeps `keep` s of the frozen frame, then the outro."""
+    r = subprocess.run(["ffmpeg", "-i", path, "-vf", "freezedetect=n=-50dB:d=%s" % minlen, "-map", "0:v", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    import re as _re
+    st = [float(x) for x in _re.findall(r"freeze_start: ([0-9.]+)", r)]; en = [float(x) for x in _re.findall(r"freeze_end: ([0-9.]+)", r)]
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path], capture_output=True, text=True).stdout)
+    cuts = [(a + keep, b) for a, b in zip(st, en) if a > dur*0.25 and b - a >= minlen]
+    if not cuts: return
+    segs, cur = [], 0.0
+    for a, b in cuts: segs.append((cur, a)); cur = b
+    segs.append((cur, dur))
+    sel = "+".join("between(t,%.3f,%.3f)" % ab for ab in segs)
+    tmp = path + ".tmp.mp4"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", path, "-vf", "select='%s',setpts=N/FRAME_RATE/TB" % sel,
+                    "-af", "aselect='%s',asetpts=N/SR/TB" % sel, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, path); print("trimmed", path, cuts)
+
+
 man = []
 for i, fmt in enumerate(fmts):
     for attempt in range(4):
@@ -249,6 +270,7 @@ for i, fmt in enumerate(fmts):
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f, "-filter_complex", "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]",
                     "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-c:a", "aac", "-b:a", "160k",
                     "-movflags", "+faststart", os.path.join(OUT, yfile)], check=True)
+    trim_dead_tail(os.path.join(OUT, yfile))
     ytags_h = [t for t in tags if t != "#physics"]
     man.append({"file": name + ".mp4", "yt_file": yfile, "format": fmt, "caption": cap, "yt_title": yt, "yt_caption": yt_description(fmt, cap_text, ytags_h), "yt_tags": ytags, "yt_first_comment": fc, "duration": round(dur, 1), "params": p})
     hist.append({"format": fmt, "date": stamp})
