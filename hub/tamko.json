@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-22T05:50:00+01:00",
- "date_label": "Dimanche 22 novembre",
+ "updated": "2026-11-23T06:10:00+01:00",
+ "date_label": "Lundi 23 novembre",
  "alerts": [],
  "channel": {
   "name": "Tamko",
@@ -8,21 +8,21 @@
    "Tamko,",
    "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Race à 08:00, plinko à 13:00 et rps à 20:00 sur TikTok ; Shorts YouTube race à 10:00 et rps à 22:00. Depuis le lancement : 7 346 vues TikTok et environ 6 875 vues YouTube ; les vidéos récentes restent autour de 210-260 vues.",
+  "summary": "Dup à 08:00, rockets à 13:00 et ducks à 20:00 sur TikTok ; Shorts YouTube dup à 10:00 et ducks à 22:00. Depuis le lancement : environ 8 284 vues TikTok et 7 400 vues YouTube ; les vidéos récentes restent autour de 200-600 vues, le plinko (515) et la course (597) d'hier sont les meilleures de la semaine.",
   "kpis": [
    {
     "platform": "TikTok",
     "label": "Meilleure vidéo",
-    "detail": "Ball escape, publiée le 15/11",
-    "value": 932,
+    "detail": "Country battle, publiée le 16/11",
+    "value": 1070,
     "unit": "vues",
-    "bar": 0.85
+    "bar": 0.94
    },
    {
     "platform": "YouTube",
     "label": "Meilleur Short",
-    "detail": "Course de voitures, publié le 16/11",
-    "value": 1099,
+    "detail": "Territory, publié le 20/11",
+    "value": 1137,
     "unit": "vues",
     "bar": 1.0
    }
@@ -36,45 +36,45 @@
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Who reaches the bottom first? (race)",
+    "title": "Watch it multiply (dup)",
     "status": "programmé"
    },
    {
     "time": "10:00",
     "platform": "YouTube",
-    "title": "Who reaches the bottom first? (race)",
+    "title": "Every bounce = MORE balls (dup)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Pick 1 to 6 (plinko)",
+    "title": "Only 1 rocket survives (rockets)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Rock, paper or scissors (rps)",
+    "title": "The cutest race (ducks)",
     "status": "programmé"
    },
    {
     "time": "22:00",
     "platform": "YouTube",
-    "title": "Rock vs Paper vs Scissors (rps)",
+    "title": "Can your duck dodge everything? (ducks)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Lundi 23",
-    "text": "3 TikTok (08:00, 13:00, 20:00) + 2 Shorts YouTube (10:00, 22:00) selon la limite de 2 par 24 h"
+    "day": "Mardi 24",
+    "text": "3 TikTok (08:00, 13:00, 20:00) + 2 Shorts YouTube (10:00, 22:00)"
    }
   ],
   "trend": null,
   "engagement": {
-   "likes": 17,
-   "comments": 2,
-   "shares": 4,
+   "likes": 9,
+   "comments": 0,
+   "shares": 1,
    "followers_gain": 0
   },
   "best_time": "08:00",
