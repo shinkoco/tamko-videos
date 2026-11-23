@@ -1,86 +1,88 @@
 [
  {
-  "file": "tamko_20261122_0532_0_race.mp4",
-  "yt_file": "tamko_20261122_0532_0_race_yt.mp4",
-  "format": "race",
-  "caption": "Who reaches the bottom first? \ud83c\udfc1 Choose now, no cheating \ud83d\udc40\ud83d\udc47 #marblerace #marblerun #algodoo #mobilegames",
-  "yt_title": "Who reaches the bottom first? \ud83c\udfc1",
-  "yt_caption": "Who reaches the bottom first? \ud83c\udfc1 Choose now, no cheating \ud83d\udc40\ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich runner did you pick? \ud83d\udc47\n\n#marblerace #marblerun #algodoo #mobilegames #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261123_0532_0_dup.mp4",
+  "yt_file": "tamko_20261123_0532_0_dup_yt.mp4",
+  "format": "dup",
+  "caption": "Watch it multiply... how many balls do you think? \ud83d\udc47 #satisfyingsimulation #bouncingball #2dphysics #arcade",
+  "yt_title": "Every bounce = MORE balls \ud83d\udc80 Guess the count",
+  "yt_caption": "Watch it multiply... how many balls do you think? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhat number did you guess? \ud83d\udc47\n\n#satisfyingsimulation #bouncingball #2dphysics #arcade #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "satisfying simulation",
+   "bouncing ball",
+   "2d physics",
+   "physics simulation",
+   "gameplay",
+   "relaxing video",
+   "mobile games",
+   "classic arcade games",
+   "tamko"
+  ],
+  "yt_first_comment": "What was your guess? \ud83e\udd2f Comment the number! Subscribe for a new game every day!",
+  "duration": 64.5,
+  "params": {
+   "seed": 968320912,
+   "tamko": false,
+   "max": 2500,
+   "g": 0.4474680446272282,
+   "hue": 0.49219492430002065,
+   "title": "1 BOUNCE = 1 NEW BALL"
+  }
+ },
+ {
+  "file": "tamko_20261123_0532_1_rockets.mp4",
+  "yt_file": "tamko_20261123_0532_1_rockets_yt.mp4",
+  "format": "rockets",
+  "caption": "Invaders, asteroids, lasers\u2026 only 1 rocket survives \ud83d\ude80 Who's your pick? \ud83d\udc47 #spaceinvaders #spaceinvadersgameplay #classicarcade #simulatorgames",
+  "yt_title": "Wait for the final boss wave \ud83d\udc7e Pick your rocket",
+  "yt_caption": "Invaders, asteroids, lasers\u2026 only 1 rocket survives \ud83d\ude80 Who's your pick? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich rocket did you pick? \ud83d\udc47\n\n#spaceinvaders #spaceinvadersgameplay #classicarcade #simulatorgames #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "space invaders",
+   "space invaders gameplay",
+   "space invaders arcade",
+   "gameplay",
+   "satisfying video",
+   "mobile games",
+   "classic arcade games",
+   "tamko"
+  ],
+  "yt_first_comment": "Which rocket did you pick? \ud83d\ude80 Comment below! Subscribe for a new game every day!",
+  "duration": 63.5,
+  "params": {
+   "seed": 934006111,
+   "tamko": true,
+   "n": 8,
+   "hue": 0.1104761201875305,
+   "bpm": 155,
+   "title": "PICK YOUR ROCKET!"
+  }
+ },
+ {
+  "file": "tamko_20261123_0532_2_ducks.mp4",
+  "yt_file": "tamko_20261123_0532_2_ducks_yt.mp4",
+  "format": "ducks",
+  "caption": "The cutest race on TikTok \ud83e\udd86 Comment your champion! \ud83d\udc47 #marblerace #algodoo #whowouldwin #retrogames",
+  "yt_title": "Can your duck dodge everything? \ud83e\udd86",
+  "yt_caption": "The cutest race on TikTok \ud83e\udd86 Comment your champion! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich duck did you pick? \ud83d\udc47\n\n#marblerace #algodoo #whowouldwin #retrogames #satisfying #physics #simulation #shorts",
   "yt_tags": [
    "marble race",
-   "marble run",
-   "marble racing",
-   "algodoo marble race",
-   "classic arcade games",
-   "simulator games",
-   "mobile games",
-   "relaxing video",
-   "tamko"
-  ],
-  "yt_first_comment": "Did your runner win? \ud83c\udfc1 Comment! Subscribe for a new game every day!",
-  "duration": 63.5,
-  "params": {
-   "seed": 940602002,
-   "tamko": true,
-   "sx": 100,
-   "sy": 130,
-   "gaprow": 11,
-   "hue": 0.7622182038699424,
-   "fin": 8800,
-   "title": "WHO WINS THE RACE?"
-  }
- },
- {
-  "file": "tamko_20261122_0532_1_plinko.mp4",
-  "yt_file": "tamko_20261122_0532_1_plinko_yt.mp4",
-  "format": "plinko",
-  "caption": "Pick 1 to 6 \ud83d\udc47 OUT = eliminated. Which number survives? #plinko #pickanumber #whowouldwin #gameplay",
-  "yt_title": "Pick 1 to 6 \ud83c\udfaf Which ball survives?",
-  "yt_caption": "Pick 1 to 6 \ud83d\udc47 OUT = eliminated. Which number survives?\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich number did you pick? \ud83d\udc47\n\n#plinko #pickanumber #whowouldwin #gameplay #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "plinko",
-   "pick a number",
+   "algodoo",
    "who would win",
-   "mobile games",
-   "relaxing video",
-   "simulator games",
+   "satisfying video",
    "arcade",
-   "tamko"
-  ],
-  "yt_first_comment": "Which number did you pick? \ud83c\udfaf Comment below!",
-  "duration": 63.5,
-  "params": {
-   "seed": 612790373,
-   "tamko": false,
-   "bpm": 150,
-   "title": "WHICH NUMBER WINS?"
-  }
- },
- {
-  "file": "tamko_20261122_0532_2_rps.mp4",
-  "yt_file": "tamko_20261122_0532_2_rps_yt.mp4",
-  "format": "rps",
-  "caption": "Rock, paper or scissors? Who wins this war? \ud83d\udc47 #rockpaperscissors #whowouldwin #satisfyingsimulation #physics",
-  "yt_title": "Wait for the comeback \ud83d\udc80 Rock vs Paper vs Scissors",
-  "yt_caption": "Rock, paper or scissors? Who wins this war? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nRock, paper or scissors: who did you pick? \ud83d\udc47\n\n#rockpaperscissors #whowouldwin #satisfyingsimulation #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "rock paper scissors",
-   "rock paper scissors simulation",
    "who would win",
    "physics simulation",
-   "mobile games",
-   "classic arcade games",
-   "retro games",
    "tamko"
   ],
-  "yt_first_comment": "Rock, paper or scissors? \u2702\ufe0f What did you pick? Subscribe for a new game every day!",
-  "duration": 68.9,
+  "yt_first_comment": "Did your duck win? \ud83e\udd86 Tell us! Subscribe for a new game every day!",
+  "duration": 65.5,
   "params": {
-   "seed": 57018207,
-   "tamko": true,
-   "n": 30,
-   "speed": 0.6417301567243615,
-   "title": "ROCK PAPER SCISSORS"
+   "seed": 69756616,
+   "tamko": false,
+   "n": 6,
+   "fin": 6800,
+   "rock_gap": 300,
+   "pool_gap": 1500,
+   "title": "PICK YOUR DUCK!"
   }
  }
 ]
