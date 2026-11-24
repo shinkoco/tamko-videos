@@ -39,3 +39,7 @@ Brand: Lilita One (titles), Fredoka (body text), palette A (night background #0E
 Seasonal themes: engine/brand.py switches automatically by date (THEME). Christmas = 1–26 December: snowy night-blue background, gold title, icy-blue call to action, animated falling snow and a blinking garland, plus 🎄 and #christmas in the TikTok caption. Can be forced with the env var TAMKO_THEME=christmas.
 
 Quality check: after ANY change to the engine, run `python3 engine/qa.py /tmp/qa` (renders all 16 formats, ~11 min) and only push if it prints ALL GOOD. daily.py now switches to another format if one keeps failing, instead of stopping the day.
+
+
+## Comment pop-up (since 24/11/2026, option A validated by Mathieu)
+The first CTA of each video is no longer drawn under the subtitle: it pops up as a TikTok-style comment bubble ("@tamkoplay asks: ...") at 3-8 s and 30-35 s (1.5-4 s and 15-17.5 s in the short). Lines below the subtitle move up (close_gap). Result CTAs (WINS!, FREE!...) are still drawn in the header. Code: brand.py cta() / comment_pop() / close_gap().

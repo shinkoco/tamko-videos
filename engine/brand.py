@@ -76,8 +76,18 @@ def tamko_sprite(img, cx, cy, s, phase=0.0):
         d.ellipse([cx+ex*r-.16*r, cy+.33*r-.08*r, cx+ex*r+.16*r, cy+.33*r+.08*r], fill=(245, 120, 110))
     d.chord([cx-.2*r, cy+.22*r, cx+.2*r, cy+.55*r], 0, 180, fill=(150, 30, 35), outline=DEEP)
 
+_cta = [None, -1]  # comment prompt text, frame it was set
 def cta(img, text, y=388, col=None, mascot=True):
     col = col or BLUE; _tick[0] += 1
+    # 2026-11-24: the opening prompt (first CTA of the video) becomes a TikTok-style comment pop-up (option A);
+    # later CTAs (results such as "#3 WINS!") are still drawn in the header.
+    if "  •  " in text:  # "8 CARS LEFT  •  Pick your car!": live info stays, the prompt pops up
+        info, text = text.split("  •  ", 1); out(ImageDraw.Draw(img), (AX, y), info, fit(info, 540, 42), col, sw=6)
+        if _cta[0] is None: _cta[0] = text
+        if text == _cta[0]: _cta[1] = _wf[0]
+        return
+    if _cta[0] is None: _cta[0] = text
+    if text == _cta[0]: _cta[1] = _wf[0]; return
     f = fit(text, 480 if mascot else 540, 42); d = ImageDraw.Draw(img)
     if not mascot:
         out(d, (AX, y), text, f, col, sw=6); return
@@ -163,12 +173,42 @@ def lift_header(img):
     ImageDraw.Draw(img).rectangle([0, 466 - SHIFT, W, 465], fill=BG)
     return img
 
+def close_gap(img):
+    # the old CTA line (y~388) is gone: pull the format's extra line (y~440) up under the subtitle
+    import numpy as _np
+    a = _np.asarray(img.convert("RGB")); bg = _np.array(BG, _np.uint8)
+    if not _np.all(a[360:412] == bg): return img
+    rowbg = _np.all(a == bg, axis=(1, 2))
+    end = next((y for y in range(420, 476) if rowbg[y]), None)
+    if end is None: return img
+    blk = img.crop((0, 412, W, end)); img.paste(blk, (0, 367))
+    ImageDraw.Draw(img).rectangle([0, 367 + end - 412, W, end - 1], fill=BG); return img
+
+POP_WIN = ((3.0, 8.0), (30.0, 35.0))  # seconds in the 60 s version (= 1.5-4 s and 15-17.5 s in the 2x short)
+def comment_pop(img):
+    if not _cta[0] or _wf[0] - _cta[1] > 2: return img
+    t = _wf[0]/FPS_GUESS; w = [a for a in POP_WIN if a[0] <= t <= a[1]]
+    if not w: return img
+    k = min(1, (t - w[0][0])/.18, (w[0][1] - t)/.18); k = k*(1.15 - .15*k)  # pop in / out
+    card = Image.new("RGBA", (620, 150), (0, 0, 0, 0)); d = ImageDraw.Draw(card)
+    d.rounded_rectangle((2, 2, 617, 147), 28, fill=(255, 255, 255), outline=(20, 20, 30), width=4)
+    tamko_sprite(card, 62, 75, 68, t)
+    d.text((120, 22), "@tamkoplay  asks:", font=fredoka(26), fill=(120, 120, 130))
+    f = fit(_cta[0], 470, 40); d.text((120, 62), _cta[0], font=f, fill=(20, 20, 30))
+    d.text((120, 108), "Reply below", font=fredoka(22), fill=(150, 150, 160))
+    sw, sh = max(1, int(620*k)), max(1, int(150*k)); card = card.resize((sw, sh))
+    base = img.convert("RGBA"); base.alpha_composite(card, (int(AX - sw/2), int(1060 - sh/2)))
+    dr = ImageDraw.Draw(base); dr.polygon([(AX-18, 1142), (AX+18, 1142), (AX, 1166)], fill="white") if k > .9 else None
+    img.paste(base.convert(img.mode)); return img
+
 def watermark(img):
     _wf[0] += 1
+    close_gap(img)
     lift_header(img)
     brand_bg(img)
     hook(img)
     season(img)
+    comment_pop(img)
     if img.mode != "RGBA":
         global _wm
         if _wm is None:

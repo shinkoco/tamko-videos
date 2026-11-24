@@ -69,7 +69,7 @@ while True:
     col = "white" if left > 10 else RED
     out(dr, (AX, Y0 + GH*CS + 60), f"0:{int(left):02d}", lilita(64), col, sw=6)
     header(img, P.get("title", "TRAPPED OR FREE?"), f"Tamko needs the exit in {int(TIMER)} seconds")
-    cta(img, ("FREE!" if res == "FREE" else "TRAPPED!") if res else "Bet now: TRAPPED or FREE?", col=YEL if res != "TRAPPED" else RED)
+    cta(img, ("FREE!" if res == "FREE" else "TRAPPED!") if res else "Comment TRAPPED or FREE!", col=YEL if res != "TRAPPED" else RED)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
 print("maze", res, len(moves), round(finish, 1), o.t)
