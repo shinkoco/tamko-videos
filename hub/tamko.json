@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-23T06:10:00+01:00",
- "date_label": "Lundi 23 novembre",
+ "updated": "2026-11-24T05:50:00+01:00",
+ "date_label": "Mardi 24 novembre",
  "alerts": [],
  "channel": {
   "name": "Tamko",
@@ -8,65 +8,65 @@
    "Tamko,",
    "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Dup à 08:00, rockets à 13:00 et ducks à 20:00 sur TikTok ; Shorts YouTube dup à 10:00 et ducks à 22:00. Depuis le lancement : environ 8 284 vues TikTok et 7 400 vues YouTube ; les vidéos récentes restent autour de 200-600 vues, le plinko (515) et la course (597) d'hier sont les meilleures de la semaine.",
+  "summary": "Maze à 08:00, vision à 13:00 et cars à 20:00 sur TikTok ; Shorts YouTube maze à 10:00 et cars à 22:00. Depuis le 15/11 : environ 9 738 vues TikTok (22 vidéos) ; les vidéos récentes tournent autour de 200-700 vues, le rockets d'hier (668) et le dup (704) sont les meilleures de la veille.",
   "kpis": [
    {
     "platform": "TikTok",
     "label": "Meilleure vidéo",
     "detail": "Country battle, publiée le 16/11",
-    "value": 1070,
+    "value": 1084,
     "unit": "vues",
-    "bar": 0.94
+    "bar": 0.95
    },
    {
     "platform": "YouTube",
     "label": "Meilleur Short",
     "detail": "Territory, publié le 20/11",
-    "value": 1137,
+    "value": 1138,
     "unit": "vues",
     "bar": 1.0
    }
   ],
   "followers": {
    "label": "Abonnés TikTok",
-   "value": 1,
+   "value": 3,
    "goal": 1000
   },
   "today": [
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Watch it multiply (dup)",
+    "title": "Can Tamko find the exit? (maze)",
     "status": "programmé"
    },
    {
     "time": "10:00",
     "platform": "YouTube",
-    "title": "Every bounce = MORE balls (dup)",
+    "title": "Wait for the timer, trapped or free? (maze)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Only 1 rocket survives (rockets)",
+    "title": "Can you still see the ball? (vision)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "The cutest race (ducks)",
+    "title": "Which car makes it to the end? (cars)",
     "status": "programmé"
    },
    {
     "time": "22:00",
     "platform": "YouTube",
-    "title": "Can your duck dodge everything? (ducks)",
+    "title": "Only 1 car survives the highway (cars)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Mardi 24",
+    "day": "Mercredi 25",
     "text": "3 TikTok (08:00, 13:00, 20:00) + 2 Shorts YouTube (10:00, 22:00)"
    }
   ],
@@ -74,8 +74,8 @@
   "engagement": {
    "likes": 9,
    "comments": 0,
-   "shares": 1,
-   "followers_gain": 0
+   "shares": 2,
+   "followers_gain": 2
   },
   "best_time": "08:00",
   "warmup": [
