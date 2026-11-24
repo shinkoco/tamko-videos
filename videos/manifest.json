@@ -1,88 +1,85 @@
 [
  {
-  "file": "tamko_20261123_0532_0_dup.mp4",
-  "yt_file": "tamko_20261123_0532_0_dup_yt.mp4",
-  "format": "dup",
-  "caption": "Watch it multiply... how many balls do you think? \ud83d\udc47 #satisfyingsimulation #bouncingball #2dphysics #arcade",
-  "yt_title": "Every bounce = MORE balls \ud83d\udc80 Guess the count",
-  "yt_caption": "Watch it multiply... how many balls do you think? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhat number did you guess? \ud83d\udc47\n\n#satisfyingsimulation #bouncingball #2dphysics #arcade #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261124_0533_0_maze.mp4",
+  "yt_file": "tamko_20261124_0533_0_maze_yt.mp4",
+  "format": "maze",
+  "caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47 #maze #mazegame #puzzle #retrogames",
+  "yt_title": "Wait for the timer \ud83d\udc80 Trapped or free?",
+  "yt_caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nTrapped or free: what was your bet? \ud83d\udc47\n\n#maze #mazegame #puzzle #retrogames #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "satisfying simulation",
-   "bouncing ball",
-   "2d physics",
-   "physics simulation",
-   "gameplay",
-   "relaxing video",
-   "mobile games",
+   "maze",
+   "maze game",
+   "maze solving",
    "classic arcade games",
-   "tamko"
-  ],
-  "yt_first_comment": "What was your guess? \ud83e\udd2f Comment the number! Subscribe for a new game every day!",
-  "duration": 64.5,
-  "params": {
-   "seed": 968320912,
-   "tamko": false,
-   "max": 2500,
-   "g": 0.4474680446272282,
-   "hue": 0.49219492430002065,
-   "title": "1 BOUNCE = 1 NEW BALL"
-  }
- },
- {
-  "file": "tamko_20261123_0532_1_rockets.mp4",
-  "yt_file": "tamko_20261123_0532_1_rockets_yt.mp4",
-  "format": "rockets",
-  "caption": "Invaders, asteroids, lasers\u2026 only 1 rocket survives \ud83d\ude80 Who's your pick? \ud83d\udc47 #spaceinvaders #spaceinvadersgameplay #classicarcade #simulatorgames",
-  "yt_title": "Wait for the final boss wave \ud83d\udc7e Pick your rocket",
-  "yt_caption": "Invaders, asteroids, lasers\u2026 only 1 rocket survives \ud83d\ude80 Who's your pick? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich rocket did you pick? \ud83d\udc47\n\n#spaceinvaders #spaceinvadersgameplay #classicarcade #simulatorgames #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "space invaders",
-   "space invaders gameplay",
-   "space invaders arcade",
    "gameplay",
    "satisfying video",
-   "mobile games",
-   "classic arcade games",
+   "physics simulation",
    "tamko"
   ],
-  "yt_first_comment": "Which rocket did you pick? \ud83d\ude80 Comment below! Subscribe for a new game every day!",
+  "yt_first_comment": "Trapped or free? What was your bet? \ud83e\udde9",
   "duration": 63.5,
   "params": {
-   "seed": 934006111,
+   "seed": 605400777,
    "tamko": true,
-   "n": 8,
-   "hue": 0.1104761201875305,
-   "bpm": 155,
-   "title": "PICK YOUR ROCKET!"
+   "gw": 14,
+   "gh": 14,
+   "timer": 55.0,
+   "bpm": 140
   }
  },
  {
-  "file": "tamko_20261123_0532_2_ducks.mp4",
-  "yt_file": "tamko_20261123_0532_2_ducks_yt.mp4",
-  "format": "ducks",
-  "caption": "The cutest race on TikTok \ud83e\udd86 Comment your champion! \ud83d\udc47 #marblerace #algodoo #whowouldwin #retrogames",
-  "yt_title": "Can your duck dodge everything? \ud83e\udd86",
-  "yt_caption": "The cutest race on TikTok \ud83e\udd86 Comment your champion! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich duck did you pick? \ud83d\udc47\n\n#marblerace #algodoo #whowouldwin #retrogames #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261124_0533_1_vision.mp4",
+  "yt_file": "tamko_20261124_0533_1_vision_yt.mp4",
+  "format": "vision",
+  "caption": "How old is your vision? \ud83d\udc40 Comment the age when you lost the ball \ud83d\udc47 #visiontest #eyetest #satisfyingvideo #gameplay",
+  "yt_title": "Can you still see the ball? \ud83d\udc40 Vision test",
+  "yt_caption": "How old is your vision? \ud83d\udc40 Comment the age when you lost the ball \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nAt what age did the ball disappear for you? \ud83d\udc47\n\n#visiontest #eyetest #satisfyingvideo #gameplay #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "marble race",
-   "algodoo",
-   "who would win",
+   "vision test",
+   "eye test",
    "satisfying video",
+   "retro games",
+   "gameplay",
+   "classic arcade games",
+   "relaxing video",
+   "tamko"
+  ],
+  "yt_first_comment": "What age did you get? \ud83d\udc40 Comment below! Subscribe for a new game every day!",
+  "duration": 63.3,
+  "params": {
+   "seed": 914397973,
+   "tamko": false,
+   "hue": 0.8131035509436192,
+   "tend": 54.77299943725245,
+   "r": 26
+  }
+ },
+ {
+  "file": "tamko_20261124_0533_2_cars.mp4",
+  "yt_file": "tamko_20261124_0533_2_cars_yt.mp4",
+  "format": "cars",
+  "caption": "Which car makes it to the end? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #cargame #carracinggame #whowouldwin #mobilegames",
+  "yt_title": "Only 1 car survives the highway \ud83d\udc80\ud83c\udfce\ufe0f",
+  "yt_caption": "Which car makes it to the end? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich car did you pick? \ud83d\udc47\n\n#cargame #carracinggame #whowouldwin #mobilegames #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "car game",
+   "car race game",
+   "car racing game",
+   "classic arcade games",
    "arcade",
    "who would win",
    "physics simulation",
    "tamko"
   ],
-  "yt_first_comment": "Did your duck win? \ud83e\udd86 Tell us! Subscribe for a new game every day!",
-  "duration": 65.5,
+  "yt_first_comment": "Which car did you pick? \ud83c\udfce\ufe0f Comment below! Subscribe for a new game every day!",
+  "duration": 64.1,
   "params": {
-   "seed": 69756616,
+   "seed": 556325345,
    "tamko": false,
    "n": 6,
-   "fin": 6800,
-   "rock_gap": 300,
-   "pool_gap": 1500,
-   "title": "PICK YOUR DUCK!"
+   "hue": 0.42006849430632687,
+   "bpm": 160,
+   "title": "LAST CAR STANDING WINS"
   }
  }
 ]
