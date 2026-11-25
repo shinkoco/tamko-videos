@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-24T05:50:00+01:00",
- "date_label": "Mardi 24 novembre",
+ "updated": "2026-11-25T06:15:00+01:00",
+ "date_label": "Mercredi 25 novembre",
  "alerts": [],
  "channel": {
   "name": "Tamko",
@@ -8,7 +8,7 @@
    "Tamko,",
    "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Maze à 08:00, vision à 13:00 et cars à 20:00 sur TikTok ; Shorts YouTube maze à 10:00 et cars à 22:00. Depuis le 15/11 : environ 9 738 vues TikTok (22 vidéos) ; les vidéos récentes tournent autour de 200-700 vues, le rockets d'hier (668) et le dup (704) sont les meilleures de la veille.",
+  "summary": "Dominos à 08:00, balle qui grossit à 13:00 et météores à 20:00 sur TikTok ; Shorts YouTube dominos à 10:30 et météores à 22:45. Depuis le lancement : 13 389 vues TikTok (28 vidéos) et environ 11 567 vues YouTube ; les 3 derniers jours tournent à 540-700 vues par TikTok.",
   "kpis": [
    {
     "platform": "TikTok",
@@ -29,106 +29,76 @@
   ],
   "followers": {
    "label": "Abonnés TikTok",
-   "value": 3,
+   "value": 4,
    "goal": 1000
   },
   "today": [
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Can Tamko find the exit? (maze)",
+    "title": "Will they ALL fall? (dominos)",
     "status": "programmé"
    },
    {
-    "time": "10:00",
+    "time": "10:30",
     "platform": "YouTube",
-    "title": "Wait for the timer, trapped or free? (maze)",
+    "title": "Can 500 dominoes make it? (dominos)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Can you still see the ball? (vision)",
+    "title": "It grows every bounce (grow)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Which car makes it to the end? (cars)",
+    "title": "Dodge or die (météores)",
     "status": "programmé"
    },
    {
-    "time": "22:00",
+    "time": "22:45",
     "platform": "YouTube",
-    "title": "Only 1 car survives the highway (cars)",
+    "title": "Only 1 survives the meteors (météores)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Mercredi 25",
-    "text": "3 TikTok (08:00, 13:00, 20:00) + 2 Shorts YouTube (10:00, 22:00)"
+    "day": "Jeudi 26",
+    "text": "3 TikTok (08:00, 13:00, 20:00) ; YouTube ~10:40 et ~22:55 selon la règle des 24 h glissantes"
    }
   ],
-  "trend": null,
-  "engagement": {
-   "likes": 9,
-   "comments": 0,
-   "shares": 2,
-   "followers_gain": 2
-  },
-  "best_time": "08:00",
-  "warmup": [
-   {
-    "label": "@bongballs — courses de balles virales",
-    "url": "https://www.tiktok.com/@bongballs",
-    "comment": "The 1 ball always has the best comeback energy 😂"
-   },
-   {
-    "label": "@ballomena0 — 1 ball vs 4000",
-    "url": "https://www.tiktok.com/@ballomena0",
-    "comment": "I picked the single ball and I regret nothing 💀"
-   },
-   {
-    "label": "@satisfying2dsims — simulations physiques",
-    "url": "https://www.tiktok.com/@satisfying2dsims",
-    "comment": "That last bounce was way too close 😳"
-   },
-   {
-    "label": "@hypnobille — balles et spinners",
-    "url": "https://www.tiktok.com/@hypnobille",
-    "comment": "Watched this 3 times to see when it overflows 🤯"
-   },
-   {
-    "label": "@satisfying_shape5 — ball escape",
-    "url": "https://www.tiktok.com/@satisfying_shape5",
-    "comment": "I was sure it wouldn't escape that ring 👀"
-   },
-   {
-    "label": "#ballescape",
-    "url": "https://www.tiktok.com/tag/ballescape",
-    "comment": "My heart rate on that final ring 📈"
-   },
-   {
-    "label": "#marblerace",
-    "url": "https://www.tiktok.com/tag/marblerace",
-    "comment": "Yellow was robbed on the last turn 😤"
-   },
-   {
-    "label": "#physicssimulation",
-    "url": "https://www.tiktok.com/tag/physicssimulation",
-    "comment": "How do you even code physics this smooth? 🔥"
-   },
-   {
-    "label": "#satisfyingsimulation",
-    "url": "https://www.tiktok.com/tag/satisfyingsimulation",
-    "comment": "This is my favorite kind of brain rest 😌"
-   },
-   {
-    "label": "#whowouldwin",
-    "url": "https://www.tiktok.com/tag/whowouldwin",
-    "comment": "Called it from the first second 😎"
+  "trend": {
+   "labels": [
+    "18/11",
+    "19/11",
+    "20/11",
+    "21/11",
+    "22/11",
+    "23/11",
+    "24/11"
+   ],
+   "series": {
+    "TikTok": [
+     490,
+     463,
+     646,
+     690,
+     1968,
+     1961,
+     1855
+    ]
    }
-  ]
+  },
+  "engagement": {
+   "likes": 28,
+   "comments": 0,
+   "shares": 13,
+   "followers_gain": 3
+  },
+  "best_time": null,
+  "comment_replies": 0
  }
 }
