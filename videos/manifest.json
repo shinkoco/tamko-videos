@@ -1,85 +1,85 @@
 [
  {
-  "file": "tamko_20261124_0533_0_maze.mp4",
-  "yt_file": "tamko_20261124_0533_0_maze_yt.mp4",
-  "format": "maze",
-  "caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47 #maze #mazegame #puzzle #retrogames",
-  "yt_title": "Wait for the timer \ud83d\udc80 Trapped or free?",
-  "yt_caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nTrapped or free: what was your bet? \ud83d\udc47\n\n#maze #mazegame #puzzle #retrogames #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261125_0604_0_dominoes.mp4",
+  "yt_file": "tamko_20261125_0604_0_dominoes_yt.mp4",
+  "format": "dominoes",
+  "caption": "Will they ALL fall? \ud83d\ude2c Watch till the end \ud83d\udc47 #domino #dominoesfalling #rubegoldberg #arcade",
+  "yt_title": "Can 500 dominoes make it? \ud83d\ude2c\ud83d\udc80",
+  "yt_caption": "Will they ALL fall? \ud83d\ude2c Watch till the end \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you think they'd all fall? \ud83d\udc47\n\n#domino #dominoesfalling #rubegoldberg #arcade #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "maze",
-   "maze game",
-   "maze solving",
-   "classic arcade games",
-   "gameplay",
-   "satisfying video",
+   "domino",
+   "dominoes falling",
+   "rube goldberg",
    "physics simulation",
+   "relaxing video",
+   "who would win",
+   "satisfying video",
    "tamko"
   ],
-  "yt_first_comment": "Trapped or free? What was your bet? \ud83e\udde9",
+  "yt_first_comment": "Did you think they'd all fall? \ud83d\ude2c Comment! Subscribe for a new game every day!",
   "duration": 63.5,
   "params": {
-   "seed": 605400777,
+   "seed": 252938485,
    "tamko": true,
-   "gw": 14,
-   "gh": 14,
-   "timer": 55.0,
-   "bpm": 140
+   "n": 450,
+   "shape": "spiral",
+   "hue": 0.40668940846599866,
+   "tstep": 0.10075038839054658
   }
  },
  {
-  "file": "tamko_20261124_0533_1_vision.mp4",
-  "yt_file": "tamko_20261124_0533_1_vision_yt.mp4",
-  "format": "vision",
-  "caption": "How old is your vision? \ud83d\udc40 Comment the age when you lost the ball \ud83d\udc47 #visiontest #eyetest #satisfyingvideo #gameplay",
-  "yt_title": "Can you still see the ball? \ud83d\udc40 Vision test",
-  "yt_caption": "How old is your vision? \ud83d\udc40 Comment the age when you lost the ball \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nAt what age did the ball disappear for you? \ud83d\udc47\n\n#visiontest #eyetest #satisfyingvideo #gameplay #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261125_0604_1_grow.mp4",
+  "yt_file": "tamko_20261125_0604_1_grow_yt.mp4",
+  "format": "grow",
+  "caption": "It grows every bounce \ud83d\ude33 How many bounces to fill the circle? Guess \ud83d\udc47 #bouncingball #satisfyingsimulation #physicssimulation #physics",
+  "yt_title": "Wait for the last bounce \ud83d\ude33 It grows every hit",
+  "yt_caption": "It grows every bounce \ud83d\ude33 How many bounces to fill the circle? Guess \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nHow many bounces did you guess? \ud83d\udc47\n\n#bouncingball #satisfyingsimulation #physicssimulation #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "vision test",
-   "eye test",
-   "satisfying video",
-   "retro games",
-   "gameplay",
-   "classic arcade games",
-   "relaxing video",
-   "tamko"
-  ],
-  "yt_first_comment": "What age did you get? \ud83d\udc40 Comment below! Subscribe for a new game every day!",
-  "duration": 63.3,
-  "params": {
-   "seed": 914397973,
-   "tamko": false,
-   "hue": 0.8131035509436192,
-   "tend": 54.77299943725245,
-   "r": 26
-  }
- },
- {
-  "file": "tamko_20261124_0533_2_cars.mp4",
-  "yt_file": "tamko_20261124_0533_2_cars_yt.mp4",
-  "format": "cars",
-  "caption": "Which car makes it to the end? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47 #cargame #carracinggame #whowouldwin #mobilegames",
-  "yt_title": "Only 1 car survives the highway \ud83d\udc80\ud83c\udfce\ufe0f",
-  "yt_caption": "Which car makes it to the end? \ud83c\udfce\ufe0f Comment now! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich car did you pick? \ud83d\udc47\n\n#cargame #carracinggame #whowouldwin #mobilegames #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "car game",
-   "car race game",
-   "car racing game",
+   "bouncing ball",
+   "satisfying simulation",
+   "physics simulation",
    "classic arcade games",
    "arcade",
-   "who would win",
-   "physics simulation",
+   "mobile games",
+   "retro games",
    "tamko"
   ],
-  "yt_first_comment": "Which car did you pick? \ud83c\udfce\ufe0f Comment below! Subscribe for a new game every day!",
-  "duration": 64.1,
+  "yt_first_comment": "How many bounces did you guess? \ud83d\ude33 Subscribe for a new game every day!",
+  "duration": 63.5,
   "params": {
-   "seed": 556325345,
+   "seed": 835597973,
    "tamko": false,
-   "n": 6,
-   "hue": 0.42006849430632687,
-   "bpm": 160,
-   "title": "LAST CAR STANDING WINS"
+   "tfill": 50.82230182392475,
+   "g": 0.42562501124056473,
+   "hue": 0.005475625969228237,
+   "title": "IT GROWS EVERY BOUNCE"
+  }
+ },
+ {
+  "file": "tamko_20261125_0604_2_meteors.mp4",
+  "yt_file": "tamko_20261125_0604_2_meteors_yt.mp4",
+  "format": "meteors",
+  "caption": "Dodge or die \u2604\ufe0f Who makes it? Comment! \ud83d\udc47 #battleroyale #survivalgame #whowouldwin #gameplay",
+  "yt_title": "Only 1 survives the meteors \ud83d\udc80 Pick yours",
+  "yt_caption": "Dodge or die \u2604\ufe0f Who makes it? Comment! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWho was your survivor? \ud83d\udc47\n\n#battleroyale #survivalgame #whowouldwin #gameplay #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "battle royale",
+   "survival game",
+   "who would win",
+   "arcade",
+   "retro games",
+   "physics simulation",
+   "simulator games",
+   "tamko"
+  ],
+  "yt_first_comment": "Who was your survivor? \u2604\ufe0f Comment below! Subscribe for a new game every day!",
+  "duration": 63.5,
+  "params": {
+   "seed": 982415929,
+   "tamko": false,
+   "n": 22,
+   "hue": 0.3263904389597937,
+   "title": "SURVIVE THE METEORS!"
   }
  }
 ]
