@@ -43,3 +43,10 @@ Quality check: after ANY change to the engine, run `python3 engine/qa.py /tmp/qa
 
 ## Comment pop-up (since 24/11/2026, option A validated by Mathieu)
 The first CTA of each video is no longer drawn under the subtitle: it pops up as a TikTok-style comment bubble ("@tamkoplay asks: ...") at 3-8 s and 30-35 s (1.5-4 s and 15-17.5 s in the short). Lines below the subtitle move up (close_gap). Result CTAs (WINS!, FREE!...) are still drawn in the header. Code: brand.py cta() / comment_pop() / close_gap().
+
+## HUB v2 (since 25/11/2026) — hub/tamko.json → "channel"
+Principle: FEW stats, only those that say whether the channel grows and WHAT PEOPLE WANT TO SEE. No Instagram. Never invent a number (null if unknown).
+- growth: followers (Zernio accounts_get_follower_stats), goal 1000, followers_delta (vs D-7), followers_note (1 short sentence), views_7d / views_prev_7d (TikTok, Zernio analytics_get_daily_metrics with attribution "received", sum of the last 7 days / the 7 before), avg_views (avg views per TikTok video published in the last 7 days), avg_watch (mean of igReelsAvgWatchTime/1000 over the same videos, 1 decimal), avg_note, yt_views_7d / yt_views_prev_7d / yt_avg_views (Buffer list_posts includeMetrics, Shorts sent in each 7-day window; ignore a Short at 0 views sent less than 24 h ago), yt_note.
+- insights: groups_title "Par type de jeu"; streamers = game types [{label, value = avg TikTok views, detail "n vidéos · YouTube X" (X = avg YouTube views or —)}] sorted desc; formats = short vs long etc. [{label, value, detail}]; slots = TikTok times Paris [{label, value, detail, group:1}]; takeaways = 3-4 DECISIONS (keep / stop / test), always one about YouTube, flag small samples; top = 3 best videos [{title, views, detail with platform}].
+- trend: last 7 rolling days, labels "dd/mm", series.TikTok = views per day (same daily_metrics call).
+- Keep today, upcoming, alerts (and drafts/warmup if present). Do NOT write kpis, engagement, best_time, keywords anymore.
