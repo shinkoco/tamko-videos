@@ -1,5 +1,8 @@
 # Tamko daily run
 
+## ⚠️ PUBLICATION 100 % AUTOMATIQUE (décision de Mathieu, 26/11, toutes les chaînes)
+Cette règle prime sur tout le reste. TikTok (Zernio) et YouTube (Buffer) sont programmés pour publication automatique : jamais de brouillon (`draft`, `saveToDraft`), jamais de mode notification (`schedulingType` reste "automatic"), aucune publication à la main demandée à Mathieu. hub/tamko.json → channel.drafts reste vide ou absent. En cas d'échec : ne pas se rabattre sur un brouillon, le signaler dans les alertes.
+
 Daily routine for @tamkoplay (TikTok + YouTube Shorts), run by a scheduled Claude session.
 
 1. Clone the repo: `git clone --depth 1 https://github.com/shinkoco/tamko-videos /home/claude/tamko-videos`.
@@ -49,4 +52,4 @@ Principle: FEW stats, only those that say whether the channel grows and WHAT PEO
 - growth: followers (Zernio accounts_get_follower_stats), goal 1000, followers_delta (vs D-7), followers_note (1 short sentence), views_7d / views_prev_7d (TikTok, Zernio analytics_get_daily_metrics with attribution "received", sum of the last 7 days / the 7 before), avg_views (avg views per TikTok video published in the last 7 days), avg_watch (mean of igReelsAvgWatchTime/1000 over the same videos, 1 decimal), avg_note, yt_views_7d / yt_views_prev_7d / yt_avg_views (Buffer list_posts includeMetrics, Shorts sent in each 7-day window; ignore a Short at 0 views sent less than 24 h ago), yt_note.
 - insights: groups_title "Par type de jeu"; streamers = game types [{label, value = avg TikTok views, detail "n vidéos · YouTube X" (X = avg YouTube views or —)}] sorted desc; formats = short vs long etc. [{label, value, detail}]; slots = TikTok times Paris [{label, value, detail, group:1}]; takeaways = 3-4 DECISIONS (keep / stop / test), always one about YouTube, flag small samples; top = 3 best videos [{title, views, detail with platform}].
 - trend: last 7 rolling days, labels "dd/mm", series.TikTok = views per day (same daily_metrics call).
-- Keep today, upcoming, alerts (and drafts/warmup if present). Do NOT write kpis, engagement, best_time, keywords anymore.
+- Keep today, upcoming, alerts (and warmup if present). Do NOT write kpis, engagement, best_time, keywords anymore.
