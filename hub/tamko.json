@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-25T15:55:00+01:00",
- "date_label": "Mercredi 25 novembre",
+ "updated": "2026-11-26T06:25:00+01:00",
+ "date_label": "Jeudi 26 novembre",
  "alerts": [],
  "channel": {
   "name": "Tamko",
@@ -8,7 +8,7 @@
    "Tamko,",
    "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Dominos à 08:00, balle qui grossit à 13:00 et météores à 20:00 sur TikTok ; Shorts YouTube dominos à 10:30 et météores à 22:45. Depuis le lancement : 13 389 vues TikTok (28 vidéos) et environ 11 567 vues YouTube ; les 3 derniers jours tournent à 540-700 vues par TikTok.",
+  "summary": "Mélodie à 08:00, course de billes à 13:00 et survie aux pièges à 20:00 sur TikTok ; Shorts YouTube mélodie à 10:45 et survie à 23:00. Sur 7 jours complets (19-25/11) : 9 732 vues TikTok, contre 5 463 la semaine d'avant.",
   "followers": {
    "label": "Abonnés TikTok",
    "value": 4,
@@ -18,38 +18,38 @@
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Will they ALL fall? (dominos)",
+    "title": "Can you name this song? (mélodie)",
     "status": "programmé"
    },
    {
-    "time": "10:30",
+    "time": "10:45",
     "platform": "YouTube",
-    "title": "Can 500 dominoes make it? (dominos)",
+    "title": "Can you name this song? (mélodie)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "It grows every bounce (grow)",
+    "title": "Who reaches the bottom first? (course de billes)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Dodge or die (météores)",
+    "title": "Traps every round (survie)",
     "status": "programmé"
    },
    {
-    "time": "22:45",
+    "time": "23:00",
     "platform": "YouTube",
-    "title": "Only 1 survives the meteors (météores)",
+    "title": "Only 1 survives the traps (survie)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Jeudi 26",
-    "text": "3 TikTok (08:00, 13:00, 20:00) ; YouTube ~10:40 et ~22:55 selon la règle des 24 h glissantes"
+    "day": "Vendredi 27",
+    "text": "3 TikTok (08:00, 13:00, 20:00) ; 2 Shorts vers 11h et 23h15 selon la règle des 24 h glissantes (préparés demain matin)"
    }
   ],
   "trend": {
@@ -70,7 +70,7 @@
      1532,
      2490,
      2003,
-     969
+     1917
     ]
    }
   },
@@ -80,15 +80,15 @@
    "goal": 1000,
    "followers_delta": 3,
    "followers_note": "3 abonnés gagnés en 7 jours : la croissance démarre à peine.",
-   "views_7d": 8784,
+   "views_7d": 9732,
    "views_prev_7d": 5463,
-   "avg_views": 444,
-   "avg_watch": 5.1,
+   "avg_views": 470,
+   "avg_watch": 5.2,
    "avg_note": "5 s regardées en moyenne : on perd la majorité des gens avant la fin.",
-   "yt_views_7d": 6481,
-   "yt_views_prev_7d": 5116,
-   "yt_avg_views": 720,
-   "yt_note": "YouTube progresse : 720 vues par Short en moyenne (9 Shorts)."
+   "yt_views_7d": 8536,
+   "yt_views_prev_7d": 5125,
+   "yt_avg_views": 776,
+   "yt_note": "YouTube progresse : 776 vues par Short en moyenne (11 Shorts)."
   },
   "insights": {
    "groups_title": "Par type de jeu",
@@ -100,7 +100,7 @@
     },
     {
      "label": "Plinko",
-     "value": 694,
+     "value": 708,
      "detail": "1 vidéo · YouTube —"
     },
     {
@@ -111,17 +111,17 @@
     {
      "label": "Pierre-feuille-ciseaux",
      "value": 664,
-     "detail": "1 vidéo · YouTube 857"
+     "detail": "1 vidéo · YouTube 862"
     },
     {
      "label": "Multiplication",
      "value": 630,
-     "detail": "3 vidéos · YouTube 669"
+     "detail": "3 vidéos · YouTube 673"
     },
     {
      "label": "Canards",
-     "value": 590,
-     "detail": "1 vidéo · YouTube 293"
+     "value": 591,
+     "detail": "1 vidéo · YouTube 301"
     },
     {
      "label": "Escape",
@@ -136,32 +136,32 @@
     {
      "label": "Labyrinthe",
      "value": 431,
-     "detail": "2 vidéos · YouTube 864"
+     "detail": "2 vidéos · YouTube 962"
     },
     {
      "label": "Course de billes",
      "value": 430,
-     "detail": "2 vidéos · YouTube 194"
+     "detail": "2 vidéos · YouTube 195"
     },
     {
      "label": "Dominos",
-     "value": 418,
-     "detail": "2 vidéos · YouTube 996"
+     "value": 420,
+     "detail": "2 vidéos · YouTube 956"
+    },
+    {
+     "label": "Grow",
+     "value": 416,
+     "detail": "2 vidéos · YouTube —"
+    },
+    {
+     "label": "Météores",
+     "value": 403,
+     "detail": "2 vidéos · YouTube 155"
     },
     {
      "label": "Voitures",
      "value": 394,
-     "detail": "2 vidéos · YouTube 1105"
-    },
-    {
-     "label": "Météores",
-     "value": 245,
-     "detail": "1 vidéo · YouTube 154"
-    },
-    {
-     "label": "Grow",
-     "value": 227,
-     "detail": "2 vidéos · YouTube —"
+     "detail": "2 vidéos · YouTube 1012"
     },
     {
      "label": "Mélodie",
@@ -171,7 +171,7 @@
     {
      "label": "Territoire",
      "value": 214,
-     "detail": "1 vidéo · YouTube 1138"
+     "detail": "1 vidéo · YouTube 1139"
     }
    ],
    "formats": [
@@ -182,8 +182,8 @@
     },
     {
      "label": "Court (~30 s)",
-     "value": 550,
-     "detail": "4 vidéos dont 2 publiées aujourd'hui · 4,2 s regardées (14 % de la vidéo)"
+     "value": 630,
+     "detail": "5 vidéos · 5,0 s regardées (17 % de la vidéo)"
     }
    ],
    "slots": [
@@ -195,22 +195,22 @@
     },
     {
      "label": "13:00",
-     "value": 451,
+     "value": 516,
      "detail": "6 vidéos depuis le 20/11",
      "group": 1
     },
     {
      "label": "20:00",
-     "value": 447,
-     "detail": "5 vidéos depuis le 20/11",
+     "value": 467,
+     "detail": "6 vidéos depuis le 20/11",
      "group": 1
     }
    ],
    "takeaways": [
-    "On remet plus souvent Pays, Plinko, Vision et Pierre-feuille-ciseaux : ce sont les jeux qui font le plus de vues sur TikTok (650 à 750).",
-    "Grow, Mélodie, Météores et Territoire sont en bas, mais surtout publiés le 20-21/11, des jours creux : on leur redonne une chance chacun avant de les retirer.",
-    "Court contre long : échantillon trop petit (4 courts, dont 2 d'aujourd'hui). On garde le court sur TikTok et on tranche au point du 28/11.",
-    "YouTube : on garde 2 Shorts par jour (~10h30 et ~22h30). Territoire, Voitures, Labyrinthe et Dominos y dépassent 850 vues ; les courses de billes et canards restent sous 300."
+    "On garde Pays, Plinko, Vision et Pierre-feuille-ciseaux dans la rotation : 650 à 750 vues sur TikTok (petits échantillons).",
+    "On ne retire encore aucun jeu : Mélodie (rejouée aujourd'hui) et Territoire n'ont qu'une vidéo, publiée un jour creux.",
+    "On garde le court sur TikTok : il fait autant de vues que le long (630 contre 635) avec une plus grande part regardée. Petit échantillon, à confirmer le 28/11.",
+    "YouTube : on garde 2 Shorts par jour. Territoire, Voitures, Labyrinthe et Dominos y dépassent 900 vues en moyenne ; les courses de billes restent sous 200 (petits échantillons)."
    ],
    "top": [
     {
@@ -220,12 +220,12 @@
     },
     {
      "title": "Territoire jour contre nuit — 20/11",
-     "views": 1138,
+     "views": 1139,
      "detail": "YouTube"
     },
     {
      "title": "Voitures sur l'autoroute — 16/11",
-     "views": 1105,
+     "views": 1108,
      "detail": "YouTube"
     }
    ]
