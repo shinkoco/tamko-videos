@@ -106,7 +106,7 @@ while True:
     header(img, P.get("title", "WHO SURVIVES?"), f"{nleft} left  •  Round {rnd_i+1}")
     if last_out and not win_t:
         txt = "OUT: " + "  ".join(last_out)
-        out(dr, (AX, 436), txt, fit(txt, 540, 26, fredoka), RED, sw=4)
+        out(dr, (HX, 436), txt, fit(txt, 540, 26, fredoka), RED, sw=4)
     if win_t: cta(img, f"{alive[0]['n']} SURVIVES!", col=YEL)
     else: cta(img, "Pick your survivor!")
     o.frame(watermark(img))

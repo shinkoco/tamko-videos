@@ -76,7 +76,7 @@ while True:
         else:
             blob(dr, p['x'], p['y'], BR*(1.6 if win_t else 1), p['c'], p['vx'], p['vy'], p['n'] if (len(alive) <= 8 or win_t) else None)
     header(img, P.get("title", "SURVIVE THE METEORS!"), f"{len(alive)} left")
-    if last_out and not win_t: out(dr, (AX, 438), "OUT: " + "  ".join(last_out), fit("OUT: " + "  ".join(last_out), 540, 26, fredoka), RED, sw=4)
+    if last_out and not win_t: out(dr, (HX, 438), "OUT: " + "  ".join(last_out), fit("OUT: " + "  ".join(last_out), 540, 26, fredoka), RED, sw=4)
     cta(img, f"{alive[0]['n']} SURVIVES!" if win_t else "Pick your survivor!", col=YEL if win_t else BLUE)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)

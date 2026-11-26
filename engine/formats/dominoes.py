@@ -44,7 +44,7 @@ while True:
         poly = [(x-dx*L-px*Wd/2, y-dy*L-py*Wd/2), (x+dx*L-px*Wd/2, y+dy*L-py*Wd/2), (x+dx*L+px*Wd/2, y+dy*L+py*Wd/2), (x-dx*L+px*Wd/2, y-dy*L+py*Wd/2)]
         dr.polygon(poly, fill=c)
     if 0.4 + stall_i*STEP < t < fall_at[stall_i] and not done_t:
-        out(dr, (AX, 445), "...", lilita(60), RED)
+        out(dr, (HX, 445), "...", lilita(60), RED)
     header(img, P.get("title", f"WILL ALL {N} FALL?"), f"Fallen: {fallen}/{N}")
     cta(img, "ALL DOWN!" if done_t else "Will it make it to the end?", col=YEL if done_t else BLUE)
     o.frame(watermark(img))

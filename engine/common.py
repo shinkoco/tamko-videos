@@ -18,10 +18,11 @@ def rot(pts, cx, cy, a):
     c, s = math.cos(a), math.sin(a)
     return [(cx + px*c - py*s, cy + px*s + py*c) for px, py in pts]
 
+from brand import HX
 def podium(dr, ranking, y=305):
-    from brand import YEL, AX
+    from brand import YEL, HX
     for i, nm in enumerate(ranking[:3]):
-        out(dr, (AX, y+i*36), f"{i+1}. {nm}", fredoka(30), [YEL, (200, 200, 215), (230, 140, 70)][i], sw=4)
+        out(dr, (HX, y+i*36), f"{i+1}. {nm}", fredoka(30), [YEL, (200, 200, 215), (230, 140, 70)][i], sw=4)
 
 def fanfare(o, t):
     for k, fr in enumerate([523, 659, 784, 1047]): o.ev.append((t+.12*k, fr, .4, .35, 5, "sine"))

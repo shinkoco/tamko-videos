@@ -19,6 +19,7 @@ THEME = os.environ.get("TAMKO_THEME") or _auto_theme()
 if THEME == "christmas":
     BG = (14, 24, 52)
 AX = 340  # action centre x (shifted left of TikTok right rail)
+HX = 360  # header centre x (title, subtitle, header lines): true screen centre (26/11/2026)
 _mini = Image.open(os.path.join(A, "tamko_mini_sticker.png")).convert("RGBA")
 _full = Image.open(os.path.join(A, "tamko_B.png")).convert("RGBA")
 _wm = None  # built after tamko_sprite is defined
@@ -49,11 +50,11 @@ def glossy_layer(text, size, maxw=600):
     _gl[key] = L; return L
 
 def header(img, title, sub=None, y=250):
-    L = glossy_layer(title, 72, 600)
-    if img.mode == "RGBA": img.alpha_composite(L, (int(AX - L.width/2), int(y - L.height/2)))
-    else: img.paste(L, (int(AX - L.width/2), int(y - L.height/2)), L)
+    L = glossy_layer(title, 72, 520)  # 520: stays inside TikTok's side crop on tall phones
+    if img.mode == "RGBA": img.alpha_composite(L, (int(HX - L.width/2), int(y - L.height/2)))
+    else: img.paste(L, (int(HX - L.width/2), int(y - L.height/2)), L)
     d = ImageDraw.Draw(img)
-    if sub: out(d, (AX, y+70), sub, fit(sub, 540, 40, fredoka), "white", sw=5)
+    if sub: out(d, (HX, y+70), sub, fit(sub, 480, 40, fredoka), "white", sw=5)
 
 _tick = [0]
 def tamko_sprite(img, cx, cy, s, phase=0.0):
@@ -82,7 +83,7 @@ def cta(img, text, y=388, col=None, mascot=True):
     # 2026-11-24: the opening prompt (first CTA of the video) becomes a TikTok-style comment pop-up (option A);
     # later CTAs (results such as "#3 WINS!") are still drawn in the header.
     if "  •  " in text:  # "8 CARS LEFT  •  Pick your car!": live info stays, the prompt pops up
-        info, text = text.split("  •  ", 1); out(ImageDraw.Draw(img), (AX, y), info, fit(info, 540, 42), col, sw=6)
+        info, text = text.split("  •  ", 1); out(ImageDraw.Draw(img), (HX, y), info, fit(info, 540, 42), col, sw=6)
         if _cta[0] is None: _cta[0] = text
         if text == _cta[0]: _cta[1] = _wf[0]
         return
@@ -90,8 +91,8 @@ def cta(img, text, y=388, col=None, mascot=True):
     if text == _cta[0]: _cta[1] = _wf[0]; return
     f = fit(text, 480 if mascot else 540, 42); d = ImageDraw.Draw(img)
     if not mascot:
-        out(d, (AX, y), text, f, col, sw=6); return
-    tw = f.getlength(text); s = 52; gap = 10; x0 = AX - (tw + gap + s)/2
+        out(d, (HX, y), text, f, col, sw=6); return
+    tw = f.getlength(text); s = 52; gap = 10; x0 = HX - (tw + gap + s)/2
     out(d, (x0 + tw/2, y), text, f, col, sw=6)
     bob = math.sin(_tick[0]/5)*3
     tamko_sprite(img, x0 + tw + gap + s/2, y + bob, s, _tick[0]/FPS_GUESS)
@@ -196,9 +197,10 @@ def comment_pop(img):
     d.text((120, 22), "@tamkoplay  asks:", font=fredoka(26), fill=(120, 120, 130))
     f = fit(_cta[0], 470, 40); d.text((120, 62), _cta[0], font=f, fill=(20, 20, 30))
     d.text((120, 108), "Reply below", font=fredoka(22), fill=(150, 150, 160))
-    sw, sh = max(1, int(620*k)), max(1, int(150*k)); card = card.resize((sw, sh))
-    base = img.convert("RGBA"); base.alpha_composite(card, (int(AX - sw/2), int(1060 - sh/2)))
-    dr = ImageDraw.Draw(base); dr.polygon([(AX-18, 1142), (AX+18, 1142), (AX, 1166)], fill="white") if k > .9 else None
+    PS, PY = .78, 830  # 26/11/2026 option C: smaller, just above TikTok's caption zone
+    sw, sh = max(1, int(620*k*PS)), max(1, int(150*k*PS)); card = card.resize((sw, sh))
+    base = img.convert("RGBA"); base.alpha_composite(card, (int(HX - sw/2), int(PY - sh/2)))
+    ay = PY + sh/2 + 8; dr = ImageDraw.Draw(base); dr.polygon([(HX-14, ay), (HX+14, ay), (HX, ay+18)], fill="white") if k > .9 else None
     img.paste(base.convert(img.mode)); return img
 
 def watermark(img):

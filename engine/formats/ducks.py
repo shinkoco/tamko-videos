@@ -99,7 +99,7 @@ while True:
     header(img, P.get("title", "WHICH DUCK WINS?"), None, y=240)
     rank = order + [d['n'] for d in sorted(act, key=lambda d: -d['y'])]
     for i, nm in enumerate(rank[:3]):
-        out(dr, (AX, 305+i*36), f"{i+1}. {nm}", fredoka(30), [YEL, (200, 200, 215), (230, 140, 70)][i], sw=4)
+        out(dr, (HX, 305+i*36), f"{i+1}. {nm}", fredoka(30), [YEL, (200, 200, 215), (230, 140, 70)][i], sw=4)
     if order: cta(img, f"{order[0]} WINS!", y=440, col=YEL)
     else: cta(img, "Pick your duck!", y=440)
     o.frame(watermark(img))

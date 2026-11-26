@@ -66,7 +66,7 @@ while True:
     dr.ellipse([bx-r, by-r, bx+r, by+r], fill=hsv(hue, .7, 1), outline="white", width=3)
     header(img, P.get("title", "GUESS THE SONG!"), "Every bounce plays a note")
     if reveal_t and t >= reveal_t:
-        d2 = ImageDraw.Draw(img); out(d2, (AX, 440), song, fit(song, 560, 44), YEL, sw=5)
+        d2 = ImageDraw.Draw(img); out(d2, (HX, 440), song, fit(song, 560, 44), YEL, sw=5)
         cta(img, "Did you get it?", col=BLUE)
     else: cta(img, "Comment the song before the reveal!", col=BLUE)
     o.frame(watermark(img))

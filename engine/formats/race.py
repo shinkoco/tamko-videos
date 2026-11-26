@@ -96,7 +96,7 @@ while True:
     ranking = order + [b['n'] for b in sorted(run, key=lambda b: -b['y'])]
     for i, nm in enumerate(ranking[:3]):
         col = [YEL, (200, 200, 215), (230, 140, 70)][i]
-        out(dr, (AX, 305+i*36), f"{i+1}. {nm}", fredoka(30), col, sw=4)
+        out(dr, (HX, 305+i*36), f"{i+1}. {nm}", fredoka(30), col, sw=4)
     if order: cta(img, f"{order[0]} WINS!", y=440, col=YEL)
     else: cta(img, "Pick your runner!", y=440)
     o.frame(watermark(img))

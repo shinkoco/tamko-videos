@@ -70,7 +70,7 @@ while True:
         dr.text((x, y), b['n'], font=F2, fill=tc, anchor="mm")
     header(img, "WHO WILL WIN?", f"{len([b for b in balls if b['alive']])} countries left")
     d2 = ImageDraw.Draw(img)
-    if out_list: out(d2, (AX, 438), "OUT: " + "  ".join(out_list), fit("OUT: " + "  ".join(out_list), 540, 26, fredoka), RED, sw=4)
+    if out_list: out(d2, (HX, 438), "OUT: " + "  ".join(out_list), fit("OUT: " + "  ".join(out_list), 540, 26, fredoka), RED, sw=4)
     if win_t:
         w = [b for b in balls if b['alive']][0]
         cta(img, f"{w['n']} WINS! 🏆"[:-2], col=YEL)

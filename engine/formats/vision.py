@@ -38,7 +38,7 @@ while True:
     header(img, P.get("title", "HOW OLD IS YOUR VISION?"), "Can you still see the ball?" if not done_t else "Did you see it until the end?")
     d2 = ImageDraw.Draw(img)
     if not done_t:
-        out(d2, (AX, 440), f"If you see it: {age} years old" if age > 5 else "If you see it: SUPER VISION 🦅"[:-2], fit("If you see it: 90 years old", 520, 40), YEL, sw=5)
+        out(d2, (HX, 440), f"If you see it: {age} years old" if age > 5 else "If you see it: SUPER VISION 🦅"[:-2], fit("If you see it: 90 years old", 520, 40), YEL, sw=5)
     cta(img, "Comment your vision age!", y=1000 if False else 388, col=BLUE)
     o.frame(watermark(img))
 for f in outro_frames(): o.frame(f)
