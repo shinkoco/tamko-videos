@@ -122,5 +122,17 @@
 {
 "format": "survival",
 "date": "20261126_0602"
+},
+{
+"format": "dup",
+"date": "20261127_0601"
+},
+{
+"format": "maze",
+"date": "20261127_0601"
+},
+{
+"format": "rockets",
+"date": "20261127_0601"
 }
 ]
