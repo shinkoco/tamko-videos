@@ -1,87 +1,85 @@
 [
  {
-  "file": "tamko_20261127_0601_0_dup.mp4",
-  "yt_file": "tamko_20261127_0601_0_dup_yt.mp4",
-  "format": "dup",
-  "caption": "Watch it multiply... how many balls do you think? \ud83d\udc47 #satisfyingsimulation #bouncingball #2dphysics #physics",
-  "yt_title": "Every bounce = +1 ball \ud83e\udd2f",
-  "yt_caption": "Watch it multiply... how many balls do you think? \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhat number did you guess? \ud83d\udc47\n\n#satisfyingsimulation #bouncingball #2dphysics #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261128_0601_0_battle.mp4",
+  "yt_file": "tamko_20261128_0601_0_battle_yt.mp4",
+  "format": "battle",
+  "caption": "Which country wins this time? \ud83c\udf0d Pick yours before the end \ud83d\udc47 #countryballs #countrybattle #battleroyale #arcade",
+  "yt_title": "Wait for the final 2 \ud83d\udc80 Country battle",
+  "yt_caption": "Which country wins this time? \ud83c\udf0d Pick yours before the end \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich country did you pick? \ud83d\udc47\n\n#countryballs #countrybattle #battleroyale #arcade #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "satisfying simulation",
-   "bouncing ball",
-   "2d physics",
-   "physics simulation",
+   "countryballs",
+   "country battle",
+   "countries marble race",
+   "world war simulator",
+   "simulator games",
+   "gameplay",
    "who would win",
    "relaxing video",
-   "satisfying video",
-   "physics simulation",
    "tamko"
   ],
-  "yt_first_comment": "What was your guess? \ud83e\udd2f Comment the number! Subscribe for a new game every day!",
-  "duration": 64.5,
+  "yt_first_comment": "Which country did you pick? \ud83c\udf0d Comment yours! Subscribe for a new game every day!",
+  "duration": 63.5,
   "params": {
-   "seed": 190177820,
-   "tamko": false,
-   "max": 3000,
-   "g": 0.4725667092742503,
-   "hue": 0.5255628065215008,
-   "title": "EVERY BOUNCE = +1 BALL"
+   "seed": 872280738,
+   "tamko": true,
+   "R": 270,
+   "spin": 1.1277173469875423
   }
  },
  {
-  "file": "tamko_20261127_0601_1_maze.mp4",
-  "yt_file": "tamko_20261127_0601_1_maze_yt.mp4",
-  "format": "maze",
-  "caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47 #maze #mazegame #puzzle #arcade",
-  "yt_title": "Can Tamko escape the maze in time? \u23f1\ufe0f",
-  "yt_caption": "Can Tamko find the exit in time? \u23f1\ufe0f Comment TRAPPED or FREE \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nTrapped or free: what was your bet? \ud83d\udc47\n\n#maze #mazegame #puzzle #arcade #satisfying #physics #simulation #shorts",
+  "file": "tamko_20261128_0601_1_rings.mp4",
+  "yt_file": "tamko_20261128_0601_1_rings_yt.mp4",
+  "format": "rings",
+  "caption": "Ring after ring... will it make it out? \ud83d\udd25 Guess below \ud83d\udc47 #ballescape #spinningrings #willitescape #gameplay",
+  "yt_title": "Wait for ring 1 \ud83d\udc80 Will it make it out?",
+  "yt_caption": "Ring after ring... will it make it out? \ud83d\udd25 Guess below \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nDid you think it would escape? \ud83d\udc47\n\n#ballescape #spinningrings #willitescape #gameplay #satisfying #physics #simulation #shorts",
   "yt_tags": [
-   "maze",
-   "maze game",
-   "maze solving",
+   "ball escape",
+   "spinning rings",
+   "escape the circle",
+   "will it escape",
+   "satisfying video",
+   "relaxing video",
+   "mobile games",
+   "simulator games",
+   "tamko"
+  ],
+  "yt_first_comment": "Called it? \ud83d\udd25 Tell us below! Subscribe for a new game every day!",
+  "duration": 77.5,
+  "params": {
+   "seed": 551428073,
+   "tamko": true,
+   "n": 16,
+   "gap": 1.0078708043033064,
+   "g": 0.5353926894962515,
+   "spin": 0.727645890580106,
+   "hue": 0.4994980516585019
+  }
+ },
+ {
+  "file": "tamko_20261128_0601_2_plinko.mp4",
+  "yt_file": "tamko_20261128_0601_2_plinko_yt.mp4",
+  "format": "plinko",
+  "caption": "6 balls, 1 winner \ud83c\udfaf Comment your number before the end \ud83d\udc47 #plinko #pickanumber #whowouldwin #gameplay",
+  "yt_title": "Pick 1 to 6 \ud83c\udfaf Which ball survives?",
+  "yt_caption": "6 balls, 1 winner \ud83c\udfaf Comment your number before the end \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich number did you pick? \ud83d\udc47\n\n#plinko #pickanumber #whowouldwin #gameplay #satisfying #physics #simulation #shorts",
+  "yt_tags": [
+   "plinko",
+   "pick a number",
    "who would win",
+   "gameplay",
    "physics simulation",
    "simulator games",
    "retro games",
    "tamko"
   ],
-  "yt_first_comment": "Trapped or free? What was your bet? \ud83e\udde9",
-  "duration": 63.5,
+  "yt_first_comment": "Which number did you pick? \ud83c\udfaf Comment below!",
+  "duration": 66.5,
   "params": {
-   "seed": 11768688,
-   "tamko": false,
-   "gw": 14,
-   "gh": 16,
-   "timer": 52.0,
-   "bpm": 140
-  }
- },
- {
-  "file": "tamko_20261127_0601_2_rockets.mp4",
-  "yt_file": "tamko_20261127_0601_2_rockets_yt.mp4",
-  "format": "rockets",
-  "caption": "Which rocket survives the invasion? \ud83d\udc7e Comment now! \ud83d\udc47 #spaceinvaders #spaceinvadersgameplay #classicarcade #mobilegames",
-  "yt_title": "Last rocket standing \ud83d\ude80 Space invaders race",
-  "yt_caption": "Which rocket survives the invasion? \ud83d\udc7e Comment now! \ud83d\udc47\n\nSound on \ud83d\udd0a 100% code: our own physics, visuals and music. A new game every day!\n\nWhich rocket did you pick? \ud83d\udc47\n\n#spaceinvaders #spaceinvadersgameplay #classicarcade #mobilegames #satisfying #physics #simulation #shorts",
-  "yt_tags": [
-   "space invaders",
-   "space invaders gameplay",
-   "space invaders arcade",
-   "physics simulation",
-   "who would win",
-   "simulator games",
-   "gameplay",
-   "tamko"
-  ],
-  "yt_first_comment": "Which rocket did you pick? \ud83d\ude80 Comment below! Subscribe for a new game every day!",
-  "duration": 63.7,
-  "params": {
-   "seed": 754556853,
+   "seed": 237704254,
    "tamko": true,
-   "n": 8,
-   "hue": 0.7341943750316446,
-   "bpm": 155,
-   "title": "SPACE INVASION!"
+   "bpm": 160,
+   "title": "PICK 1 TO 6!"
   }
  }
 ]

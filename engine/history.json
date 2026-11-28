@@ -134,5 +134,17 @@
 {
 "format": "rockets",
 "date": "20261127_0601"
+},
+{
+"format": "battle",
+"date": "20261128_0601"
+},
+{
+"format": "rings",
+"date": "20261128_0601"
+},
+{
+"format": "plinko",
+"date": "20261128_0601"
 }
 ]
