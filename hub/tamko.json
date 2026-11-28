@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-27T06:25:00+01:00",
- "date_label": "Vendredi 27 novembre",
+ "updated": "2026-11-28T06:25:00+01:00",
+ "date_label": "Samedi 28 novembre",
  "alerts": [],
  "channel": {
   "name": "Tamko",
@@ -8,99 +8,99 @@
    "Tamko,",
    "3 vidéos TikTok et 2 Shorts programmés aujourd'hui."
   ],
-  "summary": "Multiplication de balles à 08:00, labyrinthe à 13:00 et fusées à 20:00 sur TikTok ; Shorts YouTube multiplication à 11:00 et fusées à 23:15. Sur 7 jours complets (20-26/11) : 10 664 vues TikTok, contre 5 931 la semaine d'avant.",
+  "summary": "Bataille de pays à 08:00, anneaux à 13:00 et Plinko à 20:00 sur TikTok ; Shorts YouTube bataille à 11:15 et Plinko à 23:30. Sur 7 jours complets (21-27/11) : 11 629 vues TikTok, contre 6 000 la semaine d'avant.",
   "followers": {
    "label": "Abonnés TikTok",
-   "value": 4,
+   "value": 5,
    "goal": 1000
   },
   "today": [
    {
     "time": "08:00",
     "platform": "TikTok",
-    "title": "Watch it multiply (multiplication de balles)",
+    "title": "Which country wins this time? (bataille de pays)",
     "status": "programmé"
    },
    {
-    "time": "11:00",
+    "time": "11:15",
     "platform": "YouTube",
-    "title": "Every bounce = +1 ball (multiplication de balles)",
+    "title": "Wait for the final 2 (bataille de pays)",
     "status": "programmé"
    },
    {
     "time": "13:00",
     "platform": "TikTok",
-    "title": "Can Tamko find the exit in time? (labyrinthe)",
+    "title": "Will it make it out? (anneaux)",
     "status": "programmé"
    },
    {
     "time": "20:00",
     "platform": "TikTok",
-    "title": "Which rocket survives the invasion? (fusées)",
+    "title": "6 balls, 1 winner (Plinko)",
     "status": "programmé"
    },
    {
-    "time": "23:15",
+    "time": "23:30",
     "platform": "YouTube",
-    "title": "Last rocket standing (fusées)",
+    "title": "Pick 1 to 6 (Plinko)",
     "status": "programmé"
    }
   ],
   "upcoming": [
    {
-    "day": "Samedi 28",
-    "text": "3 TikTok (08:00, 13:00, 20:00) ; 2 Shorts vers 11h15 et 23h30 selon la règle des 24 h glissantes (préparés demain matin)"
+    "day": "Dimanche 29",
+    "text": "3 TikTok (08:00, 13:00, 20:00) ; 2 Shorts vers 11h25 et 23h40 selon la règle des 24 h glissantes (préparés demain matin)"
    }
   ],
   "trend": {
    "labels": [
-    "20/11",
     "21/11",
     "22/11",
     "23/11",
     "24/11",
     "25/11",
-    "26/11"
+    "26/11",
+    "27/11"
    ],
    "series": {
     "TikTok": [
-     721,
      601,
      1532,
      2490,
      2003,
      1917,
-     1400
+     1400,
+     1686
     ]
    }
   },
   "comment_replies": 0,
   "growth": {
-   "followers": 4,
+   "followers": 5,
    "goal": 1000,
-   "followers_delta": 3,
-   "followers_note": "3 abonnés gagnés en 7 jours, aucun de plus depuis le 24/11.",
-   "views_7d": 10664,
-   "views_prev_7d": 5931,
-   "avg_views": 509,
+   "followers_delta": 4,
+   "followers_note": "4 abonnés gagnés en 7 jours, dont 1 le 27/11.",
+   "views_7d": 11629,
+   "views_prev_7d": 6000,
+   "avg_views": 557,
    "avg_watch": 5.0,
    "avg_note": "5 s regardées en moyenne : on perd la majorité des gens avant la fin.",
-   "yt_views_7d": 9886,
-   "yt_views_prev_7d": 5376,
-   "yt_avg_views": 824,
-   "yt_note": "YouTube progresse : 824 vues par Short en moyenne (12 Shorts, dernier Short non compté)."
+   "yt_views_7d": 9956,
+   "yt_views_prev_7d": 7315,
+   "yt_avg_views": 830,
+   "yt_note": "YouTube progresse : 830 vues par Short en moyenne (12 Shorts, dernier Short non compté)."
   },
   "insights": {
    "groups_title": "Par type de jeu",
    "streamers": [
     {
      "label": "Pays (battle)",
-     "value": 749,
-     "detail": "3 vidéos · YouTube 14"
+     "value": 1012,
+     "detail": "2 vidéos · YouTube 14"
     },
     {
      "label": "Plinko",
-     "value": 719,
+     "value": 724,
      "detail": "1 vidéo · YouTube —"
     },
     {
@@ -111,22 +111,27 @@
     {
      "label": "Pierre-feuille-ciseaux",
      "value": 664,
-     "detail": "1 vidéo · YouTube 864"
+     "detail": "1 vidéo · YouTube 865"
     },
     {
      "label": "Multiplication",
-     "value": 630,
-     "detail": "3 vidéos · YouTube 679"
+     "value": 606,
+     "detail": "4 vidéos · YouTube 737"
     },
     {
      "label": "Canards",
-     "value": 591,
+     "value": 593,
      "detail": "1 vidéo · YouTube 377"
     },
     {
-     "label": "Escape",
+     "label": "Escape / anneaux",
      "value": 527,
      "detail": "4 vidéos · YouTube 686"
+    },
+    {
+     "label": "Fusées",
+     "value": 483,
+     "detail": "3 vidéos · YouTube 661"
     },
     {
      "label": "Course de billes",
@@ -134,19 +139,14 @@
      "detail": "3 vidéos · YouTube 195"
     },
     {
-     "label": "Fusées",
-     "value": 450,
-     "detail": "2 vidéos · YouTube 659"
-    },
-    {
      "label": "Labyrinthe",
-     "value": 431,
-     "detail": "2 vidéos · YouTube 1004"
+     "value": 474,
+     "detail": "3 vidéos · YouTube 1004"
     },
     {
      "label": "Dominos",
      "value": 421,
-     "detail": "2 vidéos · YouTube 964"
+     "detail": "2 vidéos · YouTube 994"
     },
     {
      "label": "Grow",
@@ -155,23 +155,23 @@
     },
     {
      "label": "Survie",
-     "value": 405,
-     "detail": "2 vidéos · YouTube —"
+     "value": 406,
+     "detail": "2 vidéos · YouTube 901"
     },
     {
      "label": "Météores",
      "value": 404,
-     "detail": "2 vidéos · YouTube 521"
+     "detail": "2 vidéos · YouTube 524"
     },
     {
      "label": "Mélodie",
      "value": 403,
-     "detail": "2 vidéos · YouTube 492"
+     "detail": "2 vidéos · YouTube 887"
     },
     {
      "label": "Voitures",
      "value": 396,
-     "detail": "2 vidéos · YouTube 1025"
+     "detail": "2 vidéos · YouTube 1024"
     },
     {
      "label": "Territoire",
@@ -182,40 +182,40 @@
    "formats": [
     {
      "label": "Long (60 s+), depuis le 22/11",
-     "value": 635,
-     "detail": "7 vidéos · 5,5 s regardées (9 % de la vidéo)"
+     "value": 636,
+     "detail": "7 vidéos · 5,4 s regardées (9 % de la vidéo)"
     },
     {
      "label": "Court (~30 s), depuis le 22/11",
-     "value": 614,
-     "detail": "8 vidéos · 4,5 s regardées (15 % de la vidéo)"
+     "value": 597,
+     "detail": "11 vidéos · 4,7 s regardées (15 % de la vidéo)"
     }
    ],
    "slots": [
     {
      "label": "08:00",
-     "value": 484,
-     "detail": "7 vidéos depuis le 20/11",
+     "value": 520,
+     "detail": "8 vidéos depuis le 20/11",
      "group": 1
     },
     {
      "label": "13:00",
-     "value": 526,
-     "detail": "7 vidéos depuis le 20/11",
+     "value": 531,
+     "detail": "8 vidéos depuis le 20/11",
      "group": 1
     },
     {
      "label": "20:00",
-     "value": 517,
-     "detail": "7 vidéos depuis le 20/11",
+     "value": 493,
+     "detail": "8 vidéos depuis le 20/11",
      "group": 1
     }
    ],
    "takeaways": [
-    "On garde le court sur TikTok : presque autant de vues que le long (614 contre 635) avec une plus grande part regardée, mais moins de secondes (4,5 contre 5,5). Petit échantillon.",
-    "On garde les 3 créneaux : l'écart entre 08:00, 13:00 et 20:00 reste faible (484 à 526 vues).",
-    "On ne retire encore aucun jeu : la plupart n'ont qu'une à trois vidéos.",
-    "YouTube : on garde 2 Shorts par jour. Territoire, Voitures, Labyrinthe et Dominos dépassent 900 vues en moyenne ; les courses de billes restent sous 200 (petits échantillons)."
+    "On garde le court sur TikTok : un peu moins de vues que le long (597 contre 636) mais une plus grande part regardée (15 % contre 9 %). Petit échantillon.",
+    "On garde les 3 créneaux : l'écart reste faible (493 à 531 vues).",
+    "On ne retire encore aucun jeu : la plupart n'ont qu'une à quatre vidéos.",
+    "YouTube : on garde 2 Shorts par jour. Territoire, Voitures et Labyrinthe dépassent 1 000 vues en moyenne ; les courses de billes restent sous 200 (petits échantillons)."
    ],
    "top": [
     {
